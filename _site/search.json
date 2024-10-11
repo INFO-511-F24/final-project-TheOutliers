@@ -116,7 +116,11 @@
     "href": "about.html",
     "title": "About",
     "section": "",
+<<<<<<< HEAD
     "text": "This project was developed by The Outliers For INFO 511 - Fundamentals of Data Science at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nSomething other than Role 3: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.)."
+=======
+    "text": "This project was developed by [The Outliers] For INFO 511 - Fundamentals of Data Science at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nSarah Gilbride: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.)."
+>>>>>>> cb982ffb163df1879bd8b02b935c08d91bb3b6a0
   },
   {
     "objectID": "presentation.html",
