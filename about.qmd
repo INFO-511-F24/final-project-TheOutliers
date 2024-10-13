@@ -6,12 +6,12 @@ editor: visual
 
 This project was developed by **\[The Outliers\]** For [INFO 511 - Fundamentals of Data Science](https://datasciaz.netlify.app/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
 
--   Sarah Gilbride: One sentence description of Team member 1 (e.g., year, major, etc.).
+-   Sarah Gilbride: Master's student in Data Science program, based in Phoenix, AZ
 
 -   Miguel Peralta: Master's student in Data Science, based in Tucson, AZ
 
 -   Vera Jackson: Master's student in Data Science program, based out of Chicago, IL
 
--   Quinn Jones: One sentence description of Team member 4 (e.g., year, major, etc.).
+-   Quinn Jones: Master's of Data Science student, based in Salem, OR
 
--   Cas Laskowski: One sentence description of Team member 5 (e.g., year, major, etc.).
+-   Cas Laskowski: PhD in Information, Tucson, AZ
