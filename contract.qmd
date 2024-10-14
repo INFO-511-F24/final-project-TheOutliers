@@ -11,7 +11,7 @@ editor: visual
 - Miguel Peralta: [contact information]
 - Sarah Gilbride:[contact information]
 - Quinn Jones:[contact information]
-- Vera Jackson:[contact information]
+- Vera Jackson: verasjackson@arizona.edu
 
 ## Project Overview
 
@@ -95,5 +95,5 @@ By signing below, each team member agrees to the terms of this contract and comm
 - Miguel Peralta: ________________________ Date: ___________
 - Sarah Gilbride: ________________________ Date: ___________
 - Quinn Jones: ________________________ Date: ___________
-- Vera Jackson: ________________________ Date: ___________
+- Vera Jackson: *VSJ* Date: *10/14/2024*
 
