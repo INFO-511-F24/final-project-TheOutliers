@@ -9,7 +9,7 @@ editor: visual
 ### Team Members
 - Cas Laskowski:[contact information]
 - Miguel Peralta: miguelperalta@arizona.edu
-- Sarah Gilbride:[contact information]
+- Sarah Gilbride:sarahgilbride@arizona.edu
 - Quinn Jones:[contact information]
 - Vera Jackson: verasjackson@arizona.edu
 
@@ -93,7 +93,7 @@ By signing below, each team member agrees to the terms of this contract and comm
 
 - Cas Laskowski: ________________________ Date: ___________
 - Miguel Peralta: *MCAP* Date: *10/14/2024*
-- Sarah Gilbride: ________________________ Date: ___________
+- Sarah Gilbride: *SMG* Date: *10/14/0224*
 - Quinn Jones: ________________________ Date: ___________
 - Vera Jackson: *VSJ* Date: *10/14/2024*
 
