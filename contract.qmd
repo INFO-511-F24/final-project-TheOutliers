@@ -8,10 +8,10 @@ editor: visual
 
 ### Team Members
 - Cas Laskowski:[contact information]
-- Miguel Peralta: [contact information]
-- Sarah Gilbride:[contact information]
+- Miguel Peralta: miguelperalta@arizona.edu
+- Sarah Gilbride:sarahgilbride@arizona.edu
 - Quinn Jones:[contact information]
-- Vera Jackson:[contact information]
+- Vera Jackson: verasjackson@arizona.edu
 
 ## Project Overview
 
@@ -46,10 +46,10 @@ Each team member is responsible for:
 ## Communication Plan
 
 ### Meeting Schedule
-Weekly on [Day] at [Time] via [platform].
+Weekly on 9:00 AM Arizona Time via Slack.
 
 ### Primary Communication Platform
-[Platform, e.g., Slack].
+Slack
 
 ### Decision-Making Process
 Decisions will be made by consensus; if a consensus cannot be reached, a vote will be taken.
@@ -92,8 +92,8 @@ If a conflict arises, team members will:
 By signing below, each team member agrees to the terms of this contract and commits to working together effectively and respectfully.
 
 - Cas Laskowski: ________________________ Date: ___________
-- Miguel Peralta: ________________________ Date: ___________
-- Sarah Gilbride: ________________________ Date: ___________
-- Quinn Jones: ___Quinn Jones________ Date: _10/15/2024___
-- Vera Jackson: ________________________ Date: ___________
+- Miguel Peralta: *MCAP* Date: *10/14/2024*
+- Sarah Gilbride: *SMG* Date: *10/14/0224*
+- Quinn Jones: *QAJ* Date: *10/15/2024*
+- Vera Jackson: *VSJ* Date: *10/14/2024*
 
