@@ -131,6 +131,16 @@ There may also be bias in the model used to identify AI-related publications, wh
 
 ### Research Question
 
+-   What relationships are there between the **number of AI publications** and **patents** and the **sector** of the companies represented in this dataset? 
+
+    -   Target population: Companies represented in dataset
+
+-   This question is important because AI is a rapidly growing field of research and investment. Understanding the sectors in which the most innovation is occurring can help guide business decisions of companies and investors. For example, investors who are interested in new technologies may want to invest in companies with higher numbers of AI publications and patents, while investors who have ethical concerns regarding the use of AI may be interested in fields with less development in this area. 
+
+-   The topic of research is private-sector AI research activity, specifically related to the number of patents and research publications.
+
+-   We hypothesize that the sectors ‘Software and IT Services”, ‘Banking and Investment Services’, and ‘Financial Technology (Fintech) & Infrastructure’ will have high numbers of AI related publications and patents, while ‘Food & Beverages’, ‘Food & Drug Retailing’, and ‘Personal & Household Products & Services’ will have lower levels of publications and patents.
+
 ### Glimpse of data
 
 ### Analysis plan
