@@ -10,7 +10,7 @@ This project was developed by **\[The Outliers\]** For [INFO 511 - Fundamentals 
 
 -   Miguel Peralta: Master's student in Data Science, based in Tucson, AZ
 
--   Vera Jackson: Master's student in Data Science program, based out of Chicago, IL
+-   Vera Jackson: Master's student in Data Science program, based in Chicago, IL
 
 -   Quinn Jones: Master's of Data Science student, based in Salem, OR
 
