@@ -2,10 +2,10 @@
 title: "Proposal title"
 subtitle: "Proposal"
 author: 
-  - name: "Team Name"
+  - name: "The Outliers"
     affiliations:
       - name: "School of Information, University of Arizona"
-description: "Project description"
+description: "Final Project: Milestone 2"
 format:
   html:
     code-tools: true
@@ -97,7 +97,7 @@ For each data set:
 
 ### Analysis plan
 
-## Dataset 3: Bachelor's degrees by field of study 
+## Dataset 3: Bachelor's degrees by field of study
 
 ### Introduction and data
 
