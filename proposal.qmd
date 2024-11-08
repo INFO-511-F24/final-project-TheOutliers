@@ -91,6 +91,30 @@ For each data set:
 
 ### Introduction and data
 
+The dataset was constructed by the Emerging Technology Observatory (ETO), a project of the Center for Security and Emerging Technology at Georgetown University. The information about company stages of development and company metadata was generated using data from Crunchbase, a tool for business insights. Publications data was obtained from another project by the ETO, their Merged Academic Corpus, which contains information about scholarly articles. Machine learning models were used to identify AI related publications. Patent information was obtained from 1790 Analytics, PATSTAT, and The Lens. Workforce related data was compiled and processed from LinkedIn profiles by Revelio Labs.
+
+#### Description of contents
+
+The dataset contains indicators of business and R&D activity related to AI for many private sector companies. The dataset contains 5 tables, core, ticker, alias, id, and yearly_publication_counts. We chose to focus on the core table for the purposes of this project.
+
+The core table includes metadata and metrics related to publication, patent, and worker data regarding AI. The metadata includes a company name, unique numeric id, region of the world, stage of development, business sector, and description of the company, among other information.
+
+The table also contains counts of AI research publications, average percent increase in publications per year over the past 3 years, percent of total publications that were related to AI, and metrics related to citations and presence in conferences. The counts of publications are also divided into the categories of computer vision, NLP, and robotics.
+
+The patent information is separated into total patents, average percent increase in patents per year over the past 3 years, percentage of total patents related to AI, and granted patents. The patents are separated into subcategories. There are 2 main subcategories, ‘AI use cases’ and ‘AI applications and techniques’, which are further divided into more subcategories. These include energy, transportation, security for ‘AI use cases’, and computer vision, language processing, and distributed AI for ‘AI applications and techniques’.
+
+The workforce data consists of 2 columns containing the number of AI workers and ‘Tech Team 1’ workers. Tech Team 1 is defined as “anyone with technical skills and a reasonable probability of working with AI” and is derived from Revelio Labs’ taxonomy of highly technical roles and their responsibilities. More information on this definition can be found in the dataset’s documentation. The AI workers metric is defined as a subset of Tech Team 1 with a high probability of working with AI.
+
+#### Ethics of working with this dataset
+
+The data was acquired from secondary sources (Crunchbase, PATSTAT, LinkedIn) so users of this dataset must be aware of the limitations of each individual source to make informed ethical decisions when making inferences using it. This could include ethical concerns regarding the use of LinkedIn users' data, when these users did not explicitly consent to it being used for this purpose, although they did agree with the site's terms of service.
+
+The dataset authors address some limitations of the dataset in the description and there may be some ethical concerns related to making broad generalizations based on this dataset, which does not represent the entire population of all companies working with AI. One concern is that the workforce metrics are incomplete because they are based on LinkedIn data. As a result, the dataset could be biased towards United States residents and against other regions of the world, as LinkedIn is less popular in other countries and is blocked in some countries like Russia and China.
+
+Another ethical concern could be that the dataset is heavily focused on large and established companies, and neglects other areas of AI development such as small companies, non-patented innovation, and open source projects. The dataset is also heavily reliant on publicly available and self reported data, which could make less public companies underrepresented such as companies who are doing work related to sensitive topics or are focused on proprietary innovations.
+
+There may also be bias in the model used to identify AI-related publications, which could lead to an incomplete or misleading representation of actual AI research activity.
+
 ### Research Question
 
 ### Glimpse of data
