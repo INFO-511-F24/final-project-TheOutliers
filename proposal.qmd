@@ -81,6 +81,20 @@ For each data set:
 
 ### Introduction and data
 
+This dataset was provided by the Centers for Disease Control and Provention (CDC), National Center for Chronic Disease prevention and Health Promotion, Division of Nutrition, Physical Activity, and Obesity. This data was collected through health-related telephone surveys that gather state data about U.S. Residents. This dataset has been used for the Data, Trends, and Maps database that the Division of Nutrition, Physical Activity, and Obesity (DNPAO) section of the CDC has, which is responsible for providing both state and national data for these topics.
+
+#### Description of contents
+
+This dataset includes over 104 thousand rows, and has 33 columns. Each row represents a combination of a year, state, survey question, and percent of individuals who are positively identified for that question, along with stratification. The categories for stratification are Age Range, Education, Gender, Income, Race/Ethnicity, and Total.
+
+Survey questions fall into the categories of "Fruits and Vegetables - Behavior", "Obesity/Weight Status", and "Physical Activity - Behavior". Examples of survey questions include "Percent of adults who engage in muscle-strengthening activities on 2 or more days a week" and "Percent of adults aged 18 years and older who have obesity".
+
+This dataset includes observations for the years 2011-2023. Percentages and data are not included for groups with insufficient sample sizes.
+
+#### Ethical Concerns
+
+There are no particular ethical concerns regarding working with this data. This dataset is aggregated, and numbers are excluded in instances where the sample size is too small. This removes concerns surrounding the personal identification of individuals within this dataset. This dataset is publicly available for anyone to download, and the licensing agreement states that it is free to be shared, created, and adapted, as long as it is attributed as the data source when publicly displayed or published. This removes concerns surrounding unfair or illegal acquisition and use of the data.
+
 ### Research Question
 
 ### Glimpse of data
