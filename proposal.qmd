@@ -97,6 +97,20 @@ There are no particular ethical concerns regarding working with this data. This 
 
 ### Research Question
 
+-   Research Question: Do higher-income populations consistently have more time for physical activity than lower income populations?
+
+    -   Additional research questions include: How has the relationship between amount of physical activity and income changed over time? How does this vary between groups? And how does the amount of physical activity that lower-income populations have the time to do changed over the years?
+
+    -   The target population for this research question is U.S. Residents 18 and over, represented by the dataset
+
+-   This question is important because it may highlight areas that correlate with differences in physical health across the population. If there are groupings that are identified that are tied to physical health and activity more than others, then more research can be done to identify ways in which these groups can receive more assistance with nutrition and adopting healthier lifestyles. 
+
+-   The research topic of interest here is whether or not there is a relationship between the amount of income that an individual makes and the amount of physical activity they are able to make time for. This falls in a larger category of interest surrounding differences between physical activity and nutrition for different groups and subsets of the population.
+
+-   We hypothesize that individuals who have lower income levels will have less time for physical activity, showing that larger percentages of the low income population will fall into the “Percent of adults who engage in no leisure-time physical activity” group compared to individuals with higher incomes. 
+
+-   The variables in this research question are mostly categorical, the questions themselves and the groupings (income range) are both categorical. The percentage of respondents who fall into each category is a quantitative variable, and there is a time element (years) which can be used as well.
+
 ### Glimpse of data
 
 ### Analysis plan
