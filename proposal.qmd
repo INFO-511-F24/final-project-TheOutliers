@@ -162,8 +162,23 @@ There may also be bias in the model used to identify AI-related publications, wh
 ## Dataset 3: Bachelor's degrees by field of study
 
 ### Introduction and data
+The Digest of Education Statistics includes data summarized from surveys administered by the National Center for Education Statistics (NCES) (and other government agencies) and 
+Annual Reports. This data was collected by surveys administered to postsecondary institutions participating in Title IV federal financial aid programs. The tables can be found [here](https://nces.ed.gov/programs/digest/d22/tables/dt22_322.10.asp)
+
+#### Description of contents
+There are 6 datasets that will be loaded, providing a combination of data on bachelor’s degrees conferred by either field of study, state, sex, or race/ethnicity. The datasets provide data either from a range of time (~1970-2021) or only two years (2019/20-2020/21). Below is an outline of each table and its contents.
+- Table 319.30.	Bachelor's degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21
+- Table 322.10. Bachelor's degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21
+- Table 322.20. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21
+- Table 322.30.	Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+- Table 322.40.	Bachelor's degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+- Table 322.50.	Bachelor's degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+
+#### Ethical Concerns
+Because the data was collected from surveys, it is possible that there could be missing patterns from universities that did not participate. Otherwise, there are no other glaring ethical concerns with the data. 
 
 ### Research Question
+How does the diversity, in gender and race/ethnicity, of newer and fast growing majors compare with more traditional majors?
 
 ### Glimpse of data
 

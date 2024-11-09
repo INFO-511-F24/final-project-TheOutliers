@@ -1,0 +1,187 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Proposal title\"\n",
+        "subtitle: \"Proposal\"\n",
+        "author: \n",
+        "  - name: \"The Outliers\"\n",
+        "    affiliations:\n",
+        "      - name: \"School of Information, University of Arizona\"\n",
+        "description: \"Final Project: Milestone 2\"\n",
+        "format:\n",
+        "  html:\n",
+        "    code-tools: true\n",
+        "    code-overflow: wrap\n",
+        "    code-line-numbers: true\n",
+        "    embed-resources: true\n",
+        "editor: visual\n",
+        "code-annotations: hover\n",
+        "execute:\n",
+        "  warning: false\n",
+        "jupyter: python3\n",
+        "---"
+      ],
+      "id": "cd5ce6e4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "message": false
+      },
+      "source": [
+        "#| label: load-pkgs\n",
+        "import numpy as np\n",
+        "import seaborn as sns"
+      ],
+      "id": "load-pkgs",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Introduction and data\n"
+      ],
+      "id": "c3e2eee2"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "message": false
+      },
+      "source": [
+        "#| label: load-dataset\n"
+      ],
+      "id": "load-dataset",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "For each data set:\n",
+        "\n",
+        "-   Identify the source of the data.\n",
+        "\n",
+        "-   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).\n",
+        "\n",
+        "-   Write a brief description of the observations.\n",
+        "\n",
+        "-   Address ethical concerns about the data, if any.\n",
+        "\n",
+        "Make sure to load the data and use inline code for some of this information.\n",
+        "\n",
+        "## Research Question\n",
+        "\n",
+        "Your research question should contain at least three variables, and should be a mix of categorical and quantitative variables. When writing a research question, please think about the following:\n",
+        "\n",
+        "-   What is your target population?\n",
+        "\n",
+        "-   Is the question original?\n",
+        "\n",
+        "-   Can the question be answered?\n",
+        "\n",
+        "For each data set, include the following:\n",
+        "\n",
+        "-   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\n",
+        "\n",
+        "-   Statement on why this question is important.\n",
+        "\n",
+        "-   A description of the research topic along with a concise statement of your hypotheses on this topic.\n",
+        "\n",
+        "-   Identify the types of variables in your research question. Categorical? Quantitative?\n",
+        "\n",
+        "## Glimpse of data\n",
+        "\n",
+        "For each data set:\n",
+        "\n",
+        "-   Place the file containing your data in the data folder of the project repo.\n",
+        "\n",
+        "-   Use the `.head()` and `.info()` functions to provide a glimpse of the data set.\n",
+        "\n",
+        "## Analysis plan\n",
+        "\n",
+        "-   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).\n",
+        "\n",
+        "## Dataset 1: Nutrition, physical activity, and obesity\n",
+        "\n",
+        "### Introduction and data\n",
+        "\n",
+        "### Research Question\n",
+        "\n",
+        "### Glimpse of data\n",
+        "\n",
+        "### Analysis plan\n",
+        "\n",
+        "## Dataset 2: Private sector AI activity indicators\n",
+        "\n",
+        "### Introduction and data\n",
+        "\n",
+        "### Research Question\n",
+        "\n",
+        "### Glimpse of data\n",
+        "\n",
+        "### Analysis plan\n",
+        "\n",
+        "## Dataset 3: Bachelor's degrees by field of study\n",
+        "\n",
+        "### Introduction and data\n"
+      ],
+      "id": "f6a867ad"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "message": false
+      },
+      "source": [
+        "#| label: load-dataset\n"
+      ],
+      "id": "load-dataset",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "For each data set:\n",
+        "\n",
+        "-   Identify the source of the data.\n",
+        "\n",
+        "\n",
+        "-   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).\n",
+        "\n",
+        "-   Write a brief description of the observations.\n",
+        "\n",
+        "-   Address ethical concerns about the data, if any.\n",
+        "\n",
+        "Make sure to load the data and use inline code for some of this information.\n",
+        "\n",
+        "### Research Question\n",
+        "\n",
+        "### Glimpse of data\n",
+        "\n",
+        "### Analysis plan\n",
+        "\n",
+        "##"
+      ],
+      "id": "b8ab52c0"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
