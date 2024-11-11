@@ -4836,7 +4836,6 @@ vertical-align: -.125em;
   <li><a href="#glimpse-of-data-3" id="toc-glimpse-of-data-3" class="nav-link" data-scroll-target="#glimpse-of-data-3">Glimpse of data</a></li>
   <li><a href="#analysis-plan-3" id="toc-analysis-plan-3" class="nav-link" data-scroll-target="#analysis-plan-3">Analysis plan</a></li>
   </ul></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul>
 </nav>
     </div>
@@ -4959,10 +4958,10 @@ vertical-align: -.125em;
 </section>
 <section id="glimpse-of-data-1" class="level3">
 <h3 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h3>
-<div id="31b48541" class="cell" data-execution_count="3">
+<div id="b11b058b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>nutrition <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/nutrition.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b20e4feb" class="cell" data-execution_count="4">
+<div id="09c473ec" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>nutrition.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>
@@ -5123,7 +5122,7 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
-<div id="c415678b" class="cell" data-execution_count="5">
+<div id="daceff9b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>nutrition.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
@@ -5206,14 +5205,15 @@ memory usage: 26.3+ MB</code></pre>
 <li><p>This question is important because AI is a rapidly growing field of research and investment. Understanding the sectors in which the most innovation is occurring can help guide business decisions of companies and investors. For example, investors who are interested in new technologies may want to invest in companies with higher numbers of AI publications and patents, while investors who have ethical concerns regarding the use of AI may be interested in fields with less development in this area. </p></li>
 <li><p>The topic of research is private-sector AI research activity, specifically related to the number of patents and research publications.</p></li>
 <li><p>We hypothesize that the sectors ‘Software and IT Services”, ‘Banking and Investment Services’, and ‘Financial Technology (Fintech) &amp; Infrastructure’ will have high numbers of AI related publications and patents, while ‘Food &amp; Beverages’, ‘Food &amp; Drug Retailing’, and ‘Personal &amp; Household Products &amp; Services’ will have lower levels of publications and patents.</p></li>
+<li><p>Most of the variables are numeric and quantitative as they represent numerical quantities describing levels of AI related business activity, such as the variables in the subcategories Publications, Patents, and Workforce. The categorical qualitative variables include Name, Country, Region, and Sector.</p></li>
 </ul>
 </section>
 <section id="glimpse-of-data-2" class="level3">
 <h3 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h3>
-<div id="42cae0a9" class="cell" data-execution_count="6">
+<div id="d0c6f017" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>ai <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/private_sector_ai_indicators.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5ec00a07" class="cell" data-execution_count="7">
+<div id="b8759dc4" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>ai.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
@@ -5374,7 +5374,7 @@ memory usage: 26.3+ MB</code></pre>
 </div>
 </div>
 </div>
-<div id="2fe08cb9" class="cell" data-execution_count="8">
+<div id="47a1baa4" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>ai.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
@@ -5450,6 +5450,7 @@ memory usage: 329.4+ KB</code></pre>
 </section>
 <section id="analysis-plan-2" class="level3">
 <h3 class="anchored" data-anchor-id="analysis-plan-2">Analysis plan</h3>
+<p>Some data cleaning will need to take place to identify missing data and outliers. Some variables that may require significant decision making about the scope of the data used to answer the research question are <code>Publications: Recent AI publication growth</code> and <code>Patents: AI patents: recent growth</code>, which each only have 331 rows compared to the 691 for most other variables. The variables involved in answering the research question are the company name/ID, variables within the Publications and Patents categories. There are no plans to integrate any other data sources, but if necessary the other tables in the dataset may contain information of use. After the data cleaning, wrangling, and EDA prcoess the data can be visualized and numerical statistics can be computed to understand the relationships between publications/patents and sector.</p>
 </section>
 </section>
 <section id="dataset-3-bachelors-degrees-by-field-of-study" class="level2">
@@ -5472,17 +5473,905 @@ memory usage: 329.4+ KB</code></pre>
 </section>
 <section id="glimpse-of-data-3" class="level3">
 <h3 class="anchored" data-anchor-id="glimpse-of-data-3">Glimpse of data</h3>
+<div id="a0e254d8" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>tabn319_30 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn319.30.xlsx&quot;</span>)         </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="24f11d95" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>tabn319_30.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Table 319.30. Bachelor&#39;s degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21</th>
+<th data-quarto-table-cell-role="th">Unnamed: 1</th>
+<th data-quarto-table-cell-role="th">Unnamed: 2</th>
+<th data-quarto-table-cell-role="th">Unnamed: 3</th>
+<th data-quarto-table-cell-role="th">Unnamed: 4</th>
+<th data-quarto-table-cell-role="th">Unnamed: 5</th>
+<th data-quarto-table-cell-role="th">Unnamed: 6</th>
+<th data-quarto-table-cell-role="th">Unnamed: 7</th>
+<th data-quarto-table-cell-role="th">Unnamed: 8</th>
+<th data-quarto-table-cell-role="th">Unnamed: 9</th>
+<th data-quarto-table-cell-role="th">Unnamed: 10</th>
+<th data-quarto-table-cell-role="th">Unnamed: 11</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>State or jurisdiction</td>
+<td>Total</td>
+<td>Humanities\1\</td>
+<td>Psychology</td>
+<td>Social sciences and history</td>
+<td>Natural sciences and mathematics\2\</td>
+<td>Computer and information sciences and support ...</td>
+<td>Engineering\3\</td>
+<td>Education</td>
+<td>Business\4\</td>
+<td>Health professions and related programs</td>
+<td>Other fields\5\</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>United States</td>
+<td>2066445</td>
+<td>263894</td>
+<td>126944</td>
+<td>160827</td>
+<td>187829</td>
+<td>104874</td>
+<td>145041</td>
+<td>89398</td>
+<td>391375</td>
+<td>268018</td>
+<td>328245</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Alabama</td>
+<td>34821</td>
+<td>2785</td>
+<td>1523</td>
+<td>1593</td>
+<td>2851</td>
+<td>1195</td>
+<td>3832</td>
+<td>1813</td>
+<td>8272</td>
+<td>4513</td>
+<td>6444</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Alaska</td>
+<td>1812</td>
+<td>273</td>
+<td>110</td>
+<td>124</td>
+<td>159</td>
+<td>29</td>
+<td>166</td>
+<td>57</td>
+<td>320</td>
+<td>261</td>
+<td>313</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="93535a9a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>tabn322_10 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn322.10.xlsx&quot;</span>)         </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="878a191a" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>tabn322_10.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Table 322.10. Bachelor&#39;s degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21</th>
+<th data-quarto-table-cell-role="th">Unnamed: 1</th>
+<th data-quarto-table-cell-role="th">Unnamed: 2</th>
+<th data-quarto-table-cell-role="th">Unnamed: 3</th>
+<th data-quarto-table-cell-role="th">Unnamed: 4</th>
+<th data-quarto-table-cell-role="th">Unnamed: 5</th>
+<th data-quarto-table-cell-role="th">Unnamed: 6</th>
+<th data-quarto-table-cell-role="th">Unnamed: 7</th>
+<th data-quarto-table-cell-role="th">Unnamed: 8</th>
+<th data-quarto-table-cell-role="th">Unnamed: 9</th>
+<th data-quarto-table-cell-role="th">Unnamed: 10</th>
+<th data-quarto-table-cell-role="th">Unnamed: 11</th>
+<th data-quarto-table-cell-role="th">Unnamed: 12</th>
+<th data-quarto-table-cell-role="th">Unnamed: 13</th>
+<th data-quarto-table-cell-role="th">Unnamed: 14</th>
+<th data-quarto-table-cell-role="th">Unnamed: 15</th>
+<th data-quarto-table-cell-role="th">Unnamed: 16</th>
+<th data-quarto-table-cell-role="th">Unnamed: 17</th>
+<th data-quarto-table-cell-role="th">Unnamed: 18</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Field of study</td>
+<td>1970-71</td>
+<td>1975-76</td>
+<td>1980-81</td>
+<td>1985-86</td>
+<td>1990-91</td>
+<td>1995-96</td>
+<td>2000-01</td>
+<td>2005-06</td>
+<td>2011-12</td>
+<td>2012-13</td>
+<td>2013-14</td>
+<td>2014-15</td>
+<td>2015-16</td>
+<td>2016-17</td>
+<td>2017-18</td>
+<td>2018-19</td>
+<td>2019-20</td>
+<td>2020-21</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Total</td>
+<td>839730</td>
+<td>925746</td>
+<td>935140</td>
+<td>987823</td>
+<td>1094538</td>
+<td>1164792</td>
+<td>1244171</td>
+<td>1485104</td>
+<td>1792163</td>
+<td>1840381</td>
+<td>1870150</td>
+<td>1894969</td>
+<td>1920750</td>
+<td>1956114</td>
+<td>1980665</td>
+<td>2013086</td>
+<td>2038682</td>
+<td>2066445</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Agriculture and natural resources\1\</td>
+<td>12674</td>
+<td>19402</td>
+<td>21886</td>
+<td>17191</td>
+<td>13363</td>
+<td>21757</td>
+<td>23766</td>
+<td>23497</td>
+<td>31629</td>
+<td>34304</td>
+<td>35953</td>
+<td>37028</td>
+<td>37827</td>
+<td>38782</td>
+<td>40334</td>
+<td>41373</td>
+<td>41858</td>
+<td>41925</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Architecture and related services</td>
+<td>5570</td>
+<td>9146</td>
+<td>9455</td>
+<td>9119</td>
+<td>9781</td>
+<td>8352</td>
+<td>8480</td>
+<td>9515</td>
+<td>9727</td>
+<td>9757</td>
+<td>9149</td>
+<td>9090</td>
+<td>8825</td>
+<td>8579</td>
+<td>8464</td>
+<td>8806</td>
+<td>9045</td>
+<td>9296</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="dfeed107" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>tabn322_20 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn322.20.xlsx&quot;</span>)         </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="8627cd67" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>tabn322_20.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Table 322.20. Bachelor&#39;s degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21</th>
+<th data-quarto-table-cell-role="th">Unnamed: 1</th>
+<th data-quarto-table-cell-role="th">Unnamed: 2</th>
+<th data-quarto-table-cell-role="th">Unnamed: 3</th>
+<th data-quarto-table-cell-role="th">Unnamed: 4</th>
+<th data-quarto-table-cell-role="th">Unnamed: 5</th>
+<th data-quarto-table-cell-role="th">Unnamed: 6</th>
+<th data-quarto-table-cell-role="th">Unnamed: 7</th>
+<th data-quarto-table-cell-role="th">Unnamed: 8</th>
+<th data-quarto-table-cell-role="th">Unnamed: 9</th>
+<th data-quarto-table-cell-role="th">Unnamed: 10</th>
+<th data-quarto-table-cell-role="th">Unnamed: 11</th>
+<th data-quarto-table-cell-role="th">Unnamed: 12</th>
+<th data-quarto-table-cell-role="th">Unnamed: 13</th>
+<th data-quarto-table-cell-role="th">Unnamed: 14</th>
+<th data-quarto-table-cell-role="th">Unnamed: 15</th>
+<th data-quarto-table-cell-role="th">Unnamed: 16</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Year and sex</td>
+<td>Number of degrees conferred to U.S. citizens, ...</td>
+<td>Number of degrees conferred to U.S. citizens, ...</td>
+<td>Number of degrees conferred to U.S. citizens, ...</td>
+<td>Number of degrees conferred to U.S. citizens, ...</td>
+<td>Number of degrees conferred to U.S. citizens, ...</td>
+<td>Number of degrees conferred to U.S. citizens, ...</td>
+<td>Number of degrees conferred to U.S. citizens, ...</td>
+<td>Number of degrees conferred to U.S. citizens, ...</td>
+<td>Number of degrees conferred to U.S. citizens, ...</td>
+<td>Percentage distribution of degrees conferred t...</td>
+<td>Percentage distribution of degrees conferred t...</td>
+<td>Percentage distribution of degrees conferred t...</td>
+<td>Percentage distribution of degrees conferred t...</td>
+<td>Percentage distribution of degrees conferred t...</td>
+<td>Percentage distribution of degrees conferred t...</td>
+<td>Percentage distribution of degrees conferred t...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Year and sex</td>
+<td>Total</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Asian/Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races\1\</td>
+<td>Nonresident</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Asian/Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races\1\</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Total</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1976-77</td>
+<td>919549</td>
+<td>\2,3\</td>
+<td>807688</td>
+<td>58636</td>
+<td>18743</td>
+<td>13793</td>
+<td>3326</td>
+<td>---</td>
+<td>15714</td>
+<td>100</td>
+<td>89.525663</td>
+<td>6.499325</td>
+<td>2.07751</td>
+<td>1.528842</td>
+<td>0.36866</td>
+<td>---</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="5f3969db" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>tabn322_30 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn322.30.xlsx&quot;</span>)         </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="5854397f" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>tabn322_30.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Table 322.30. Bachelor&#39;s degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21</th>
+<th data-quarto-table-cell-role="th">Unnamed: 1</th>
+<th data-quarto-table-cell-role="th">Unnamed: 2</th>
+<th data-quarto-table-cell-role="th">Unnamed: 3</th>
+<th data-quarto-table-cell-role="th">Unnamed: 4</th>
+<th data-quarto-table-cell-role="th">Unnamed: 5</th>
+<th data-quarto-table-cell-role="th">Unnamed: 6</th>
+<th data-quarto-table-cell-role="th">Unnamed: 7</th>
+<th data-quarto-table-cell-role="th">Unnamed: 8</th>
+<th data-quarto-table-cell-role="th">Unnamed: 9</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Unnamed: 11</th>
+<th data-quarto-table-cell-role="th">Unnamed: 12</th>
+<th data-quarto-table-cell-role="th">Unnamed: 13</th>
+<th data-quarto-table-cell-role="th">Unnamed: 14</th>
+<th data-quarto-table-cell-role="th">Unnamed: 15</th>
+<th data-quarto-table-cell-role="th">Unnamed: 16</th>
+<th data-quarto-table-cell-role="th">Unnamed: 17</th>
+<th data-quarto-table-cell-role="th">Unnamed: 18</th>
+<th data-quarto-table-cell-role="th">Unnamed: 19</th>
+<th data-quarto-table-cell-role="th">Unnamed: 20</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Field of study</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>...</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Field of study</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>...</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>Nonresident</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Field of study</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Total</td>
+<td>Asian</td>
+<td>Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>...</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Total</td>
+<td>Asian</td>
+<td>Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>Nonresident</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>...</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>All fields, total</td>
+<td>2038682</td>
+<td>1184082</td>
+<td>197491</td>
+<td>302663</td>
+<td>161468</td>
+<td>157085</td>
+<td>4383</td>
+<td>9154</td>
+<td>77621</td>
+<td>...</td>
+<td>2066445</td>
+<td>1172187</td>
+<td>206527</td>
+<td>324848</td>
+<td>169261</td>
+<td>164845</td>
+<td>4416</td>
+<td>9545</td>
+<td>81369</td>
+<td>102708</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 21 columns</p>
+</div>
+</div>
+</div>
+<div id="6afe94a2" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>tabn322_40 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn322.40.xlsx&quot;</span>)         </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="0cabdb8d" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>tabn322_40.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Table 322.40. Bachelor&#39;s degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21</th>
+<th data-quarto-table-cell-role="th">Unnamed: 1</th>
+<th data-quarto-table-cell-role="th">Unnamed: 2</th>
+<th data-quarto-table-cell-role="th">Unnamed: 3</th>
+<th data-quarto-table-cell-role="th">Unnamed: 4</th>
+<th data-quarto-table-cell-role="th">Unnamed: 5</th>
+<th data-quarto-table-cell-role="th">Unnamed: 6</th>
+<th data-quarto-table-cell-role="th">Unnamed: 7</th>
+<th data-quarto-table-cell-role="th">Unnamed: 8</th>
+<th data-quarto-table-cell-role="th">Unnamed: 9</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Unnamed: 11</th>
+<th data-quarto-table-cell-role="th">Unnamed: 12</th>
+<th data-quarto-table-cell-role="th">Unnamed: 13</th>
+<th data-quarto-table-cell-role="th">Unnamed: 14</th>
+<th data-quarto-table-cell-role="th">Unnamed: 15</th>
+<th data-quarto-table-cell-role="th">Unnamed: 16</th>
+<th data-quarto-table-cell-role="th">Unnamed: 17</th>
+<th data-quarto-table-cell-role="th">Unnamed: 18</th>
+<th data-quarto-table-cell-role="th">Unnamed: 19</th>
+<th data-quarto-table-cell-role="th">Unnamed: 20</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Field of study</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>...</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Field of study</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>...</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>Nonresident</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Field of study</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Total</td>
+<td>Asian</td>
+<td>Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>...</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Total</td>
+<td>Asian</td>
+<td>Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>Nonresident</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>...</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>All fields, total</td>
+<td>861384</td>
+<td>509079</td>
+<td>70346</td>
+<td>117230</td>
+<td>72916</td>
+<td>71005</td>
+<td>1911</td>
+<td>3344</td>
+<td>31620</td>
+<td>...</td>
+<td>860764</td>
+<td>499092</td>
+<td>72092</td>
+<td>123256</td>
+<td>75704</td>
+<td>73835</td>
+<td>1869</td>
+<td>3407</td>
+<td>33003</td>
+<td>54210</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 21 columns</p>
+</div>
+</div>
+</div>
+<div id="125b1e31" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>tabn322_50 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn322.50.xlsx&quot;</span>)         </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2a762e74" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>tabn322_50.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Table 322.50. Bachelor&#39;s degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21</th>
+<th data-quarto-table-cell-role="th">Unnamed: 1</th>
+<th data-quarto-table-cell-role="th">Unnamed: 2</th>
+<th data-quarto-table-cell-role="th">Unnamed: 3</th>
+<th data-quarto-table-cell-role="th">Unnamed: 4</th>
+<th data-quarto-table-cell-role="th">Unnamed: 5</th>
+<th data-quarto-table-cell-role="th">Unnamed: 6</th>
+<th data-quarto-table-cell-role="th">Unnamed: 7</th>
+<th data-quarto-table-cell-role="th">Unnamed: 8</th>
+<th data-quarto-table-cell-role="th">Unnamed: 9</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Unnamed: 11</th>
+<th data-quarto-table-cell-role="th">Unnamed: 12</th>
+<th data-quarto-table-cell-role="th">Unnamed: 13</th>
+<th data-quarto-table-cell-role="th">Unnamed: 14</th>
+<th data-quarto-table-cell-role="th">Unnamed: 15</th>
+<th data-quarto-table-cell-role="th">Unnamed: 16</th>
+<th data-quarto-table-cell-role="th">Unnamed: 17</th>
+<th data-quarto-table-cell-role="th">Unnamed: 18</th>
+<th data-quarto-table-cell-role="th">Unnamed: 19</th>
+<th data-quarto-table-cell-role="th">Unnamed: 20</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Field of study</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>2019-20</td>
+<td>...</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+<td>2020-21</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Field of study</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>...</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>Asian/Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>Nonresident</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Field of study</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Total</td>
+<td>Asian</td>
+<td>Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>...</td>
+<td>Total</td>
+<td>White</td>
+<td>Black</td>
+<td>Hispanic</td>
+<td>Total</td>
+<td>Asian</td>
+<td>Pacific Islander</td>
+<td>American Indian/Alaska Native</td>
+<td>Two or more races</td>
+<td>Nonresident</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>...</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>All fields, total</td>
+<td>1177298</td>
+<td>675003</td>
+<td>127145</td>
+<td>185433</td>
+<td>88552</td>
+<td>86080</td>
+<td>2472</td>
+<td>5810</td>
+<td>46001</td>
+<td>...</td>
+<td>1205681</td>
+<td>673095</td>
+<td>134435</td>
+<td>201592</td>
+<td>93557</td>
+<td>91010</td>
+<td>2547</td>
+<td>6138</td>
+<td>48366</td>
+<td>48498</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 21 columns</p>
+</div>
+</div>
+</div>
 </section>
 <section id="analysis-plan-3" class="level3">
 <h3 class="anchored" data-anchor-id="analysis-plan-3">Analysis plan</h3>
-</section>
-</section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
 
 
 <!-- -->
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -6140,219 +7029,267 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a><span class="co">---</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="an">title:</span><span class="co"> &quot;Proposal title&quot;</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="an">subtitle:</span><span class="co"> &quot;Proposal&quot;</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="an">author:</span><span class="co"> </span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="co">  - name: &quot;The Outliers&quot;</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="co">    affiliations:</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="co">      - name: &quot;School of Information, University of Arizona&quot;</span></span>
-<span id="cb10-8"><a href="#cb10-8"></a><span class="an">description:</span><span class="co"> &quot;Final Project: Milestone 2&quot;</span></span>
-<span id="cb10-9"><a href="#cb10-9"></a><span class="an">format:</span></span>
-<span id="cb10-10"><a href="#cb10-10"></a><span class="co">  html:</span></span>
-<span id="cb10-11"><a href="#cb10-11"></a><span class="co">    code-tools: true</span></span>
-<span id="cb10-12"><a href="#cb10-12"></a><span class="co">    code-overflow: wrap</span></span>
-<span id="cb10-13"><a href="#cb10-13"></a><span class="co">    code-line-numbers: true</span></span>
-<span id="cb10-14"><a href="#cb10-14"></a><span class="co">    embed-resources: true</span></span>
-<span id="cb10-15"><a href="#cb10-15"></a><span class="an">editor:</span><span class="co"> visual</span></span>
-<span id="cb10-16"><a href="#cb10-16"></a><span class="an">code-annotations:</span><span class="co"> hover</span></span>
-<span id="cb10-17"><a href="#cb10-17"></a><span class="an">execute:</span></span>
-<span id="cb10-18"><a href="#cb10-18"></a><span class="co">  warning: false</span></span>
-<span id="cb10-19"><a href="#cb10-19"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
-<span id="cb10-20"><a href="#cb10-20"></a><span class="co">---</span></span>
-<span id="cb10-21"><a href="#cb10-21"></a></span>
-<span id="cb10-24"><a href="#cb10-24"></a><span class="in">```{python}</span></span>
-<span id="cb10-25"><a href="#cb10-25"></a><span class="co">#| label: load-pkgs</span></span>
-<span id="cb10-26"><a href="#cb10-26"></a><span class="co">#| message: false</span></span>
-<span id="cb10-27"><a href="#cb10-27"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb10-28"><a href="#cb10-28"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb10-29"><a href="#cb10-29"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb10-30"><a href="#cb10-30"></a><span class="in">```</span></span>
-<span id="cb10-31"><a href="#cb10-31"></a></span>
-<span id="cb10-32"><a href="#cb10-32"></a><span class="fu">## Introduction and data</span></span>
-<span id="cb10-33"><a href="#cb10-33"></a></span>
-<span id="cb10-36"><a href="#cb10-36"></a><span class="in">```{python}</span></span>
-<span id="cb10-37"><a href="#cb10-37"></a><span class="co">#| label: load-dataset</span></span>
-<span id="cb10-38"><a href="#cb10-38"></a><span class="co">#| message: false</span></span>
-<span id="cb10-39"><a href="#cb10-39"></a><span class="in">```</span></span>
-<span id="cb10-40"><a href="#cb10-40"></a></span>
-<span id="cb10-41"><a href="#cb10-41"></a>For each data set:</span>
-<span id="cb10-42"><a href="#cb10-42"></a></span>
-<span id="cb10-43"><a href="#cb10-43"></a><span class="ss">-   </span>Identify the source of the data.</span>
-<span id="cb10-44"><a href="#cb10-44"></a></span>
-<span id="cb10-45"><a href="#cb10-45"></a><span class="ss">-   </span>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</span>
-<span id="cb10-46"><a href="#cb10-46"></a></span>
-<span id="cb10-47"><a href="#cb10-47"></a><span class="ss">-   </span>Write a brief description of the observations.</span>
-<span id="cb10-48"><a href="#cb10-48"></a></span>
-<span id="cb10-49"><a href="#cb10-49"></a><span class="ss">-   </span>Address ethical concerns about the data, if any.</span>
-<span id="cb10-50"><a href="#cb10-50"></a></span>
-<span id="cb10-51"><a href="#cb10-51"></a>Make sure to load the data and use inline code for some of this information.</span>
-<span id="cb10-52"><a href="#cb10-52"></a></span>
-<span id="cb10-53"><a href="#cb10-53"></a><span class="fu">## Research Question</span></span>
-<span id="cb10-54"><a href="#cb10-54"></a></span>
-<span id="cb10-55"><a href="#cb10-55"></a>Your research question should contain at least three variables, and should be a mix of categorical and quantitative variables. When writing a research question, please think about the following:</span>
-<span id="cb10-56"><a href="#cb10-56"></a></span>
-<span id="cb10-57"><a href="#cb10-57"></a><span class="ss">-   </span>What is your target population?</span>
-<span id="cb10-58"><a href="#cb10-58"></a></span>
-<span id="cb10-59"><a href="#cb10-59"></a><span class="ss">-   </span>Is the question original?</span>
-<span id="cb10-60"><a href="#cb10-60"></a></span>
-<span id="cb10-61"><a href="#cb10-61"></a><span class="ss">-   </span>Can the question be answered?</span>
-<span id="cb10-62"><a href="#cb10-62"></a></span>
-<span id="cb10-63"><a href="#cb10-63"></a>For each data set, include the following:</span>
-<span id="cb10-64"><a href="#cb10-64"></a></span>
-<span id="cb10-65"><a href="#cb10-65"></a><span class="ss">-   </span>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</span>
-<span id="cb10-66"><a href="#cb10-66"></a></span>
-<span id="cb10-67"><a href="#cb10-67"></a><span class="ss">-   </span>Statement on why this question is important.</span>
-<span id="cb10-68"><a href="#cb10-68"></a></span>
-<span id="cb10-69"><a href="#cb10-69"></a><span class="ss">-   </span>A description of the research topic along with a concise statement of your hypotheses on this topic.</span>
-<span id="cb10-70"><a href="#cb10-70"></a></span>
-<span id="cb10-71"><a href="#cb10-71"></a><span class="ss">-   </span>Identify the types of variables in your research question. Categorical? Quantitative?</span>
-<span id="cb10-72"><a href="#cb10-72"></a></span>
-<span id="cb10-73"><a href="#cb10-73"></a><span class="fu">## Glimpse of data</span></span>
-<span id="cb10-74"><a href="#cb10-74"></a></span>
-<span id="cb10-75"><a href="#cb10-75"></a>For each data set:</span>
-<span id="cb10-76"><a href="#cb10-76"></a></span>
-<span id="cb10-77"><a href="#cb10-77"></a><span class="ss">-   </span>Place the file containing your data in the data folder of the project repo.</span>
-<span id="cb10-78"><a href="#cb10-78"></a></span>
-<span id="cb10-79"><a href="#cb10-79"></a><span class="ss">-   </span>Use the <span class="in">`.head()`</span> and <span class="in">`.info()`</span> functions to provide a glimpse of the data set.</span>
-<span id="cb10-80"><a href="#cb10-80"></a></span>
-<span id="cb10-81"><a href="#cb10-81"></a><span class="fu">## Analysis plan</span></span>
-<span id="cb10-82"><a href="#cb10-82"></a></span>
-<span id="cb10-83"><a href="#cb10-83"></a><span class="ss">-   </span>A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).</span>
-<span id="cb10-84"><a href="#cb10-84"></a></span>
-<span id="cb10-85"><a href="#cb10-85"></a><span class="fu">## Dataset 1: Nutrition, physical activity, and obesity</span></span>
-<span id="cb10-86"><a href="#cb10-86"></a></span>
-<span id="cb10-87"><a href="#cb10-87"></a><span class="fu">### Introduction and data</span></span>
-<span id="cb10-88"><a href="#cb10-88"></a></span>
-<span id="cb10-89"><a href="#cb10-89"></a>This dataset was provided by the Centers for Disease Control and Provention (CDC), National Center for Chronic Disease prevention and Health Promotion, Division of Nutrition, Physical Activity, and Obesity. This data was collected through health-related telephone surveys that gather state data about U.S. Residents. This dataset has been used for the Data, Trends, and Maps database that the Division of Nutrition, Physical Activity, and Obesity (DNPAO) section of the CDC has, which is responsible for providing both state and national data for these topics.</span>
-<span id="cb10-90"><a href="#cb10-90"></a></span>
-<span id="cb10-91"><a href="#cb10-91"></a><span class="fu">#### Description of contents</span></span>
-<span id="cb10-92"><a href="#cb10-92"></a></span>
-<span id="cb10-93"><a href="#cb10-93"></a>This dataset includes over 104 thousand rows, and has 33 columns. Each row represents a combination of a year, state, survey question, and percent of individuals who are positively identified for that question, along with stratification. The categories for stratification are Age Range, Education, Gender, Income, Race/Ethnicity, and Total.</span>
-<span id="cb10-94"><a href="#cb10-94"></a></span>
-<span id="cb10-95"><a href="#cb10-95"></a>Survey questions fall into the categories of &quot;Fruits and Vegetables - Behavior&quot;, &quot;Obesity/Weight Status&quot;, and &quot;Physical Activity - Behavior&quot;. Examples of survey questions include &quot;Percent of adults who engage in muscle-strengthening activities on 2 or more days a week&quot; and &quot;Percent of adults aged 18 years and older who have obesity&quot;.</span>
-<span id="cb10-96"><a href="#cb10-96"></a></span>
-<span id="cb10-97"><a href="#cb10-97"></a>This dataset includes observations for the years 2011-2023. Percentages and data are not included for groups with insufficient sample sizes.</span>
-<span id="cb10-98"><a href="#cb10-98"></a></span>
-<span id="cb10-99"><a href="#cb10-99"></a><span class="fu">#### Ethical Concerns</span></span>
-<span id="cb10-100"><a href="#cb10-100"></a></span>
-<span id="cb10-101"><a href="#cb10-101"></a>There are no particular ethical concerns regarding working with this data. This dataset is aggregated, and numbers are excluded in instances where the sample size is too small. This removes concerns surrounding the personal identification of individuals within this dataset. This dataset is publicly available for anyone to download, and the licensing agreement states that it is free to be shared, created, and adapted, as long as it is attributed as the data source when publicly displayed or published. This removes concerns surrounding unfair or illegal acquisition and use of the data.</span>
-<span id="cb10-102"><a href="#cb10-102"></a></span>
-<span id="cb10-103"><a href="#cb10-103"></a><span class="fu">### Research Question</span></span>
-<span id="cb10-104"><a href="#cb10-104"></a></span>
-<span id="cb10-105"><a href="#cb10-105"></a><span class="ss">-   </span>Research Question: Do higher-income populations consistently have more time for physical activity than lower income populations?</span>
-<span id="cb10-106"><a href="#cb10-106"></a></span>
-<span id="cb10-107"><a href="#cb10-107"></a><span class="ss">    -   </span>Additional research questions include: How has the relationship between amount of physical activity and income changed over time? How does this vary between groups? And how does the amount of physical activity that lower-income populations have the time to do changed over the years?</span>
-<span id="cb10-108"><a href="#cb10-108"></a></span>
-<span id="cb10-109"><a href="#cb10-109"></a><span class="ss">    -   </span>The target population for this research question is U.S. Residents 18 and over, represented by the dataset</span>
-<span id="cb10-110"><a href="#cb10-110"></a></span>
-<span id="cb10-111"><a href="#cb10-111"></a><span class="ss">-   </span>This question is important because it may highlight areas that correlate with differences in physical health across the population. If there are groupings that are identified that are tied to physical health and activity more than others, then more research can be done to identify ways in which these groups can receive more assistance with nutrition and adopting healthier lifestyles. </span>
-<span id="cb10-112"><a href="#cb10-112"></a></span>
-<span id="cb10-113"><a href="#cb10-113"></a><span class="ss">-   </span>The research topic of interest here is whether or not there is a relationship between the amount of income that an individual makes and the amount of physical activity they are able to make time for. This falls in a larger category of interest surrounding differences between physical activity and nutrition for different groups and subsets of the population.</span>
-<span id="cb10-114"><a href="#cb10-114"></a></span>
-<span id="cb10-115"><a href="#cb10-115"></a><span class="ss">-   </span>We hypothesize that individuals who have lower income levels will have less time for physical activity, showing that larger percentages of the low income population will fall into the “Percent of adults who engage in no leisure-time physical activity” group compared to individuals with higher incomes. </span>
-<span id="cb10-116"><a href="#cb10-116"></a></span>
-<span id="cb10-117"><a href="#cb10-117"></a><span class="ss">-   </span>The variables in this research question are mostly categorical, the questions themselves and the groupings (income range) are both categorical. The percentage of respondents who fall into each category is a quantitative variable, and there is a time element (years) which can be used as well.</span>
-<span id="cb10-118"><a href="#cb10-118"></a></span>
-<span id="cb10-119"><a href="#cb10-119"></a><span class="fu">### Glimpse of data</span></span>
-<span id="cb10-120"><a href="#cb10-120"></a></span>
-<span id="cb10-123"><a href="#cb10-123"></a><span class="in">```{python}</span></span>
-<span id="cb10-124"><a href="#cb10-124"></a>nutrition <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/nutrition.csv&quot;</span>)</span>
-<span id="cb10-125"><a href="#cb10-125"></a><span class="in">```</span></span>
-<span id="cb10-126"><a href="#cb10-126"></a></span>
-<span id="cb10-129"><a href="#cb10-129"></a><span class="in">```{python}</span></span>
-<span id="cb10-130"><a href="#cb10-130"></a>nutrition.head()</span>
-<span id="cb10-131"><a href="#cb10-131"></a><span class="in">```</span></span>
-<span id="cb10-132"><a href="#cb10-132"></a></span>
-<span id="cb10-135"><a href="#cb10-135"></a><span class="in">```{python}</span></span>
-<span id="cb10-136"><a href="#cb10-136"></a>nutrition.info()</span>
-<span id="cb10-137"><a href="#cb10-137"></a><span class="in">```</span></span>
-<span id="cb10-138"><a href="#cb10-138"></a></span>
-<span id="cb10-139"><a href="#cb10-139"></a><span class="fu">### Analysis plan</span></span>
-<span id="cb10-140"><a href="#cb10-140"></a></span>
-<span id="cb10-141"><a href="#cb10-141"></a>Initial detailed exploration of the data (focusing on the main variables involved) will be followed by data cleaning and some wrangling. Identification of missing observations, data type conversions, etc. will be addressed in these initial steps. The variables involved to answer the largest research question include the &quot;Question&quot; and &quot;Income&quot; and &quot;StratificationCategoryId1&quot; columns, as well as the &quot;Data_Value&quot; column and the &quot;YearStart&quot; column. New columns that group some of these variables may also be created, such as grouping the &quot;Income&quot; values into &quot;Low Income&quot; and &quot;High Income&quot;. At this point there is no plan to bring in and merge any external data.</span>
-<span id="cb10-142"><a href="#cb10-142"></a></span>
-<span id="cb10-143"><a href="#cb10-143"></a>Once the data has been wrangled, it can be visualized in an assortment of plots for analysis, and summary statistics by group can be compiled as well. These visualizations and statistics will allow for insight as to how the relationship between income and physical activity compares between groups, as well as over time. From here, additional metrics can be run, plots created, etc. to explore and dive in further.</span>
-<span id="cb10-144"><a href="#cb10-144"></a></span>
-<span id="cb10-145"><a href="#cb10-145"></a><span class="fu">## Dataset 2: Private sector AI activity indicators</span></span>
-<span id="cb10-146"><a href="#cb10-146"></a></span>
-<span id="cb10-147"><a href="#cb10-147"></a><span class="fu">### Introduction and data</span></span>
-<span id="cb10-148"><a href="#cb10-148"></a></span>
-<span id="cb10-149"><a href="#cb10-149"></a>The dataset was constructed by the Emerging Technology Observatory (ETO), a project of the Center for Security and Emerging Technology at Georgetown University. The information about company stages of development and company metadata was generated using data from Crunchbase, a tool for business insights. Publications data was obtained from another project by the ETO, their Merged Academic Corpus, which contains information about scholarly articles. Machine learning models were used to identify AI related publications. Patent information was obtained from 1790 Analytics, PATSTAT, and The Lens. Workforce related data was compiled and processed from LinkedIn profiles by Revelio Labs.</span>
-<span id="cb10-150"><a href="#cb10-150"></a></span>
-<span id="cb10-151"><a href="#cb10-151"></a><span class="fu">#### Description of contents</span></span>
-<span id="cb10-152"><a href="#cb10-152"></a></span>
-<span id="cb10-153"><a href="#cb10-153"></a>The dataset contains indicators of business and R&amp;D activity related to AI for many private sector companies. The dataset contains 5 tables, core, ticker, alias, id, and yearly_publication_counts. We chose to focus on the core table for the purposes of this project.</span>
-<span id="cb10-154"><a href="#cb10-154"></a></span>
-<span id="cb10-155"><a href="#cb10-155"></a>The core table includes metadata and metrics related to publication, patent, and worker data regarding AI. The metadata includes a company name, unique numeric id, region of the world, stage of development, business sector, and description of the company, among other information.</span>
-<span id="cb10-156"><a href="#cb10-156"></a></span>
-<span id="cb10-157"><a href="#cb10-157"></a>The table also contains counts of AI research publications, average percent increase in publications per year over the past 3 years, percent of total publications that were related to AI, and metrics related to citations and presence in conferences. The counts of publications are also divided into the categories of computer vision, NLP, and robotics.</span>
-<span id="cb10-158"><a href="#cb10-158"></a></span>
-<span id="cb10-159"><a href="#cb10-159"></a>The patent information is separated into total patents, average percent increase in patents per year over the past 3 years, percentage of total patents related to AI, and granted patents. The patents are separated into subcategories. There are 2 main subcategories, ‘AI use cases’ and ‘AI applications and techniques’, which are further divided into more subcategories. These include energy, transportation, security for ‘AI use cases’, and computer vision, language processing, and distributed AI for ‘AI applications and techniques’.</span>
-<span id="cb10-160"><a href="#cb10-160"></a></span>
-<span id="cb10-161"><a href="#cb10-161"></a>The workforce data consists of 2 columns containing the number of AI workers and ‘Tech Team 1’ workers. Tech Team 1 is defined as “anyone with technical skills and a reasonable probability of working with AI” and is derived from Revelio Labs’ taxonomy of highly technical roles and their responsibilities. More information on this definition can be found in the dataset’s documentation. The AI workers metric is defined as a subset of Tech Team 1 with a high probability of working with AI.</span>
-<span id="cb10-162"><a href="#cb10-162"></a></span>
-<span id="cb10-163"><a href="#cb10-163"></a><span class="fu">#### Ethics of working with this dataset</span></span>
-<span id="cb10-164"><a href="#cb10-164"></a></span>
-<span id="cb10-165"><a href="#cb10-165"></a>The data was acquired from secondary sources (Crunchbase, PATSTAT, LinkedIn) so users of this dataset must be aware of the limitations of each individual source to make informed ethical decisions when making inferences using it. This could include ethical concerns regarding the use of LinkedIn users&#39; data, when these users did not explicitly consent to it being used for this purpose, although they did agree with the site&#39;s terms of service.</span>
-<span id="cb10-166"><a href="#cb10-166"></a></span>
-<span id="cb10-167"><a href="#cb10-167"></a>The dataset authors address some limitations of the dataset in the description and there may be some ethical concerns related to making broad generalizations based on this dataset, which does not represent the entire population of all companies working with AI. One concern is that the workforce metrics are incomplete because they are based on LinkedIn data. As a result, the dataset could be biased towards United States residents and against other regions of the world, as LinkedIn is less popular in other countries and is blocked in some countries like Russia and China.</span>
-<span id="cb10-168"><a href="#cb10-168"></a></span>
-<span id="cb10-169"><a href="#cb10-169"></a>Another ethical concern could be that the dataset is heavily focused on large and established companies, and neglects other areas of AI development such as small companies, non-patented innovation, and open source projects. The dataset is also heavily reliant on publicly available and self reported data, which could make less public companies underrepresented such as companies who are doing work related to sensitive topics or are focused on proprietary innovations.</span>
-<span id="cb10-170"><a href="#cb10-170"></a></span>
-<span id="cb10-171"><a href="#cb10-171"></a>There may also be bias in the model used to identify AI-related publications, which could lead to an incomplete or misleading representation of actual AI research activity.</span>
-<span id="cb10-172"><a href="#cb10-172"></a></span>
-<span id="cb10-173"><a href="#cb10-173"></a><span class="fu">### Research Question</span></span>
-<span id="cb10-174"><a href="#cb10-174"></a></span>
-<span id="cb10-175"><a href="#cb10-175"></a><span class="ss">-   </span>What relationships are there between the **number of AI publications** and **patents** and the **sector** of the companies represented in this dataset? </span>
-<span id="cb10-176"><a href="#cb10-176"></a></span>
-<span id="cb10-177"><a href="#cb10-177"></a><span class="ss">    -   </span>Target population: Companies represented in dataset</span>
-<span id="cb10-178"><a href="#cb10-178"></a></span>
-<span id="cb10-179"><a href="#cb10-179"></a><span class="ss">-   </span>This question is important because AI is a rapidly growing field of research and investment. Understanding the sectors in which the most innovation is occurring can help guide business decisions of companies and investors. For example, investors who are interested in new technologies may want to invest in companies with higher numbers of AI publications and patents, while investors who have ethical concerns regarding the use of AI may be interested in fields with less development in this area. </span>
-<span id="cb10-180"><a href="#cb10-180"></a></span>
-<span id="cb10-181"><a href="#cb10-181"></a><span class="ss">-   </span>The topic of research is private-sector AI research activity, specifically related to the number of patents and research publications.</span>
-<span id="cb10-182"><a href="#cb10-182"></a></span>
-<span id="cb10-183"><a href="#cb10-183"></a><span class="ss">-   </span>We hypothesize that the sectors ‘Software and IT Services”, ‘Banking and Investment Services’, and ‘Financial Technology (Fintech) &amp; Infrastructure’ will have high numbers of AI related publications and patents, while ‘Food &amp; Beverages’, ‘Food &amp; Drug Retailing’, and ‘Personal &amp; Household Products &amp; Services’ will have lower levels of publications and patents.</span>
-<span id="cb10-184"><a href="#cb10-184"></a></span>
-<span id="cb10-185"><a href="#cb10-185"></a><span class="fu">### Glimpse of data</span></span>
-<span id="cb10-186"><a href="#cb10-186"></a></span>
-<span id="cb10-189"><a href="#cb10-189"></a><span class="in">```{python}</span></span>
-<span id="cb10-190"><a href="#cb10-190"></a>ai <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/private_sector_ai_indicators.csv&quot;</span>)</span>
-<span id="cb10-191"><a href="#cb10-191"></a><span class="in">```</span></span>
-<span id="cb10-192"><a href="#cb10-192"></a></span>
-<span id="cb10-195"><a href="#cb10-195"></a><span class="in">```{python}</span></span>
-<span id="cb10-196"><a href="#cb10-196"></a>ai.head()</span>
-<span id="cb10-197"><a href="#cb10-197"></a><span class="in">```</span></span>
-<span id="cb10-198"><a href="#cb10-198"></a></span>
-<span id="cb10-201"><a href="#cb10-201"></a><span class="in">```{python}</span></span>
-<span id="cb10-202"><a href="#cb10-202"></a>ai.info()</span>
-<span id="cb10-203"><a href="#cb10-203"></a><span class="in">```</span></span>
-<span id="cb10-204"><a href="#cb10-204"></a></span>
-<span id="cb10-205"><a href="#cb10-205"></a><span class="fu">### Analysis plan</span></span>
-<span id="cb10-206"><a href="#cb10-206"></a></span>
-<span id="cb10-207"><a href="#cb10-207"></a><span class="fu">## Dataset 3: Bachelor&#39;s degrees by field of study</span></span>
-<span id="cb10-208"><a href="#cb10-208"></a></span>
-<span id="cb10-209"><a href="#cb10-209"></a><span class="fu">### Introduction and data</span></span>
-<span id="cb10-210"><a href="#cb10-210"></a></span>
-<span id="cb10-211"><a href="#cb10-211"></a>The Digest of Education Statistics includes data summarized from surveys administered by the National Center for Education Statistics (NCES) (and other government agencies) and Annual Reports. This data was collected by surveys administered to postsecondary institutions participating in Title IV federal financial aid programs. The tables can be found <span class="co">[</span><span class="ot">here</span><span class="co">](https://nces.ed.gov/programs/digest/d22/tables/dt22_322.10.asp)</span></span>
-<span id="cb10-212"><a href="#cb10-212"></a></span>
-<span id="cb10-213"><a href="#cb10-213"></a><span class="fu">#### Description of contents</span></span>
-<span id="cb10-214"><a href="#cb10-214"></a></span>
-<span id="cb10-215"><a href="#cb10-215"></a>There are 6 datasets that will be loaded, providing a combination of data on bachelor’s degrees conferred by either field of study, state, sex, or race/ethnicity. The datasets provide data either from a range of time (\~1970-2021) or only two years (2019/20-2020/21). Below is an outline of each table and its contents. - Table 319.30. Bachelor&#39;s degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21 - Table 322.10. Bachelor&#39;s degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21 - Table 322.20. Bachelor&#39;s degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21 - Table 322.30. Bachelor&#39;s degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 - Table 322.40. Bachelor&#39;s degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 - Table 322.50. Bachelor&#39;s degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21</span>
-<span id="cb10-216"><a href="#cb10-216"></a></span>
-<span id="cb10-217"><a href="#cb10-217"></a><span class="fu">#### Ethical Concerns</span></span>
-<span id="cb10-218"><a href="#cb10-218"></a></span>
-<span id="cb10-219"><a href="#cb10-219"></a>Because the data was collected from surveys, it is possible that there could be missing patterns from universities that did not participate. Otherwise, there are no other glaring ethical concerns with the data.</span>
-<span id="cb10-220"><a href="#cb10-220"></a></span>
-<span id="cb10-221"><a href="#cb10-221"></a><span class="fu">### Research Question</span></span>
-<span id="cb10-222"><a href="#cb10-222"></a></span>
-<span id="cb10-223"><a href="#cb10-223"></a>How does the diversity, in gender and race/ethnicity, of newer and fast growing majors compare with more traditional majors?</span>
-<span id="cb10-224"><a href="#cb10-224"></a></span>
-<span id="cb10-225"><a href="#cb10-225"></a><span class="fu">### Glimpse of data</span></span>
-<span id="cb10-226"><a href="#cb10-226"></a></span>
-<span id="cb10-227"><a href="#cb10-227"></a><span class="fu">### Analysis plan</span></span>
-<span id="cb10-228"><a href="#cb10-228"></a></span>
-<span id="cb10-229"><a href="#cb10-229"></a>##</span>
+<div class="sourceCode" id="cb22" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">---</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="an">title:</span><span class="co"> &quot;Proposal title&quot;</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="an">subtitle:</span><span class="co"> &quot;Proposal&quot;</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="an">author:</span><span class="co"> </span></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="co">  - name: &quot;The Outliers&quot;</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="co">    affiliations:</span></span>
+<span id="cb22-7"><a href="#cb22-7"></a><span class="co">      - name: &quot;School of Information, University of Arizona&quot;</span></span>
+<span id="cb22-8"><a href="#cb22-8"></a><span class="an">description:</span><span class="co"> &quot;Final Project: Milestone 2&quot;</span></span>
+<span id="cb22-9"><a href="#cb22-9"></a><span class="an">format:</span></span>
+<span id="cb22-10"><a href="#cb22-10"></a><span class="co">  html:</span></span>
+<span id="cb22-11"><a href="#cb22-11"></a><span class="co">    code-tools: true</span></span>
+<span id="cb22-12"><a href="#cb22-12"></a><span class="co">    code-overflow: wrap</span></span>
+<span id="cb22-13"><a href="#cb22-13"></a><span class="co">    code-line-numbers: true</span></span>
+<span id="cb22-14"><a href="#cb22-14"></a><span class="co">    embed-resources: true</span></span>
+<span id="cb22-15"><a href="#cb22-15"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb22-16"><a href="#cb22-16"></a><span class="an">code-annotations:</span><span class="co"> hover</span></span>
+<span id="cb22-17"><a href="#cb22-17"></a><span class="an">execute:</span></span>
+<span id="cb22-18"><a href="#cb22-18"></a><span class="co">  warning: false</span></span>
+<span id="cb22-19"><a href="#cb22-19"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb22-20"><a href="#cb22-20"></a><span class="co">---</span></span>
+<span id="cb22-21"><a href="#cb22-21"></a></span>
+<span id="cb22-24"><a href="#cb22-24"></a><span class="in">```{python}</span></span>
+<span id="cb22-25"><a href="#cb22-25"></a><span class="co">#| label: load-pkgs</span></span>
+<span id="cb22-26"><a href="#cb22-26"></a><span class="co">#| message: false</span></span>
+<span id="cb22-27"><a href="#cb22-27"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb22-28"><a href="#cb22-28"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb22-29"><a href="#cb22-29"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb22-30"><a href="#cb22-30"></a><span class="in">```</span></span>
+<span id="cb22-31"><a href="#cb22-31"></a></span>
+<span id="cb22-32"><a href="#cb22-32"></a><span class="fu">## Introduction and data</span></span>
+<span id="cb22-33"><a href="#cb22-33"></a></span>
+<span id="cb22-36"><a href="#cb22-36"></a><span class="in">```{python}</span></span>
+<span id="cb22-37"><a href="#cb22-37"></a><span class="co">#| label: load-dataset</span></span>
+<span id="cb22-38"><a href="#cb22-38"></a><span class="co">#| message: false</span></span>
+<span id="cb22-39"><a href="#cb22-39"></a><span class="in">```</span></span>
+<span id="cb22-40"><a href="#cb22-40"></a></span>
+<span id="cb22-41"><a href="#cb22-41"></a>For each data set:</span>
+<span id="cb22-42"><a href="#cb22-42"></a></span>
+<span id="cb22-43"><a href="#cb22-43"></a><span class="ss">-   </span>Identify the source of the data.</span>
+<span id="cb22-44"><a href="#cb22-44"></a></span>
+<span id="cb22-45"><a href="#cb22-45"></a><span class="ss">-   </span>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</span>
+<span id="cb22-46"><a href="#cb22-46"></a></span>
+<span id="cb22-47"><a href="#cb22-47"></a><span class="ss">-   </span>Write a brief description of the observations.</span>
+<span id="cb22-48"><a href="#cb22-48"></a></span>
+<span id="cb22-49"><a href="#cb22-49"></a><span class="ss">-   </span>Address ethical concerns about the data, if any.</span>
+<span id="cb22-50"><a href="#cb22-50"></a></span>
+<span id="cb22-51"><a href="#cb22-51"></a>Make sure to load the data and use inline code for some of this information.</span>
+<span id="cb22-52"><a href="#cb22-52"></a></span>
+<span id="cb22-53"><a href="#cb22-53"></a><span class="fu">## Research Question</span></span>
+<span id="cb22-54"><a href="#cb22-54"></a></span>
+<span id="cb22-55"><a href="#cb22-55"></a>Your research question should contain at least three variables, and should be a mix of categorical and quantitative variables. When writing a research question, please think about the following:</span>
+<span id="cb22-56"><a href="#cb22-56"></a></span>
+<span id="cb22-57"><a href="#cb22-57"></a><span class="ss">-   </span>What is your target population?</span>
+<span id="cb22-58"><a href="#cb22-58"></a></span>
+<span id="cb22-59"><a href="#cb22-59"></a><span class="ss">-   </span>Is the question original?</span>
+<span id="cb22-60"><a href="#cb22-60"></a></span>
+<span id="cb22-61"><a href="#cb22-61"></a><span class="ss">-   </span>Can the question be answered?</span>
+<span id="cb22-62"><a href="#cb22-62"></a></span>
+<span id="cb22-63"><a href="#cb22-63"></a>For each data set, include the following:</span>
+<span id="cb22-64"><a href="#cb22-64"></a></span>
+<span id="cb22-65"><a href="#cb22-65"></a><span class="ss">-   </span>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</span>
+<span id="cb22-66"><a href="#cb22-66"></a></span>
+<span id="cb22-67"><a href="#cb22-67"></a><span class="ss">-   </span>Statement on why this question is important.</span>
+<span id="cb22-68"><a href="#cb22-68"></a></span>
+<span id="cb22-69"><a href="#cb22-69"></a><span class="ss">-   </span>A description of the research topic along with a concise statement of your hypotheses on this topic.</span>
+<span id="cb22-70"><a href="#cb22-70"></a></span>
+<span id="cb22-71"><a href="#cb22-71"></a><span class="ss">-   </span>Identify the types of variables in your research question. Categorical? Quantitative?</span>
+<span id="cb22-72"><a href="#cb22-72"></a></span>
+<span id="cb22-73"><a href="#cb22-73"></a><span class="fu">## Glimpse of data</span></span>
+<span id="cb22-74"><a href="#cb22-74"></a></span>
+<span id="cb22-75"><a href="#cb22-75"></a>For each data set:</span>
+<span id="cb22-76"><a href="#cb22-76"></a></span>
+<span id="cb22-77"><a href="#cb22-77"></a><span class="ss">-   </span>Place the file containing your data in the data folder of the project repo.</span>
+<span id="cb22-78"><a href="#cb22-78"></a></span>
+<span id="cb22-79"><a href="#cb22-79"></a><span class="ss">-   </span>Use the <span class="in">`.head()`</span> and <span class="in">`.info()`</span> functions to provide a glimpse of the data set.</span>
+<span id="cb22-80"><a href="#cb22-80"></a></span>
+<span id="cb22-81"><a href="#cb22-81"></a><span class="fu">## Analysis plan</span></span>
+<span id="cb22-82"><a href="#cb22-82"></a></span>
+<span id="cb22-83"><a href="#cb22-83"></a><span class="ss">-   </span>A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).</span>
+<span id="cb22-84"><a href="#cb22-84"></a></span>
+<span id="cb22-85"><a href="#cb22-85"></a><span class="fu">## Dataset 1: Nutrition, physical activity, and obesity</span></span>
+<span id="cb22-86"><a href="#cb22-86"></a></span>
+<span id="cb22-87"><a href="#cb22-87"></a><span class="fu">### Introduction and data</span></span>
+<span id="cb22-88"><a href="#cb22-88"></a></span>
+<span id="cb22-89"><a href="#cb22-89"></a>This dataset was provided by the Centers for Disease Control and Provention (CDC), National Center for Chronic Disease prevention and Health Promotion, Division of Nutrition, Physical Activity, and Obesity. This data was collected through health-related telephone surveys that gather state data about U.S. Residents. This dataset has been used for the Data, Trends, and Maps database that the Division of Nutrition, Physical Activity, and Obesity (DNPAO) section of the CDC has, which is responsible for providing both state and national data for these topics.</span>
+<span id="cb22-90"><a href="#cb22-90"></a></span>
+<span id="cb22-91"><a href="#cb22-91"></a><span class="fu">#### Description of contents</span></span>
+<span id="cb22-92"><a href="#cb22-92"></a></span>
+<span id="cb22-93"><a href="#cb22-93"></a>This dataset includes over 104 thousand rows, and has 33 columns. Each row represents a combination of a year, state, survey question, and percent of individuals who are positively identified for that question, along with stratification. The categories for stratification are Age Range, Education, Gender, Income, Race/Ethnicity, and Total.</span>
+<span id="cb22-94"><a href="#cb22-94"></a></span>
+<span id="cb22-95"><a href="#cb22-95"></a>Survey questions fall into the categories of &quot;Fruits and Vegetables - Behavior&quot;, &quot;Obesity/Weight Status&quot;, and &quot;Physical Activity - Behavior&quot;. Examples of survey questions include &quot;Percent of adults who engage in muscle-strengthening activities on 2 or more days a week&quot; and &quot;Percent of adults aged 18 years and older who have obesity&quot;.</span>
+<span id="cb22-96"><a href="#cb22-96"></a></span>
+<span id="cb22-97"><a href="#cb22-97"></a>This dataset includes observations for the years 2011-2023. Percentages and data are not included for groups with insufficient sample sizes.</span>
+<span id="cb22-98"><a href="#cb22-98"></a></span>
+<span id="cb22-99"><a href="#cb22-99"></a><span class="fu">#### Ethical Concerns</span></span>
+<span id="cb22-100"><a href="#cb22-100"></a></span>
+<span id="cb22-101"><a href="#cb22-101"></a>There are no particular ethical concerns regarding working with this data. This dataset is aggregated, and numbers are excluded in instances where the sample size is too small. This removes concerns surrounding the personal identification of individuals within this dataset. This dataset is publicly available for anyone to download, and the licensing agreement states that it is free to be shared, created, and adapted, as long as it is attributed as the data source when publicly displayed or published. This removes concerns surrounding unfair or illegal acquisition and use of the data.</span>
+<span id="cb22-102"><a href="#cb22-102"></a></span>
+<span id="cb22-103"><a href="#cb22-103"></a><span class="fu">### Research Question</span></span>
+<span id="cb22-104"><a href="#cb22-104"></a></span>
+<span id="cb22-105"><a href="#cb22-105"></a><span class="ss">-   </span>Research Question: Do higher-income populations consistently have more time for physical activity than lower income populations?</span>
+<span id="cb22-106"><a href="#cb22-106"></a></span>
+<span id="cb22-107"><a href="#cb22-107"></a><span class="ss">    -   </span>Additional research questions include: How has the relationship between amount of physical activity and income changed over time? How does this vary between groups? And how does the amount of physical activity that lower-income populations have the time to do changed over the years?</span>
+<span id="cb22-108"><a href="#cb22-108"></a></span>
+<span id="cb22-109"><a href="#cb22-109"></a><span class="ss">    -   </span>The target population for this research question is U.S. Residents 18 and over, represented by the dataset</span>
+<span id="cb22-110"><a href="#cb22-110"></a></span>
+<span id="cb22-111"><a href="#cb22-111"></a><span class="ss">-   </span>This question is important because it may highlight areas that correlate with differences in physical health across the population. If there are groupings that are identified that are tied to physical health and activity more than others, then more research can be done to identify ways in which these groups can receive more assistance with nutrition and adopting healthier lifestyles. </span>
+<span id="cb22-112"><a href="#cb22-112"></a></span>
+<span id="cb22-113"><a href="#cb22-113"></a><span class="ss">-   </span>The research topic of interest here is whether or not there is a relationship between the amount of income that an individual makes and the amount of physical activity they are able to make time for. This falls in a larger category of interest surrounding differences between physical activity and nutrition for different groups and subsets of the population.</span>
+<span id="cb22-114"><a href="#cb22-114"></a></span>
+<span id="cb22-115"><a href="#cb22-115"></a><span class="ss">-   </span>We hypothesize that individuals who have lower income levels will have less time for physical activity, showing that larger percentages of the low income population will fall into the “Percent of adults who engage in no leisure-time physical activity” group compared to individuals with higher incomes. </span>
+<span id="cb22-116"><a href="#cb22-116"></a></span>
+<span id="cb22-117"><a href="#cb22-117"></a><span class="ss">-   </span>The variables in this research question are mostly categorical, the questions themselves and the groupings (income range) are both categorical. The percentage of respondents who fall into each category is a quantitative variable, and there is a time element (years) which can be used as well.</span>
+<span id="cb22-118"><a href="#cb22-118"></a></span>
+<span id="cb22-119"><a href="#cb22-119"></a><span class="fu">### Glimpse of data</span></span>
+<span id="cb22-120"><a href="#cb22-120"></a></span>
+<span id="cb22-123"><a href="#cb22-123"></a><span class="in">```{python}</span></span>
+<span id="cb22-124"><a href="#cb22-124"></a>nutrition <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/nutrition.csv&quot;</span>)</span>
+<span id="cb22-125"><a href="#cb22-125"></a><span class="in">```</span></span>
+<span id="cb22-126"><a href="#cb22-126"></a></span>
+<span id="cb22-129"><a href="#cb22-129"></a><span class="in">```{python}</span></span>
+<span id="cb22-130"><a href="#cb22-130"></a>nutrition.head()</span>
+<span id="cb22-131"><a href="#cb22-131"></a><span class="in">```</span></span>
+<span id="cb22-132"><a href="#cb22-132"></a></span>
+<span id="cb22-135"><a href="#cb22-135"></a><span class="in">```{python}</span></span>
+<span id="cb22-136"><a href="#cb22-136"></a>nutrition.info()</span>
+<span id="cb22-137"><a href="#cb22-137"></a><span class="in">```</span></span>
+<span id="cb22-138"><a href="#cb22-138"></a></span>
+<span id="cb22-139"><a href="#cb22-139"></a><span class="fu">### Analysis plan</span></span>
+<span id="cb22-140"><a href="#cb22-140"></a></span>
+<span id="cb22-141"><a href="#cb22-141"></a>Initial detailed exploration of the data (focusing on the main variables involved) will be followed by data cleaning and some wrangling. Identification of missing observations, data type conversions, etc. will be addressed in these initial steps. The variables involved to answer the largest research question include the &quot;Question&quot; and &quot;Income&quot; and &quot;StratificationCategoryId1&quot; columns, as well as the &quot;Data_Value&quot; column and the &quot;YearStart&quot; column. New columns that group some of these variables may also be created, such as grouping the &quot;Income&quot; values into &quot;Low Income&quot; and &quot;High Income&quot;. At this point there is no plan to bring in and merge any external data.</span>
+<span id="cb22-142"><a href="#cb22-142"></a></span>
+<span id="cb22-143"><a href="#cb22-143"></a>Once the data has been wrangled, it can be visualized in an assortment of plots for analysis, and summary statistics by group can be compiled as well. These visualizations and statistics will allow for insight as to how the relationship between income and physical activity compares between groups, as well as over time. From here, additional metrics can be run, plots created, etc. to explore and dive in further.</span>
+<span id="cb22-144"><a href="#cb22-144"></a></span>
+<span id="cb22-145"><a href="#cb22-145"></a><span class="fu">## Dataset 2: Private sector AI activity indicators</span></span>
+<span id="cb22-146"><a href="#cb22-146"></a></span>
+<span id="cb22-147"><a href="#cb22-147"></a><span class="fu">### Introduction and data</span></span>
+<span id="cb22-148"><a href="#cb22-148"></a></span>
+<span id="cb22-149"><a href="#cb22-149"></a>The dataset was constructed by the Emerging Technology Observatory (ETO), a project of the Center for Security and Emerging Technology at Georgetown University. The information about company stages of development and company metadata was generated using data from Crunchbase, a tool for business insights. Publications data was obtained from another project by the ETO, their Merged Academic Corpus, which contains information about scholarly articles. Machine learning models were used to identify AI related publications. Patent information was obtained from 1790 Analytics, PATSTAT, and The Lens. Workforce related data was compiled and processed from LinkedIn profiles by Revelio Labs.</span>
+<span id="cb22-150"><a href="#cb22-150"></a></span>
+<span id="cb22-151"><a href="#cb22-151"></a><span class="fu">#### Description of contents</span></span>
+<span id="cb22-152"><a href="#cb22-152"></a></span>
+<span id="cb22-153"><a href="#cb22-153"></a>The dataset contains indicators of business and R&amp;D activity related to AI for many private sector companies. The dataset contains 5 tables, core, ticker, alias, id, and yearly_publication_counts. We chose to focus on the core table for the purposes of this project.</span>
+<span id="cb22-154"><a href="#cb22-154"></a></span>
+<span id="cb22-155"><a href="#cb22-155"></a>The core table includes metadata and metrics related to publication, patent, and worker data regarding AI. The metadata includes a company name, unique numeric id, region of the world, stage of development, business sector, and description of the company, among other information.</span>
+<span id="cb22-156"><a href="#cb22-156"></a></span>
+<span id="cb22-157"><a href="#cb22-157"></a>The table also contains counts of AI research publications, average percent increase in publications per year over the past 3 years, percent of total publications that were related to AI, and metrics related to citations and presence in conferences. The counts of publications are also divided into the categories of computer vision, NLP, and robotics.</span>
+<span id="cb22-158"><a href="#cb22-158"></a></span>
+<span id="cb22-159"><a href="#cb22-159"></a>The patent information is separated into total patents, average percent increase in patents per year over the past 3 years, percentage of total patents related to AI, and granted patents. The patents are separated into subcategories. There are 2 main subcategories, ‘AI use cases’ and ‘AI applications and techniques’, which are further divided into more subcategories. These include energy, transportation, security for ‘AI use cases’, and computer vision, language processing, and distributed AI for ‘AI applications and techniques’.</span>
+<span id="cb22-160"><a href="#cb22-160"></a></span>
+<span id="cb22-161"><a href="#cb22-161"></a>The workforce data consists of 2 columns containing the number of AI workers and ‘Tech Team 1’ workers. Tech Team 1 is defined as “anyone with technical skills and a reasonable probability of working with AI” and is derived from Revelio Labs’ taxonomy of highly technical roles and their responsibilities. More information on this definition can be found in the dataset’s documentation. The AI workers metric is defined as a subset of Tech Team 1 with a high probability of working with AI.</span>
+<span id="cb22-162"><a href="#cb22-162"></a></span>
+<span id="cb22-163"><a href="#cb22-163"></a><span class="fu">#### Ethics of working with this dataset</span></span>
+<span id="cb22-164"><a href="#cb22-164"></a></span>
+<span id="cb22-165"><a href="#cb22-165"></a>The data was acquired from secondary sources (Crunchbase, PATSTAT, LinkedIn) so users of this dataset must be aware of the limitations of each individual source to make informed ethical decisions when making inferences using it. This could include ethical concerns regarding the use of LinkedIn users&#39; data, when these users did not explicitly consent to it being used for this purpose, although they did agree with the site&#39;s terms of service.</span>
+<span id="cb22-166"><a href="#cb22-166"></a></span>
+<span id="cb22-167"><a href="#cb22-167"></a>The dataset authors address some limitations of the dataset in the description and there may be some ethical concerns related to making broad generalizations based on this dataset, which does not represent the entire population of all companies working with AI. One concern is that the workforce metrics are incomplete because they are based on LinkedIn data. As a result, the dataset could be biased towards United States residents and against other regions of the world, as LinkedIn is less popular in other countries and is blocked in some countries like Russia and China.</span>
+<span id="cb22-168"><a href="#cb22-168"></a></span>
+<span id="cb22-169"><a href="#cb22-169"></a>Another ethical concern could be that the dataset is heavily focused on large and established companies, and neglects other areas of AI development such as small companies, non-patented innovation, and open source projects. The dataset is also heavily reliant on publicly available and self reported data, which could make less public companies underrepresented such as companies who are doing work related to sensitive topics or are focused on proprietary innovations.</span>
+<span id="cb22-170"><a href="#cb22-170"></a></span>
+<span id="cb22-171"><a href="#cb22-171"></a>There may also be bias in the model used to identify AI-related publications, which could lead to an incomplete or misleading representation of actual AI research activity.</span>
+<span id="cb22-172"><a href="#cb22-172"></a></span>
+<span id="cb22-173"><a href="#cb22-173"></a><span class="fu">### Research Question</span></span>
+<span id="cb22-174"><a href="#cb22-174"></a></span>
+<span id="cb22-175"><a href="#cb22-175"></a><span class="ss">-   </span>What relationships are there between the **number of AI publications** and **patents** and the **sector** of the companies represented in this dataset? </span>
+<span id="cb22-176"><a href="#cb22-176"></a></span>
+<span id="cb22-177"><a href="#cb22-177"></a><span class="ss">    -   </span>Target population: Companies represented in dataset</span>
+<span id="cb22-178"><a href="#cb22-178"></a></span>
+<span id="cb22-179"><a href="#cb22-179"></a><span class="ss">-   </span>This question is important because AI is a rapidly growing field of research and investment. Understanding the sectors in which the most innovation is occurring can help guide business decisions of companies and investors. For example, investors who are interested in new technologies may want to invest in companies with higher numbers of AI publications and patents, while investors who have ethical concerns regarding the use of AI may be interested in fields with less development in this area. </span>
+<span id="cb22-180"><a href="#cb22-180"></a></span>
+<span id="cb22-181"><a href="#cb22-181"></a><span class="ss">-   </span>The topic of research is private-sector AI research activity, specifically related to the number of patents and research publications.</span>
+<span id="cb22-182"><a href="#cb22-182"></a></span>
+<span id="cb22-183"><a href="#cb22-183"></a><span class="ss">-   </span>We hypothesize that the sectors ‘Software and IT Services”, ‘Banking and Investment Services’, and ‘Financial Technology (Fintech) &amp; Infrastructure’ will have high numbers of AI related publications and patents, while ‘Food &amp; Beverages’, ‘Food &amp; Drug Retailing’, and ‘Personal &amp; Household Products &amp; Services’ will have lower levels of publications and patents.</span>
+<span id="cb22-184"><a href="#cb22-184"></a></span>
+<span id="cb22-185"><a href="#cb22-185"></a><span class="ss">-   </span>Most of the variables are numeric and quantitative as they represent numerical quantities describing levels of AI related business activity, such as the variables in the subcategories Publications, Patents, and Workforce. The categorical qualitative variables include Name, Country, Region, and Sector. </span>
+<span id="cb22-186"><a href="#cb22-186"></a></span>
+<span id="cb22-187"><a href="#cb22-187"></a><span class="fu">### Glimpse of data</span></span>
+<span id="cb22-188"><a href="#cb22-188"></a></span>
+<span id="cb22-191"><a href="#cb22-191"></a><span class="in">```{python}</span></span>
+<span id="cb22-192"><a href="#cb22-192"></a>ai <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/private_sector_ai_indicators.csv&quot;</span>)</span>
+<span id="cb22-193"><a href="#cb22-193"></a><span class="in">```</span></span>
+<span id="cb22-194"><a href="#cb22-194"></a></span>
+<span id="cb22-197"><a href="#cb22-197"></a><span class="in">```{python}</span></span>
+<span id="cb22-198"><a href="#cb22-198"></a>ai.head()</span>
+<span id="cb22-199"><a href="#cb22-199"></a><span class="in">```</span></span>
+<span id="cb22-200"><a href="#cb22-200"></a></span>
+<span id="cb22-203"><a href="#cb22-203"></a><span class="in">```{python}</span></span>
+<span id="cb22-204"><a href="#cb22-204"></a>ai.info()</span>
+<span id="cb22-205"><a href="#cb22-205"></a><span class="in">```</span></span>
+<span id="cb22-206"><a href="#cb22-206"></a></span>
+<span id="cb22-207"><a href="#cb22-207"></a><span class="fu">### Analysis plan</span></span>
+<span id="cb22-208"><a href="#cb22-208"></a>Some data cleaning will need to take place to identify missing data and outliers. Some variables that may require significant decision making about the scope of the data used to answer the research question are <span class="in">`Publications: Recent AI publication growth`</span> and <span class="in">`Patents: AI patents: recent growth`</span>, which each only have 331 rows compared to the 691 for most other variables. The variables involved in answering the research question are the company name/ID, variables within the Publications and Patents categories. There are no plans to integrate any other data sources, but if necessary the other tables in the dataset may contain information of use. After the data cleaning, wrangling, and EDA prcoess the data can be visualized and numerical statistics can be computed to understand the relationships between publications/patents and sector. </span>
+<span id="cb22-209"><a href="#cb22-209"></a></span>
+<span id="cb22-210"><a href="#cb22-210"></a><span class="fu">## Dataset 3: Bachelor&#39;s degrees by field of study</span></span>
+<span id="cb22-211"><a href="#cb22-211"></a></span>
+<span id="cb22-212"><a href="#cb22-212"></a><span class="fu">### Introduction and data</span></span>
+<span id="cb22-213"><a href="#cb22-213"></a></span>
+<span id="cb22-214"><a href="#cb22-214"></a>The Digest of Education Statistics includes data summarized from surveys administered by the National Center for Education Statistics (NCES) (and other government agencies) and Annual Reports. This data was collected by surveys administered to postsecondary institutions participating in Title IV federal financial aid programs. The tables can be found <span class="co">[</span><span class="ot">here</span><span class="co">](https://nces.ed.gov/programs/digest/d22/tables/dt22_322.10.asp)</span></span>
+<span id="cb22-215"><a href="#cb22-215"></a></span>
+<span id="cb22-216"><a href="#cb22-216"></a><span class="fu">#### Description of contents</span></span>
+<span id="cb22-217"><a href="#cb22-217"></a></span>
+<span id="cb22-218"><a href="#cb22-218"></a>There are 6 datasets that will be loaded, providing a combination of data on bachelor’s degrees conferred by either field of study, state, sex, or race/ethnicity. The datasets provide data either from a range of time (\~1970-2021) or only two years (2019/20-2020/21). Below is an outline of each table and its contents. - Table 319.30. Bachelor&#39;s degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21 - Table 322.10. Bachelor&#39;s degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21 - Table 322.20. Bachelor&#39;s degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21 - Table 322.30. Bachelor&#39;s degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 - Table 322.40. Bachelor&#39;s degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 - Table 322.50. Bachelor&#39;s degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21</span>
+<span id="cb22-219"><a href="#cb22-219"></a></span>
+<span id="cb22-220"><a href="#cb22-220"></a><span class="fu">#### Ethical Concerns</span></span>
+<span id="cb22-221"><a href="#cb22-221"></a></span>
+<span id="cb22-222"><a href="#cb22-222"></a>Because the data was collected from surveys, it is possible that there could be missing patterns from universities that did not participate. Otherwise, there are no other glaring ethical concerns with the data.</span>
+<span id="cb22-223"><a href="#cb22-223"></a></span>
+<span id="cb22-224"><a href="#cb22-224"></a><span class="fu">### Research Question</span></span>
+<span id="cb22-225"><a href="#cb22-225"></a></span>
+<span id="cb22-226"><a href="#cb22-226"></a>How does the diversity, in gender and race/ethnicity, of newer and fast growing majors compare with more traditional majors?</span>
+<span id="cb22-227"><a href="#cb22-227"></a></span>
+<span id="cb22-228"><a href="#cb22-228"></a><span class="fu">### Glimpse of data</span></span>
+<span id="cb22-231"><a href="#cb22-231"></a><span class="in">```{python}</span></span>
+<span id="cb22-232"><a href="#cb22-232"></a>tabn319_30 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn319.30.xlsx&quot;</span>)         </span>
+<span id="cb22-233"><a href="#cb22-233"></a><span class="in">```</span></span>
+<span id="cb22-234"><a href="#cb22-234"></a></span>
+<span id="cb22-237"><a href="#cb22-237"></a><span class="in">```{python}</span></span>
+<span id="cb22-238"><a href="#cb22-238"></a>tabn319_30.head()</span>
+<span id="cb22-239"><a href="#cb22-239"></a><span class="in">```</span></span>
+<span id="cb22-240"><a href="#cb22-240"></a></span>
+<span id="cb22-243"><a href="#cb22-243"></a><span class="in">```{python}</span></span>
+<span id="cb22-244"><a href="#cb22-244"></a>tabn322_10 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn322.10.xlsx&quot;</span>)         </span>
+<span id="cb22-245"><a href="#cb22-245"></a><span class="in">```</span></span>
+<span id="cb22-246"><a href="#cb22-246"></a></span>
+<span id="cb22-249"><a href="#cb22-249"></a><span class="in">```{python}</span></span>
+<span id="cb22-250"><a href="#cb22-250"></a>tabn322_10.head()</span>
+<span id="cb22-251"><a href="#cb22-251"></a><span class="in">```</span></span>
+<span id="cb22-252"><a href="#cb22-252"></a></span>
+<span id="cb22-255"><a href="#cb22-255"></a><span class="in">```{python}</span></span>
+<span id="cb22-256"><a href="#cb22-256"></a>tabn322_20 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn322.20.xlsx&quot;</span>)         </span>
+<span id="cb22-257"><a href="#cb22-257"></a><span class="in">```</span></span>
+<span id="cb22-258"><a href="#cb22-258"></a></span>
+<span id="cb22-261"><a href="#cb22-261"></a><span class="in">```{python}</span></span>
+<span id="cb22-262"><a href="#cb22-262"></a>tabn322_20.head()</span>
+<span id="cb22-263"><a href="#cb22-263"></a><span class="in">```</span></span>
+<span id="cb22-264"><a href="#cb22-264"></a></span>
+<span id="cb22-267"><a href="#cb22-267"></a><span class="in">```{python}</span></span>
+<span id="cb22-268"><a href="#cb22-268"></a>tabn322_30 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn322.30.xlsx&quot;</span>)         </span>
+<span id="cb22-269"><a href="#cb22-269"></a><span class="in">```</span></span>
+<span id="cb22-270"><a href="#cb22-270"></a></span>
+<span id="cb22-273"><a href="#cb22-273"></a><span class="in">```{python}</span></span>
+<span id="cb22-274"><a href="#cb22-274"></a>tabn322_30.head()</span>
+<span id="cb22-275"><a href="#cb22-275"></a><span class="in">```</span></span>
+<span id="cb22-276"><a href="#cb22-276"></a></span>
+<span id="cb22-279"><a href="#cb22-279"></a><span class="in">```{python}</span></span>
+<span id="cb22-280"><a href="#cb22-280"></a>tabn322_40 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn322.40.xlsx&quot;</span>)         </span>
+<span id="cb22-281"><a href="#cb22-281"></a><span class="in">```</span></span>
+<span id="cb22-282"><a href="#cb22-282"></a></span>
+<span id="cb22-285"><a href="#cb22-285"></a><span class="in">```{python}</span></span>
+<span id="cb22-286"><a href="#cb22-286"></a>tabn322_40.head()</span>
+<span id="cb22-287"><a href="#cb22-287"></a><span class="in">```</span></span>
+<span id="cb22-288"><a href="#cb22-288"></a></span>
+<span id="cb22-291"><a href="#cb22-291"></a><span class="in">```{python}</span></span>
+<span id="cb22-292"><a href="#cb22-292"></a>tabn322_50 <span class="op">=</span> pd.read_excel(<span class="st">&quot;data/education/tabn322.50.xlsx&quot;</span>)         </span>
+<span id="cb22-293"><a href="#cb22-293"></a><span class="in">```</span></span>
+<span id="cb22-294"><a href="#cb22-294"></a></span>
+<span id="cb22-297"><a href="#cb22-297"></a><span class="in">```{python}</span></span>
+<span id="cb22-298"><a href="#cb22-298"></a>tabn322_50.head()</span>
+<span id="cb22-299"><a href="#cb22-299"></a><span class="in">```</span></span>
+<span id="cb22-300"><a href="#cb22-300"></a></span>
+<span id="cb22-301"><a href="#cb22-301"></a><span class="fu">### Analysis plan</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

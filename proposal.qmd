@@ -211,6 +211,65 @@ How does the diversity, in gender and race/ethnicity, of newer and fast growing 
 
 ### Glimpse of data
 
+#### Table 319.30.	Bachelor's degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21
+```{python}
+tabn319_30 = pd.read_excel("data/education/tabn319.30.xlsx")         
+```
+
+```{python}
+tabn319_30.head()
+```
+
+#### Table 322.10. Bachelor's degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21
+
+```{python}
+tabn322_10 = pd.read_excel("data/education/tabn322.10.xlsx")         
+```
+
+```{python}
+tabn322_10.head()
+```
+
+#### Table 322.20. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21
+
+```{python}
+tabn322_20 = pd.read_excel("data/education/tabn322.20.xlsx")         
+```
+
+```{python}
+tabn322_20.head()
+```
+
+#### Table 322.30.	Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+
+```{python}
+tabn322_30 = pd.read_excel("data/education/tabn322.30.xlsx")         
+```
+
+```{python}
+tabn322_30.head()
+```
+
+#### Table 322.40.	Bachelor's degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+
+```{python}
+tabn322_40 = pd.read_excel("data/education/tabn322.40.xlsx")         
+```
+
+```{python}
+tabn322_40.head()
+```
+
+#### Table 322.50.	Bachelor's degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+
+```{python}
+tabn322_50 = pd.read_excel("data/education/tabn322.50.xlsx")         
+```
+
+```{python}
+tabn322_50.head()
+```
+
 ### Analysis plan
 
-##
+The tables will need to be integrated into a tabular format containing the information needed to answer the research question. 
