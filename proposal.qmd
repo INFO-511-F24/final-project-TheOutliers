@@ -172,6 +172,8 @@ There may also be bias in the model used to identify AI-related publications, wh
 
 -   We hypothesize that the sectors ‘Software and IT Services”, ‘Banking and Investment Services’, and ‘Financial Technology (Fintech) & Infrastructure’ will have high numbers of AI related publications and patents, while ‘Food & Beverages’, ‘Food & Drug Retailing’, and ‘Personal & Household Products & Services’ will have lower levels of publications and patents.
 
+-   Most of the variables are numeric and quantitative as they represent numerical quantities describing levels of AI related business activity, such as the variables in the subcategories Publications, Patents, and Workforce. The categorical qualitative variables include Name, Country, Region, and Sector. 
+-   
 ### Glimpse of data
 
 ```{python}
