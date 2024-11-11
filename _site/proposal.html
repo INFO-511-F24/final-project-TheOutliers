@@ -4959,12 +4959,12 @@ vertical-align: -.125em;
 </section>
 <section id="glimpse-of-data-1" class="level3">
 <h3 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h3>
-<div id="2ae3d3d2" class="cell" data-execution_count="3">
+<div id="31b48541" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>nutrition <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/nutrition.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b218e9e0" class="cell" data-execution_count="4">
+<div id="b20e4feb" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>nutrition.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -5123,7 +5123,7 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
-<div id="617276bb" class="cell" data-execution_count="5">
+<div id="c415678b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>nutrition.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
@@ -5210,6 +5210,243 @@ memory usage: 26.3+ MB</code></pre>
 </section>
 <section id="glimpse-of-data-2" class="level3">
 <h3 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h3>
+<div id="42cae0a9" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>ai <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/private_sector_ai_indicators.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="5ec00a07" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>ai.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">Website</th>
+<th data-quarto-table-cell-role="th">Groups</th>
+<th data-quarto-table-cell-role="th">Aggregated subsidiaries</th>
+<th data-quarto-table-cell-role="th">Region</th>
+<th data-quarto-table-cell-role="th">Stage</th>
+<th data-quarto-table-cell-role="th">Sector</th>
+<th data-quarto-table-cell-role="th">Description</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Patents: AI applications and techniques: Language processing</th>
+<th data-quarto-table-cell-role="th">Patents: AI applications and techniques: Measuring and testing</th>
+<th data-quarto-table-cell-role="th">Patents: AI applications and techniques: Planning and scheduling</th>
+<th data-quarto-table-cell-role="th">Patents: AI applications and techniques: Robotics</th>
+<th data-quarto-table-cell-role="th">Patents: AI applications and techniques: Speech processing</th>
+<th data-quarto-table-cell-role="th">Workforce: AI workers</th>
+<th data-quarto-table-cell-role="th">Workforce: Tech Team 1 workers</th>
+<th data-quarto-table-cell-role="th">City</th>
+<th data-quarto-table-cell-role="th">State/province</th>
+<th data-quarto-table-cell-role="th">PARAT link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Accenture</td>
+<td>803</td>
+<td>Ireland</td>
+<td>https://www.accenture.com/</td>
+<td>S&amp;P 500</td>
+<td>NaN</td>
+<td>Europe</td>
+<td>Mature</td>
+<td>Software &amp; IT Services</td>
+<td>Accenture is a professional services company, ...</td>
+<td>...</td>
+<td>33</td>
+<td>13</td>
+<td>129</td>
+<td>0</td>
+<td>23</td>
+<td>13610</td>
+<td>166212</td>
+<td>Dublin</td>
+<td>Dublin</td>
+<td>https://parat.eto.tech/company/803-accenture</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Cognizant</td>
+<td>806</td>
+<td>United States</td>
+<td>https://www.cognizant.com</td>
+<td>S&amp;P 500</td>
+<td>NaN</td>
+<td>North America</td>
+<td>Mature</td>
+<td>Software &amp; IT Services</td>
+<td>Cognizant is a professional services company, ...</td>
+<td>...</td>
+<td>1</td>
+<td>0</td>
+<td>7</td>
+<td>0</td>
+<td>5</td>
+<td>5226</td>
+<td>130530</td>
+<td>Teaneck</td>
+<td>New Jersey</td>
+<td>https://parat.eto.tech/company/806-cognizant</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Amazon</td>
+<td>23</td>
+<td>United States</td>
+<td>http://amazon.com</td>
+<td>S&amp;P 500, Global Big Tech</td>
+<td>Amazon Advertising, Amazon Web Services</td>
+<td>North America</td>
+<td>Mature</td>
+<td>Retailers</td>
+<td>Amazon is a global tech firm with a focus on e...</td>
+<td>...</td>
+<td>23</td>
+<td>179</td>
+<td>131</td>
+<td>9</td>
+<td>265</td>
+<td>14164</td>
+<td>128587</td>
+<td>Seattle</td>
+<td>Washington</td>
+<td>https://parat.eto.tech/company/23-amazon</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>IBM</td>
+<td>115</td>
+<td>United States</td>
+<td>http://www.ibm.com/</td>
+<td>S&amp;P 500, Global Big Tech</td>
+<td>NaN</td>
+<td>North America</td>
+<td>Mature</td>
+<td>Software &amp; IT Services</td>
+<td>IBM is an IT technology and consulting firm pr...</td>
+<td>...</td>
+<td>386</td>
+<td>296</td>
+<td>828</td>
+<td>4</td>
+<td>471</td>
+<td>6113</td>
+<td>117515</td>
+<td>Armonk</td>
+<td>New York</td>
+<td>https://parat.eto.tech/company/115-ibm</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Microsoft</td>
+<td>163</td>
+<td>United States</td>
+<td>http://www.microsoft.com</td>
+<td>S&amp;P 500, Global Big Tech, GenAI Contenders</td>
+<td>NaN</td>
+<td>North America</td>
+<td>Mature</td>
+<td>Software &amp; IT Services</td>
+<td>Microsoft is a software corporation that devel...</td>
+<td>...</td>
+<td>214</td>
+<td>61</td>
+<td>550</td>
+<td>0</td>
+<td>365</td>
+<td>5245</td>
+<td>104414</td>
+<td>Redmond</td>
+<td>Washington</td>
+<td>https://parat.eto.tech/company/163-microsoft</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 61 columns</p>
+</div>
+</div>
+</div>
+<div id="2fe08cb9" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>ai.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 691 entries, 0 to 690
+Data columns (total 61 columns):
+ #   Column                                                             Non-Null Count  Dtype  
+---  ------                                                             --------------  -----  
+ 0   Name                                                               691 non-null    object 
+ 1   ID                                                                 691 non-null    int64  
+ 2   Country                                                            690 non-null    object 
+ 3   Website                                                            690 non-null    object 
+ 4   Groups                                                             529 non-null    object 
+ 5   Aggregated subsidiaries                                            15 non-null     object 
+ 6   Region                                                             690 non-null    object 
+ 7   Stage                                                              691 non-null    object 
+ 8   Sector                                                             691 non-null    object 
+ 9   Description                                                        686 non-null    object 
+ 10  Description source                                                 686 non-null    object 
+ 11  Description link                                                   686 non-null    object 
+ 12  Description date                                                   686 non-null    object 
+ 13  Publications: AI publications                                      691 non-null    int64  
+ 14  Publications: Recent AI publication growth                         336 non-null    float64
+ 15  Publications: AI publication percentage                            691 non-null    float64
+ 16  Publications: AI publications in top conferences                   691 non-null    int64  
+ 17  Publications: Citations to AI research                             691 non-null    int64  
+ 18  Publications: CV publications                                      691 non-null    int64  
+ 19  Publications: NLP publications                                     691 non-null    int64  
+ 20  Publications: Robotics publications                                691 non-null    int64  
+ 21  Publications: Total publications                                   691 non-null    int64  
+ 22  Patents: AI patents                                                691 non-null    int64  
+ 23  Patents: AI patents: recent growth                                 331 non-null    float64
+ 24  Patents: AI patent percentage                                      691 non-null    float64
+ 25  Patents: Granted AI patents                                        691 non-null    int64  
+ 26  Patents: Total patents                                             691 non-null    int64  
+ 27  Patents: AI use cases: Agriculture                                 691 non-null    int64  
+ 28  Patents: AI use cases: Banking and finance                         691 non-null    int64  
+ 29  Patents: AI use cases: Business                                    691 non-null    int64  
+ 30  Patents: AI use cases: Computing in government                     691 non-null    int64  
+ 31  Patents: AI use cases: Document management and publishing          691 non-null    int64  
+ 32  Patents: AI use cases: Education                                   691 non-null    int64  
+ 33  Patents: AI use cases: Energy                                      691 non-null    int64  
+ 34  Patents: AI use cases: Entertainment                               691 non-null    int64  
+ 35  Patents: AI use cases: Industry and manufacturing                  691 non-null    int64  
+ 36  Patents: AI use cases: Life sciences                               691 non-null    int64  
+ 37  Patents: AI use cases: Military                                    691 non-null    int64  
+ 38  Patents: AI use cases: Nanotechnology                              691 non-null    int64  
+ 39  Patents: AI use cases: Networking                                  691 non-null    int64  
+ 40  Patents: AI use cases: Personal devices and computing              691 non-null    int64  
+ 41  Patents: AI use cases: Physical sciences and engineering           691 non-null    int64  
+ 42  Patents: AI use cases: Security                                    691 non-null    int64  
+ 43  Patents: AI use cases: Semiconductors                              691 non-null    int64  
+ 44  Patents: AI use cases: Telecommunications                          691 non-null    int64  
+ 45  Patents: AI use cases: Transportation                              691 non-null    int64  
+ 46  Patents: AI applications and techniques: Analytics and algorithms  691 non-null    int64  
+ 47  Patents: AI applications and techniques: Computer vision           691 non-null    int64  
+ 48  Patents: AI applications and techniques: Control                   691 non-null    int64  
+ 49  Patents: AI applications and techniques: Distributed AI            691 non-null    int64  
+ 50  Patents: AI applications and techniques: Knowledge representation  691 non-null    int64  
+ 51  Patents: AI applications and techniques: Language processing       691 non-null    int64  
+ 52  Patents: AI applications and techniques: Measuring and testing     691 non-null    int64  
+ 53  Patents: AI applications and techniques: Planning and scheduling   691 non-null    int64  
+ 54  Patents: AI applications and techniques: Robotics                  691 non-null    int64  
+ 55  Patents: AI applications and techniques: Speech processing         691 non-null    int64  
+ 56  Workforce: AI workers                                              691 non-null    int64  
+ 57  Workforce: Tech Team 1 workers                                     691 non-null    int64  
+ 58  City                                                               690 non-null    object 
+ 59  State/province                                                     679 non-null    object 
+ 60  PARAT link                                                         691 non-null    object 
+dtypes: float64(4), int64(42), object(15)
+memory usage: 329.4+ KB</code></pre>
+</div>
+</div>
 </section>
 <section id="analysis-plan-2" class="level3">
 <h3 class="anchored" data-anchor-id="analysis-plan-2">Analysis plan</h3>
@@ -5903,207 +6140,219 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="an">title:</span><span class="co"> &quot;Proposal title&quot;</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="an">subtitle:</span><span class="co"> &quot;Proposal&quot;</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="an">author:</span><span class="co"> </span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="co">  - name: &quot;The Outliers&quot;</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co">    affiliations:</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co">      - name: &quot;School of Information, University of Arizona&quot;</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="an">description:</span><span class="co"> &quot;Final Project: Milestone 2&quot;</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="an">format:</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="co">  html:</span></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="co">    code-tools: true</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="co">    code-overflow: wrap</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a><span class="co">    code-line-numbers: true</span></span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="co">    embed-resources: true</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a><span class="an">editor:</span><span class="co"> visual</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a><span class="an">code-annotations:</span><span class="co"> hover</span></span>
-<span id="cb6-17"><a href="#cb6-17"></a><span class="an">execute:</span></span>
-<span id="cb6-18"><a href="#cb6-18"></a><span class="co">  warning: false</span></span>
-<span id="cb6-19"><a href="#cb6-19"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
-<span id="cb6-20"><a href="#cb6-20"></a><span class="co">---</span></span>
-<span id="cb6-21"><a href="#cb6-21"></a></span>
-<span id="cb6-24"><a href="#cb6-24"></a><span class="in">```{python}</span></span>
-<span id="cb6-25"><a href="#cb6-25"></a><span class="co">#| label: load-pkgs</span></span>
-<span id="cb6-26"><a href="#cb6-26"></a><span class="co">#| message: false</span></span>
-<span id="cb6-27"><a href="#cb6-27"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb6-28"><a href="#cb6-28"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb6-29"><a href="#cb6-29"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb6-30"><a href="#cb6-30"></a><span class="in">```</span></span>
-<span id="cb6-31"><a href="#cb6-31"></a></span>
-<span id="cb6-32"><a href="#cb6-32"></a><span class="fu">## Introduction and data</span></span>
-<span id="cb6-33"><a href="#cb6-33"></a></span>
-<span id="cb6-36"><a href="#cb6-36"></a><span class="in">```{python}</span></span>
-<span id="cb6-37"><a href="#cb6-37"></a><span class="co">#| label: load-dataset</span></span>
-<span id="cb6-38"><a href="#cb6-38"></a><span class="co">#| message: false</span></span>
-<span id="cb6-39"><a href="#cb6-39"></a><span class="in">```</span></span>
-<span id="cb6-40"><a href="#cb6-40"></a></span>
-<span id="cb6-41"><a href="#cb6-41"></a>For each data set:</span>
-<span id="cb6-42"><a href="#cb6-42"></a></span>
-<span id="cb6-43"><a href="#cb6-43"></a><span class="ss">-   </span>Identify the source of the data.</span>
-<span id="cb6-44"><a href="#cb6-44"></a></span>
-<span id="cb6-45"><a href="#cb6-45"></a><span class="ss">-   </span>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</span>
-<span id="cb6-46"><a href="#cb6-46"></a></span>
-<span id="cb6-47"><a href="#cb6-47"></a><span class="ss">-   </span>Write a brief description of the observations.</span>
-<span id="cb6-48"><a href="#cb6-48"></a></span>
-<span id="cb6-49"><a href="#cb6-49"></a><span class="ss">-   </span>Address ethical concerns about the data, if any.</span>
-<span id="cb6-50"><a href="#cb6-50"></a></span>
-<span id="cb6-51"><a href="#cb6-51"></a>Make sure to load the data and use inline code for some of this information.</span>
-<span id="cb6-52"><a href="#cb6-52"></a></span>
-<span id="cb6-53"><a href="#cb6-53"></a><span class="fu">## Research Question</span></span>
-<span id="cb6-54"><a href="#cb6-54"></a></span>
-<span id="cb6-55"><a href="#cb6-55"></a>Your research question should contain at least three variables, and should be a mix of categorical and quantitative variables. When writing a research question, please think about the following:</span>
-<span id="cb6-56"><a href="#cb6-56"></a></span>
-<span id="cb6-57"><a href="#cb6-57"></a><span class="ss">-   </span>What is your target population?</span>
-<span id="cb6-58"><a href="#cb6-58"></a></span>
-<span id="cb6-59"><a href="#cb6-59"></a><span class="ss">-   </span>Is the question original?</span>
-<span id="cb6-60"><a href="#cb6-60"></a></span>
-<span id="cb6-61"><a href="#cb6-61"></a><span class="ss">-   </span>Can the question be answered?</span>
-<span id="cb6-62"><a href="#cb6-62"></a></span>
-<span id="cb6-63"><a href="#cb6-63"></a>For each data set, include the following:</span>
-<span id="cb6-64"><a href="#cb6-64"></a></span>
-<span id="cb6-65"><a href="#cb6-65"></a><span class="ss">-   </span>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</span>
-<span id="cb6-66"><a href="#cb6-66"></a></span>
-<span id="cb6-67"><a href="#cb6-67"></a><span class="ss">-   </span>Statement on why this question is important.</span>
-<span id="cb6-68"><a href="#cb6-68"></a></span>
-<span id="cb6-69"><a href="#cb6-69"></a><span class="ss">-   </span>A description of the research topic along with a concise statement of your hypotheses on this topic.</span>
-<span id="cb6-70"><a href="#cb6-70"></a></span>
-<span id="cb6-71"><a href="#cb6-71"></a><span class="ss">-   </span>Identify the types of variables in your research question. Categorical? Quantitative?</span>
-<span id="cb6-72"><a href="#cb6-72"></a></span>
-<span id="cb6-73"><a href="#cb6-73"></a><span class="fu">## Glimpse of data</span></span>
-<span id="cb6-74"><a href="#cb6-74"></a></span>
-<span id="cb6-75"><a href="#cb6-75"></a>For each data set:</span>
-<span id="cb6-76"><a href="#cb6-76"></a></span>
-<span id="cb6-77"><a href="#cb6-77"></a><span class="ss">-   </span>Place the file containing your data in the data folder of the project repo.</span>
-<span id="cb6-78"><a href="#cb6-78"></a></span>
-<span id="cb6-79"><a href="#cb6-79"></a><span class="ss">-   </span>Use the <span class="in">`.head()`</span> and <span class="in">`.info()`</span> functions to provide a glimpse of the data set.</span>
-<span id="cb6-80"><a href="#cb6-80"></a></span>
-<span id="cb6-81"><a href="#cb6-81"></a><span class="fu">## Analysis plan</span></span>
-<span id="cb6-82"><a href="#cb6-82"></a></span>
-<span id="cb6-83"><a href="#cb6-83"></a><span class="ss">-   </span>A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).</span>
-<span id="cb6-84"><a href="#cb6-84"></a></span>
-<span id="cb6-85"><a href="#cb6-85"></a><span class="fu">## Dataset 1: Nutrition, physical activity, and obesity</span></span>
-<span id="cb6-86"><a href="#cb6-86"></a></span>
-<span id="cb6-87"><a href="#cb6-87"></a><span class="fu">### Introduction and data</span></span>
-<span id="cb6-88"><a href="#cb6-88"></a></span>
-<span id="cb6-89"><a href="#cb6-89"></a>This dataset was provided by the Centers for Disease Control and Provention (CDC), National Center for Chronic Disease prevention and Health Promotion, Division of Nutrition, Physical Activity, and Obesity. This data was collected through health-related telephone surveys that gather state data about U.S. Residents. This dataset has been used for the Data, Trends, and Maps database that the Division of Nutrition, Physical Activity, and Obesity (DNPAO) section of the CDC has, which is responsible for providing both state and national data for these topics.</span>
-<span id="cb6-90"><a href="#cb6-90"></a></span>
-<span id="cb6-91"><a href="#cb6-91"></a><span class="fu">#### Description of contents</span></span>
-<span id="cb6-92"><a href="#cb6-92"></a></span>
-<span id="cb6-93"><a href="#cb6-93"></a>This dataset includes over 104 thousand rows, and has 33 columns. Each row represents a combination of a year, state, survey question, and percent of individuals who are positively identified for that question, along with stratification. The categories for stratification are Age Range, Education, Gender, Income, Race/Ethnicity, and Total.</span>
-<span id="cb6-94"><a href="#cb6-94"></a></span>
-<span id="cb6-95"><a href="#cb6-95"></a>Survey questions fall into the categories of &quot;Fruits and Vegetables - Behavior&quot;, &quot;Obesity/Weight Status&quot;, and &quot;Physical Activity - Behavior&quot;. Examples of survey questions include &quot;Percent of adults who engage in muscle-strengthening activities on 2 or more days a week&quot; and &quot;Percent of adults aged 18 years and older who have obesity&quot;.</span>
-<span id="cb6-96"><a href="#cb6-96"></a></span>
-<span id="cb6-97"><a href="#cb6-97"></a>This dataset includes observations for the years 2011-2023. Percentages and data are not included for groups with insufficient sample sizes.</span>
-<span id="cb6-98"><a href="#cb6-98"></a></span>
-<span id="cb6-99"><a href="#cb6-99"></a><span class="fu">#### Ethical Concerns</span></span>
-<span id="cb6-100"><a href="#cb6-100"></a></span>
-<span id="cb6-101"><a href="#cb6-101"></a>There are no particular ethical concerns regarding working with this data. This dataset is aggregated, and numbers are excluded in instances where the sample size is too small. This removes concerns surrounding the personal identification of individuals within this dataset. This dataset is publicly available for anyone to download, and the licensing agreement states that it is free to be shared, created, and adapted, as long as it is attributed as the data source when publicly displayed or published. This removes concerns surrounding unfair or illegal acquisition and use of the data.</span>
-<span id="cb6-102"><a href="#cb6-102"></a></span>
-<span id="cb6-103"><a href="#cb6-103"></a><span class="fu">### Research Question</span></span>
-<span id="cb6-104"><a href="#cb6-104"></a></span>
-<span id="cb6-105"><a href="#cb6-105"></a><span class="ss">-   </span>Research Question: Do higher-income populations consistently have more time for physical activity than lower income populations?</span>
-<span id="cb6-106"><a href="#cb6-106"></a></span>
-<span id="cb6-107"><a href="#cb6-107"></a><span class="ss">    -   </span>Additional research questions include: How has the relationship between amount of physical activity and income changed over time? How does this vary between groups? And how does the amount of physical activity that lower-income populations have the time to do changed over the years?</span>
-<span id="cb6-108"><a href="#cb6-108"></a></span>
-<span id="cb6-109"><a href="#cb6-109"></a><span class="ss">    -   </span>The target population for this research question is U.S. Residents 18 and over, represented by the dataset</span>
-<span id="cb6-110"><a href="#cb6-110"></a></span>
-<span id="cb6-111"><a href="#cb6-111"></a><span class="ss">-   </span>This question is important because it may highlight areas that correlate with differences in physical health across the population. If there are groupings that are identified that are tied to physical health and activity more than others, then more research can be done to identify ways in which these groups can receive more assistance with nutrition and adopting healthier lifestyles. </span>
-<span id="cb6-112"><a href="#cb6-112"></a></span>
-<span id="cb6-113"><a href="#cb6-113"></a><span class="ss">-   </span>The research topic of interest here is whether or not there is a relationship between the amount of income that an individual makes and the amount of physical activity they are able to make time for. This falls in a larger category of interest surrounding differences between physical activity and nutrition for different groups and subsets of the population.</span>
-<span id="cb6-114"><a href="#cb6-114"></a></span>
-<span id="cb6-115"><a href="#cb6-115"></a><span class="ss">-   </span>We hypothesize that individuals who have lower income levels will have less time for physical activity, showing that larger percentages of the low income population will fall into the “Percent of adults who engage in no leisure-time physical activity” group compared to individuals with higher incomes. </span>
-<span id="cb6-116"><a href="#cb6-116"></a></span>
-<span id="cb6-117"><a href="#cb6-117"></a><span class="ss">-   </span>The variables in this research question are mostly categorical, the questions themselves and the groupings (income range) are both categorical. The percentage of respondents who fall into each category is a quantitative variable, and there is a time element (years) which can be used as well.</span>
-<span id="cb6-118"><a href="#cb6-118"></a></span>
-<span id="cb6-119"><a href="#cb6-119"></a><span class="fu">### Glimpse of data</span></span>
-<span id="cb6-120"><a href="#cb6-120"></a></span>
-<span id="cb6-123"><a href="#cb6-123"></a><span class="in">```{python}</span></span>
-<span id="cb6-124"><a href="#cb6-124"></a>nutrition <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/nutrition.csv&quot;</span>)</span>
-<span id="cb6-125"><a href="#cb6-125"></a><span class="in">```</span></span>
-<span id="cb6-126"><a href="#cb6-126"></a></span>
-<span id="cb6-129"><a href="#cb6-129"></a><span class="in">```{python}</span></span>
-<span id="cb6-130"><a href="#cb6-130"></a>nutrition.head()</span>
-<span id="cb6-131"><a href="#cb6-131"></a><span class="in">```</span></span>
-<span id="cb6-132"><a href="#cb6-132"></a></span>
-<span id="cb6-135"><a href="#cb6-135"></a><span class="in">```{python}</span></span>
-<span id="cb6-136"><a href="#cb6-136"></a>nutrition.info()</span>
-<span id="cb6-137"><a href="#cb6-137"></a><span class="in">```</span></span>
-<span id="cb6-138"><a href="#cb6-138"></a></span>
-<span id="cb6-139"><a href="#cb6-139"></a><span class="fu">### Analysis plan</span></span>
-<span id="cb6-140"><a href="#cb6-140"></a></span>
-<span id="cb6-141"><a href="#cb6-141"></a>Initial detailed exploration of the data (focusing on the main variables involved) will be followed by data cleaning and some wrangling. Identification of missing observations, data type conversions, etc. will be addressed in these initial steps. The variables involved to answer the largest research question include the &quot;Question&quot; and &quot;Income&quot; and &quot;StratificationCategoryId1&quot; columns, as well as the &quot;Data_Value&quot; column and the &quot;YearStart&quot; column. New columns that group some of these variables may also be created, such as grouping the &quot;Income&quot; values into &quot;Low Income&quot; and &quot;High Income&quot;. At this point there is no plan to bring in and merge any external data.</span>
-<span id="cb6-142"><a href="#cb6-142"></a></span>
-<span id="cb6-143"><a href="#cb6-143"></a>Once the data has been wrangled, it can be visualized in an assortment of plots for analysis, and summary statistics by group can be compiled as well. These visualizations and statistics will allow for insight as to how the relationship between income and physical activity compares between groups, as well as over time. From here, additional metrics can be run, plots created, etc. to explore and dive in further.</span>
-<span id="cb6-144"><a href="#cb6-144"></a></span>
-<span id="cb6-145"><a href="#cb6-145"></a><span class="fu">## Dataset 2: Private sector AI activity indicators</span></span>
-<span id="cb6-146"><a href="#cb6-146"></a></span>
-<span id="cb6-147"><a href="#cb6-147"></a><span class="fu">### Introduction and data</span></span>
-<span id="cb6-148"><a href="#cb6-148"></a></span>
-<span id="cb6-149"><a href="#cb6-149"></a>The dataset was constructed by the Emerging Technology Observatory (ETO), a project of the Center for Security and Emerging Technology at Georgetown University. The information about company stages of development and company metadata was generated using data from Crunchbase, a tool for business insights. Publications data was obtained from another project by the ETO, their Merged Academic Corpus, which contains information about scholarly articles. Machine learning models were used to identify AI related publications. Patent information was obtained from 1790 Analytics, PATSTAT, and The Lens. Workforce related data was compiled and processed from LinkedIn profiles by Revelio Labs.</span>
-<span id="cb6-150"><a href="#cb6-150"></a></span>
-<span id="cb6-151"><a href="#cb6-151"></a><span class="fu">#### Description of contents</span></span>
-<span id="cb6-152"><a href="#cb6-152"></a></span>
-<span id="cb6-153"><a href="#cb6-153"></a>The dataset contains indicators of business and R&amp;D activity related to AI for many private sector companies. The dataset contains 5 tables, core, ticker, alias, id, and yearly_publication_counts. We chose to focus on the core table for the purposes of this project.</span>
-<span id="cb6-154"><a href="#cb6-154"></a></span>
-<span id="cb6-155"><a href="#cb6-155"></a>The core table includes metadata and metrics related to publication, patent, and worker data regarding AI. The metadata includes a company name, unique numeric id, region of the world, stage of development, business sector, and description of the company, among other information.</span>
-<span id="cb6-156"><a href="#cb6-156"></a></span>
-<span id="cb6-157"><a href="#cb6-157"></a>The table also contains counts of AI research publications, average percent increase in publications per year over the past 3 years, percent of total publications that were related to AI, and metrics related to citations and presence in conferences. The counts of publications are also divided into the categories of computer vision, NLP, and robotics.</span>
-<span id="cb6-158"><a href="#cb6-158"></a></span>
-<span id="cb6-159"><a href="#cb6-159"></a>The patent information is separated into total patents, average percent increase in patents per year over the past 3 years, percentage of total patents related to AI, and granted patents. The patents are separated into subcategories. There are 2 main subcategories, ‘AI use cases’ and ‘AI applications and techniques’, which are further divided into more subcategories. These include energy, transportation, security for ‘AI use cases’, and computer vision, language processing, and distributed AI for ‘AI applications and techniques’.</span>
-<span id="cb6-160"><a href="#cb6-160"></a></span>
-<span id="cb6-161"><a href="#cb6-161"></a>The workforce data consists of 2 columns containing the number of AI workers and ‘Tech Team 1’ workers. Tech Team 1 is defined as “anyone with technical skills and a reasonable probability of working with AI” and is derived from Revelio Labs’ taxonomy of highly technical roles and their responsibilities. More information on this definition can be found in the dataset’s documentation. The AI workers metric is defined as a subset of Tech Team 1 with a high probability of working with AI.</span>
-<span id="cb6-162"><a href="#cb6-162"></a></span>
-<span id="cb6-163"><a href="#cb6-163"></a><span class="fu">#### Ethics of working with this dataset</span></span>
-<span id="cb6-164"><a href="#cb6-164"></a></span>
-<span id="cb6-165"><a href="#cb6-165"></a>The data was acquired from secondary sources (Crunchbase, PATSTAT, LinkedIn) so users of this dataset must be aware of the limitations of each individual source to make informed ethical decisions when making inferences using it. This could include ethical concerns regarding the use of LinkedIn users&#39; data, when these users did not explicitly consent to it being used for this purpose, although they did agree with the site&#39;s terms of service.</span>
-<span id="cb6-166"><a href="#cb6-166"></a></span>
-<span id="cb6-167"><a href="#cb6-167"></a>The dataset authors address some limitations of the dataset in the description and there may be some ethical concerns related to making broad generalizations based on this dataset, which does not represent the entire population of all companies working with AI. One concern is that the workforce metrics are incomplete because they are based on LinkedIn data. As a result, the dataset could be biased towards United States residents and against other regions of the world, as LinkedIn is less popular in other countries and is blocked in some countries like Russia and China.</span>
-<span id="cb6-168"><a href="#cb6-168"></a></span>
-<span id="cb6-169"><a href="#cb6-169"></a>Another ethical concern could be that the dataset is heavily focused on large and established companies, and neglects other areas of AI development such as small companies, non-patented innovation, and open source projects. The dataset is also heavily reliant on publicly available and self reported data, which could make less public companies underrepresented such as companies who are doing work related to sensitive topics or are focused on proprietary innovations.</span>
-<span id="cb6-170"><a href="#cb6-170"></a></span>
-<span id="cb6-171"><a href="#cb6-171"></a>There may also be bias in the model used to identify AI-related publications, which could lead to an incomplete or misleading representation of actual AI research activity.</span>
-<span id="cb6-172"><a href="#cb6-172"></a></span>
-<span id="cb6-173"><a href="#cb6-173"></a><span class="fu">### Research Question</span></span>
-<span id="cb6-174"><a href="#cb6-174"></a></span>
-<span id="cb6-175"><a href="#cb6-175"></a><span class="ss">-   </span>What relationships are there between the **number of AI publications** and **patents** and the **sector** of the companies represented in this dataset? </span>
-<span id="cb6-176"><a href="#cb6-176"></a></span>
-<span id="cb6-177"><a href="#cb6-177"></a><span class="ss">    -   </span>Target population: Companies represented in dataset</span>
-<span id="cb6-178"><a href="#cb6-178"></a></span>
-<span id="cb6-179"><a href="#cb6-179"></a><span class="ss">-   </span>This question is important because AI is a rapidly growing field of research and investment. Understanding the sectors in which the most innovation is occurring can help guide business decisions of companies and investors. For example, investors who are interested in new technologies may want to invest in companies with higher numbers of AI publications and patents, while investors who have ethical concerns regarding the use of AI may be interested in fields with less development in this area. </span>
-<span id="cb6-180"><a href="#cb6-180"></a></span>
-<span id="cb6-181"><a href="#cb6-181"></a><span class="ss">-   </span>The topic of research is private-sector AI research activity, specifically related to the number of patents and research publications.</span>
-<span id="cb6-182"><a href="#cb6-182"></a></span>
-<span id="cb6-183"><a href="#cb6-183"></a><span class="ss">-   </span>We hypothesize that the sectors ‘Software and IT Services”, ‘Banking and Investment Services’, and ‘Financial Technology (Fintech) &amp; Infrastructure’ will have high numbers of AI related publications and patents, while ‘Food &amp; Beverages’, ‘Food &amp; Drug Retailing’, and ‘Personal &amp; Household Products &amp; Services’ will have lower levels of publications and patents.</span>
-<span id="cb6-184"><a href="#cb6-184"></a></span>
-<span id="cb6-185"><a href="#cb6-185"></a><span class="fu">### Glimpse of data</span></span>
-<span id="cb6-186"><a href="#cb6-186"></a></span>
-<span id="cb6-187"><a href="#cb6-187"></a><span class="fu">### Analysis plan</span></span>
-<span id="cb6-188"><a href="#cb6-188"></a></span>
-<span id="cb6-189"><a href="#cb6-189"></a><span class="fu">## Dataset 3: Bachelor&#39;s degrees by field of study</span></span>
-<span id="cb6-190"><a href="#cb6-190"></a></span>
-<span id="cb6-191"><a href="#cb6-191"></a><span class="fu">### Introduction and data</span></span>
-<span id="cb6-192"><a href="#cb6-192"></a></span>
-<span id="cb6-193"><a href="#cb6-193"></a>The Digest of Education Statistics includes data summarized from surveys administered by the National Center for Education Statistics (NCES) (and other government agencies) and Annual Reports. This data was collected by surveys administered to postsecondary institutions participating in Title IV federal financial aid programs. The tables can be found <span class="co">[</span><span class="ot">here</span><span class="co">](https://nces.ed.gov/programs/digest/d22/tables/dt22_322.10.asp)</span></span>
-<span id="cb6-194"><a href="#cb6-194"></a></span>
-<span id="cb6-195"><a href="#cb6-195"></a><span class="fu">#### Description of contents</span></span>
-<span id="cb6-196"><a href="#cb6-196"></a></span>
-<span id="cb6-197"><a href="#cb6-197"></a>There are 6 datasets that will be loaded, providing a combination of data on bachelor’s degrees conferred by either field of study, state, sex, or race/ethnicity. The datasets provide data either from a range of time (\~1970-2021) or only two years (2019/20-2020/21). Below is an outline of each table and its contents. - Table 319.30. Bachelor&#39;s degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21 - Table 322.10. Bachelor&#39;s degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21 - Table 322.20. Bachelor&#39;s degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21 - Table 322.30. Bachelor&#39;s degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 - Table 322.40. Bachelor&#39;s degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 - Table 322.50. Bachelor&#39;s degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21</span>
-<span id="cb6-198"><a href="#cb6-198"></a></span>
-<span id="cb6-199"><a href="#cb6-199"></a><span class="fu">#### Ethical Concerns</span></span>
-<span id="cb6-200"><a href="#cb6-200"></a></span>
-<span id="cb6-201"><a href="#cb6-201"></a>Because the data was collected from surveys, it is possible that there could be missing patterns from universities that did not participate. Otherwise, there are no other glaring ethical concerns with the data.</span>
-<span id="cb6-202"><a href="#cb6-202"></a></span>
-<span id="cb6-203"><a href="#cb6-203"></a><span class="fu">### Research Question</span></span>
-<span id="cb6-204"><a href="#cb6-204"></a></span>
-<span id="cb6-205"><a href="#cb6-205"></a>How does the diversity, in gender and race/ethnicity, of newer and fast growing majors compare with more traditional majors?</span>
-<span id="cb6-206"><a href="#cb6-206"></a></span>
-<span id="cb6-207"><a href="#cb6-207"></a><span class="fu">### Glimpse of data</span></span>
-<span id="cb6-208"><a href="#cb6-208"></a></span>
-<span id="cb6-209"><a href="#cb6-209"></a><span class="fu">### Analysis plan</span></span>
-<span id="cb6-210"><a href="#cb6-210"></a></span>
-<span id="cb6-211"><a href="#cb6-211"></a>##</span>
+<div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a><span class="co">---</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="an">title:</span><span class="co"> &quot;Proposal title&quot;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="an">subtitle:</span><span class="co"> &quot;Proposal&quot;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="an">author:</span><span class="co"> </span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="co">  - name: &quot;The Outliers&quot;</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="co">    affiliations:</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="co">      - name: &quot;School of Information, University of Arizona&quot;</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="an">description:</span><span class="co"> &quot;Final Project: Milestone 2&quot;</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="an">format:</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="co">  html:</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="co">    code-tools: true</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="co">    code-overflow: wrap</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="co">    code-line-numbers: true</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="co">    embed-resources: true</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="an">code-annotations:</span><span class="co"> hover</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="an">execute:</span></span>
+<span id="cb10-18"><a href="#cb10-18"></a><span class="co">  warning: false</span></span>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb10-20"><a href="#cb10-20"></a><span class="co">---</span></span>
+<span id="cb10-21"><a href="#cb10-21"></a></span>
+<span id="cb10-24"><a href="#cb10-24"></a><span class="in">```{python}</span></span>
+<span id="cb10-25"><a href="#cb10-25"></a><span class="co">#| label: load-pkgs</span></span>
+<span id="cb10-26"><a href="#cb10-26"></a><span class="co">#| message: false</span></span>
+<span id="cb10-27"><a href="#cb10-27"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-28"><a href="#cb10-28"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb10-29"><a href="#cb10-29"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-30"><a href="#cb10-30"></a><span class="in">```</span></span>
+<span id="cb10-31"><a href="#cb10-31"></a></span>
+<span id="cb10-32"><a href="#cb10-32"></a><span class="fu">## Introduction and data</span></span>
+<span id="cb10-33"><a href="#cb10-33"></a></span>
+<span id="cb10-36"><a href="#cb10-36"></a><span class="in">```{python}</span></span>
+<span id="cb10-37"><a href="#cb10-37"></a><span class="co">#| label: load-dataset</span></span>
+<span id="cb10-38"><a href="#cb10-38"></a><span class="co">#| message: false</span></span>
+<span id="cb10-39"><a href="#cb10-39"></a><span class="in">```</span></span>
+<span id="cb10-40"><a href="#cb10-40"></a></span>
+<span id="cb10-41"><a href="#cb10-41"></a>For each data set:</span>
+<span id="cb10-42"><a href="#cb10-42"></a></span>
+<span id="cb10-43"><a href="#cb10-43"></a><span class="ss">-   </span>Identify the source of the data.</span>
+<span id="cb10-44"><a href="#cb10-44"></a></span>
+<span id="cb10-45"><a href="#cb10-45"></a><span class="ss">-   </span>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</span>
+<span id="cb10-46"><a href="#cb10-46"></a></span>
+<span id="cb10-47"><a href="#cb10-47"></a><span class="ss">-   </span>Write a brief description of the observations.</span>
+<span id="cb10-48"><a href="#cb10-48"></a></span>
+<span id="cb10-49"><a href="#cb10-49"></a><span class="ss">-   </span>Address ethical concerns about the data, if any.</span>
+<span id="cb10-50"><a href="#cb10-50"></a></span>
+<span id="cb10-51"><a href="#cb10-51"></a>Make sure to load the data and use inline code for some of this information.</span>
+<span id="cb10-52"><a href="#cb10-52"></a></span>
+<span id="cb10-53"><a href="#cb10-53"></a><span class="fu">## Research Question</span></span>
+<span id="cb10-54"><a href="#cb10-54"></a></span>
+<span id="cb10-55"><a href="#cb10-55"></a>Your research question should contain at least three variables, and should be a mix of categorical and quantitative variables. When writing a research question, please think about the following:</span>
+<span id="cb10-56"><a href="#cb10-56"></a></span>
+<span id="cb10-57"><a href="#cb10-57"></a><span class="ss">-   </span>What is your target population?</span>
+<span id="cb10-58"><a href="#cb10-58"></a></span>
+<span id="cb10-59"><a href="#cb10-59"></a><span class="ss">-   </span>Is the question original?</span>
+<span id="cb10-60"><a href="#cb10-60"></a></span>
+<span id="cb10-61"><a href="#cb10-61"></a><span class="ss">-   </span>Can the question be answered?</span>
+<span id="cb10-62"><a href="#cb10-62"></a></span>
+<span id="cb10-63"><a href="#cb10-63"></a>For each data set, include the following:</span>
+<span id="cb10-64"><a href="#cb10-64"></a></span>
+<span id="cb10-65"><a href="#cb10-65"></a><span class="ss">-   </span>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</span>
+<span id="cb10-66"><a href="#cb10-66"></a></span>
+<span id="cb10-67"><a href="#cb10-67"></a><span class="ss">-   </span>Statement on why this question is important.</span>
+<span id="cb10-68"><a href="#cb10-68"></a></span>
+<span id="cb10-69"><a href="#cb10-69"></a><span class="ss">-   </span>A description of the research topic along with a concise statement of your hypotheses on this topic.</span>
+<span id="cb10-70"><a href="#cb10-70"></a></span>
+<span id="cb10-71"><a href="#cb10-71"></a><span class="ss">-   </span>Identify the types of variables in your research question. Categorical? Quantitative?</span>
+<span id="cb10-72"><a href="#cb10-72"></a></span>
+<span id="cb10-73"><a href="#cb10-73"></a><span class="fu">## Glimpse of data</span></span>
+<span id="cb10-74"><a href="#cb10-74"></a></span>
+<span id="cb10-75"><a href="#cb10-75"></a>For each data set:</span>
+<span id="cb10-76"><a href="#cb10-76"></a></span>
+<span id="cb10-77"><a href="#cb10-77"></a><span class="ss">-   </span>Place the file containing your data in the data folder of the project repo.</span>
+<span id="cb10-78"><a href="#cb10-78"></a></span>
+<span id="cb10-79"><a href="#cb10-79"></a><span class="ss">-   </span>Use the <span class="in">`.head()`</span> and <span class="in">`.info()`</span> functions to provide a glimpse of the data set.</span>
+<span id="cb10-80"><a href="#cb10-80"></a></span>
+<span id="cb10-81"><a href="#cb10-81"></a><span class="fu">## Analysis plan</span></span>
+<span id="cb10-82"><a href="#cb10-82"></a></span>
+<span id="cb10-83"><a href="#cb10-83"></a><span class="ss">-   </span>A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).</span>
+<span id="cb10-84"><a href="#cb10-84"></a></span>
+<span id="cb10-85"><a href="#cb10-85"></a><span class="fu">## Dataset 1: Nutrition, physical activity, and obesity</span></span>
+<span id="cb10-86"><a href="#cb10-86"></a></span>
+<span id="cb10-87"><a href="#cb10-87"></a><span class="fu">### Introduction and data</span></span>
+<span id="cb10-88"><a href="#cb10-88"></a></span>
+<span id="cb10-89"><a href="#cb10-89"></a>This dataset was provided by the Centers for Disease Control and Provention (CDC), National Center for Chronic Disease prevention and Health Promotion, Division of Nutrition, Physical Activity, and Obesity. This data was collected through health-related telephone surveys that gather state data about U.S. Residents. This dataset has been used for the Data, Trends, and Maps database that the Division of Nutrition, Physical Activity, and Obesity (DNPAO) section of the CDC has, which is responsible for providing both state and national data for these topics.</span>
+<span id="cb10-90"><a href="#cb10-90"></a></span>
+<span id="cb10-91"><a href="#cb10-91"></a><span class="fu">#### Description of contents</span></span>
+<span id="cb10-92"><a href="#cb10-92"></a></span>
+<span id="cb10-93"><a href="#cb10-93"></a>This dataset includes over 104 thousand rows, and has 33 columns. Each row represents a combination of a year, state, survey question, and percent of individuals who are positively identified for that question, along with stratification. The categories for stratification are Age Range, Education, Gender, Income, Race/Ethnicity, and Total.</span>
+<span id="cb10-94"><a href="#cb10-94"></a></span>
+<span id="cb10-95"><a href="#cb10-95"></a>Survey questions fall into the categories of &quot;Fruits and Vegetables - Behavior&quot;, &quot;Obesity/Weight Status&quot;, and &quot;Physical Activity - Behavior&quot;. Examples of survey questions include &quot;Percent of adults who engage in muscle-strengthening activities on 2 or more days a week&quot; and &quot;Percent of adults aged 18 years and older who have obesity&quot;.</span>
+<span id="cb10-96"><a href="#cb10-96"></a></span>
+<span id="cb10-97"><a href="#cb10-97"></a>This dataset includes observations for the years 2011-2023. Percentages and data are not included for groups with insufficient sample sizes.</span>
+<span id="cb10-98"><a href="#cb10-98"></a></span>
+<span id="cb10-99"><a href="#cb10-99"></a><span class="fu">#### Ethical Concerns</span></span>
+<span id="cb10-100"><a href="#cb10-100"></a></span>
+<span id="cb10-101"><a href="#cb10-101"></a>There are no particular ethical concerns regarding working with this data. This dataset is aggregated, and numbers are excluded in instances where the sample size is too small. This removes concerns surrounding the personal identification of individuals within this dataset. This dataset is publicly available for anyone to download, and the licensing agreement states that it is free to be shared, created, and adapted, as long as it is attributed as the data source when publicly displayed or published. This removes concerns surrounding unfair or illegal acquisition and use of the data.</span>
+<span id="cb10-102"><a href="#cb10-102"></a></span>
+<span id="cb10-103"><a href="#cb10-103"></a><span class="fu">### Research Question</span></span>
+<span id="cb10-104"><a href="#cb10-104"></a></span>
+<span id="cb10-105"><a href="#cb10-105"></a><span class="ss">-   </span>Research Question: Do higher-income populations consistently have more time for physical activity than lower income populations?</span>
+<span id="cb10-106"><a href="#cb10-106"></a></span>
+<span id="cb10-107"><a href="#cb10-107"></a><span class="ss">    -   </span>Additional research questions include: How has the relationship between amount of physical activity and income changed over time? How does this vary between groups? And how does the amount of physical activity that lower-income populations have the time to do changed over the years?</span>
+<span id="cb10-108"><a href="#cb10-108"></a></span>
+<span id="cb10-109"><a href="#cb10-109"></a><span class="ss">    -   </span>The target population for this research question is U.S. Residents 18 and over, represented by the dataset</span>
+<span id="cb10-110"><a href="#cb10-110"></a></span>
+<span id="cb10-111"><a href="#cb10-111"></a><span class="ss">-   </span>This question is important because it may highlight areas that correlate with differences in physical health across the population. If there are groupings that are identified that are tied to physical health and activity more than others, then more research can be done to identify ways in which these groups can receive more assistance with nutrition and adopting healthier lifestyles. </span>
+<span id="cb10-112"><a href="#cb10-112"></a></span>
+<span id="cb10-113"><a href="#cb10-113"></a><span class="ss">-   </span>The research topic of interest here is whether or not there is a relationship between the amount of income that an individual makes and the amount of physical activity they are able to make time for. This falls in a larger category of interest surrounding differences between physical activity and nutrition for different groups and subsets of the population.</span>
+<span id="cb10-114"><a href="#cb10-114"></a></span>
+<span id="cb10-115"><a href="#cb10-115"></a><span class="ss">-   </span>We hypothesize that individuals who have lower income levels will have less time for physical activity, showing that larger percentages of the low income population will fall into the “Percent of adults who engage in no leisure-time physical activity” group compared to individuals with higher incomes. </span>
+<span id="cb10-116"><a href="#cb10-116"></a></span>
+<span id="cb10-117"><a href="#cb10-117"></a><span class="ss">-   </span>The variables in this research question are mostly categorical, the questions themselves and the groupings (income range) are both categorical. The percentage of respondents who fall into each category is a quantitative variable, and there is a time element (years) which can be used as well.</span>
+<span id="cb10-118"><a href="#cb10-118"></a></span>
+<span id="cb10-119"><a href="#cb10-119"></a><span class="fu">### Glimpse of data</span></span>
+<span id="cb10-120"><a href="#cb10-120"></a></span>
+<span id="cb10-123"><a href="#cb10-123"></a><span class="in">```{python}</span></span>
+<span id="cb10-124"><a href="#cb10-124"></a>nutrition <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/nutrition.csv&quot;</span>)</span>
+<span id="cb10-125"><a href="#cb10-125"></a><span class="in">```</span></span>
+<span id="cb10-126"><a href="#cb10-126"></a></span>
+<span id="cb10-129"><a href="#cb10-129"></a><span class="in">```{python}</span></span>
+<span id="cb10-130"><a href="#cb10-130"></a>nutrition.head()</span>
+<span id="cb10-131"><a href="#cb10-131"></a><span class="in">```</span></span>
+<span id="cb10-132"><a href="#cb10-132"></a></span>
+<span id="cb10-135"><a href="#cb10-135"></a><span class="in">```{python}</span></span>
+<span id="cb10-136"><a href="#cb10-136"></a>nutrition.info()</span>
+<span id="cb10-137"><a href="#cb10-137"></a><span class="in">```</span></span>
+<span id="cb10-138"><a href="#cb10-138"></a></span>
+<span id="cb10-139"><a href="#cb10-139"></a><span class="fu">### Analysis plan</span></span>
+<span id="cb10-140"><a href="#cb10-140"></a></span>
+<span id="cb10-141"><a href="#cb10-141"></a>Initial detailed exploration of the data (focusing on the main variables involved) will be followed by data cleaning and some wrangling. Identification of missing observations, data type conversions, etc. will be addressed in these initial steps. The variables involved to answer the largest research question include the &quot;Question&quot; and &quot;Income&quot; and &quot;StratificationCategoryId1&quot; columns, as well as the &quot;Data_Value&quot; column and the &quot;YearStart&quot; column. New columns that group some of these variables may also be created, such as grouping the &quot;Income&quot; values into &quot;Low Income&quot; and &quot;High Income&quot;. At this point there is no plan to bring in and merge any external data.</span>
+<span id="cb10-142"><a href="#cb10-142"></a></span>
+<span id="cb10-143"><a href="#cb10-143"></a>Once the data has been wrangled, it can be visualized in an assortment of plots for analysis, and summary statistics by group can be compiled as well. These visualizations and statistics will allow for insight as to how the relationship between income and physical activity compares between groups, as well as over time. From here, additional metrics can be run, plots created, etc. to explore and dive in further.</span>
+<span id="cb10-144"><a href="#cb10-144"></a></span>
+<span id="cb10-145"><a href="#cb10-145"></a><span class="fu">## Dataset 2: Private sector AI activity indicators</span></span>
+<span id="cb10-146"><a href="#cb10-146"></a></span>
+<span id="cb10-147"><a href="#cb10-147"></a><span class="fu">### Introduction and data</span></span>
+<span id="cb10-148"><a href="#cb10-148"></a></span>
+<span id="cb10-149"><a href="#cb10-149"></a>The dataset was constructed by the Emerging Technology Observatory (ETO), a project of the Center for Security and Emerging Technology at Georgetown University. The information about company stages of development and company metadata was generated using data from Crunchbase, a tool for business insights. Publications data was obtained from another project by the ETO, their Merged Academic Corpus, which contains information about scholarly articles. Machine learning models were used to identify AI related publications. Patent information was obtained from 1790 Analytics, PATSTAT, and The Lens. Workforce related data was compiled and processed from LinkedIn profiles by Revelio Labs.</span>
+<span id="cb10-150"><a href="#cb10-150"></a></span>
+<span id="cb10-151"><a href="#cb10-151"></a><span class="fu">#### Description of contents</span></span>
+<span id="cb10-152"><a href="#cb10-152"></a></span>
+<span id="cb10-153"><a href="#cb10-153"></a>The dataset contains indicators of business and R&amp;D activity related to AI for many private sector companies. The dataset contains 5 tables, core, ticker, alias, id, and yearly_publication_counts. We chose to focus on the core table for the purposes of this project.</span>
+<span id="cb10-154"><a href="#cb10-154"></a></span>
+<span id="cb10-155"><a href="#cb10-155"></a>The core table includes metadata and metrics related to publication, patent, and worker data regarding AI. The metadata includes a company name, unique numeric id, region of the world, stage of development, business sector, and description of the company, among other information.</span>
+<span id="cb10-156"><a href="#cb10-156"></a></span>
+<span id="cb10-157"><a href="#cb10-157"></a>The table also contains counts of AI research publications, average percent increase in publications per year over the past 3 years, percent of total publications that were related to AI, and metrics related to citations and presence in conferences. The counts of publications are also divided into the categories of computer vision, NLP, and robotics.</span>
+<span id="cb10-158"><a href="#cb10-158"></a></span>
+<span id="cb10-159"><a href="#cb10-159"></a>The patent information is separated into total patents, average percent increase in patents per year over the past 3 years, percentage of total patents related to AI, and granted patents. The patents are separated into subcategories. There are 2 main subcategories, ‘AI use cases’ and ‘AI applications and techniques’, which are further divided into more subcategories. These include energy, transportation, security for ‘AI use cases’, and computer vision, language processing, and distributed AI for ‘AI applications and techniques’.</span>
+<span id="cb10-160"><a href="#cb10-160"></a></span>
+<span id="cb10-161"><a href="#cb10-161"></a>The workforce data consists of 2 columns containing the number of AI workers and ‘Tech Team 1’ workers. Tech Team 1 is defined as “anyone with technical skills and a reasonable probability of working with AI” and is derived from Revelio Labs’ taxonomy of highly technical roles and their responsibilities. More information on this definition can be found in the dataset’s documentation. The AI workers metric is defined as a subset of Tech Team 1 with a high probability of working with AI.</span>
+<span id="cb10-162"><a href="#cb10-162"></a></span>
+<span id="cb10-163"><a href="#cb10-163"></a><span class="fu">#### Ethics of working with this dataset</span></span>
+<span id="cb10-164"><a href="#cb10-164"></a></span>
+<span id="cb10-165"><a href="#cb10-165"></a>The data was acquired from secondary sources (Crunchbase, PATSTAT, LinkedIn) so users of this dataset must be aware of the limitations of each individual source to make informed ethical decisions when making inferences using it. This could include ethical concerns regarding the use of LinkedIn users&#39; data, when these users did not explicitly consent to it being used for this purpose, although they did agree with the site&#39;s terms of service.</span>
+<span id="cb10-166"><a href="#cb10-166"></a></span>
+<span id="cb10-167"><a href="#cb10-167"></a>The dataset authors address some limitations of the dataset in the description and there may be some ethical concerns related to making broad generalizations based on this dataset, which does not represent the entire population of all companies working with AI. One concern is that the workforce metrics are incomplete because they are based on LinkedIn data. As a result, the dataset could be biased towards United States residents and against other regions of the world, as LinkedIn is less popular in other countries and is blocked in some countries like Russia and China.</span>
+<span id="cb10-168"><a href="#cb10-168"></a></span>
+<span id="cb10-169"><a href="#cb10-169"></a>Another ethical concern could be that the dataset is heavily focused on large and established companies, and neglects other areas of AI development such as small companies, non-patented innovation, and open source projects. The dataset is also heavily reliant on publicly available and self reported data, which could make less public companies underrepresented such as companies who are doing work related to sensitive topics or are focused on proprietary innovations.</span>
+<span id="cb10-170"><a href="#cb10-170"></a></span>
+<span id="cb10-171"><a href="#cb10-171"></a>There may also be bias in the model used to identify AI-related publications, which could lead to an incomplete or misleading representation of actual AI research activity.</span>
+<span id="cb10-172"><a href="#cb10-172"></a></span>
+<span id="cb10-173"><a href="#cb10-173"></a><span class="fu">### Research Question</span></span>
+<span id="cb10-174"><a href="#cb10-174"></a></span>
+<span id="cb10-175"><a href="#cb10-175"></a><span class="ss">-   </span>What relationships are there between the **number of AI publications** and **patents** and the **sector** of the companies represented in this dataset? </span>
+<span id="cb10-176"><a href="#cb10-176"></a></span>
+<span id="cb10-177"><a href="#cb10-177"></a><span class="ss">    -   </span>Target population: Companies represented in dataset</span>
+<span id="cb10-178"><a href="#cb10-178"></a></span>
+<span id="cb10-179"><a href="#cb10-179"></a><span class="ss">-   </span>This question is important because AI is a rapidly growing field of research and investment. Understanding the sectors in which the most innovation is occurring can help guide business decisions of companies and investors. For example, investors who are interested in new technologies may want to invest in companies with higher numbers of AI publications and patents, while investors who have ethical concerns regarding the use of AI may be interested in fields with less development in this area. </span>
+<span id="cb10-180"><a href="#cb10-180"></a></span>
+<span id="cb10-181"><a href="#cb10-181"></a><span class="ss">-   </span>The topic of research is private-sector AI research activity, specifically related to the number of patents and research publications.</span>
+<span id="cb10-182"><a href="#cb10-182"></a></span>
+<span id="cb10-183"><a href="#cb10-183"></a><span class="ss">-   </span>We hypothesize that the sectors ‘Software and IT Services”, ‘Banking and Investment Services’, and ‘Financial Technology (Fintech) &amp; Infrastructure’ will have high numbers of AI related publications and patents, while ‘Food &amp; Beverages’, ‘Food &amp; Drug Retailing’, and ‘Personal &amp; Household Products &amp; Services’ will have lower levels of publications and patents.</span>
+<span id="cb10-184"><a href="#cb10-184"></a></span>
+<span id="cb10-185"><a href="#cb10-185"></a><span class="fu">### Glimpse of data</span></span>
+<span id="cb10-186"><a href="#cb10-186"></a></span>
+<span id="cb10-189"><a href="#cb10-189"></a><span class="in">```{python}</span></span>
+<span id="cb10-190"><a href="#cb10-190"></a>ai <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/private_sector_ai_indicators.csv&quot;</span>)</span>
+<span id="cb10-191"><a href="#cb10-191"></a><span class="in">```</span></span>
+<span id="cb10-192"><a href="#cb10-192"></a></span>
+<span id="cb10-195"><a href="#cb10-195"></a><span class="in">```{python}</span></span>
+<span id="cb10-196"><a href="#cb10-196"></a>ai.head()</span>
+<span id="cb10-197"><a href="#cb10-197"></a><span class="in">```</span></span>
+<span id="cb10-198"><a href="#cb10-198"></a></span>
+<span id="cb10-201"><a href="#cb10-201"></a><span class="in">```{python}</span></span>
+<span id="cb10-202"><a href="#cb10-202"></a>ai.info()</span>
+<span id="cb10-203"><a href="#cb10-203"></a><span class="in">```</span></span>
+<span id="cb10-204"><a href="#cb10-204"></a></span>
+<span id="cb10-205"><a href="#cb10-205"></a><span class="fu">### Analysis plan</span></span>
+<span id="cb10-206"><a href="#cb10-206"></a></span>
+<span id="cb10-207"><a href="#cb10-207"></a><span class="fu">## Dataset 3: Bachelor&#39;s degrees by field of study</span></span>
+<span id="cb10-208"><a href="#cb10-208"></a></span>
+<span id="cb10-209"><a href="#cb10-209"></a><span class="fu">### Introduction and data</span></span>
+<span id="cb10-210"><a href="#cb10-210"></a></span>
+<span id="cb10-211"><a href="#cb10-211"></a>The Digest of Education Statistics includes data summarized from surveys administered by the National Center for Education Statistics (NCES) (and other government agencies) and Annual Reports. This data was collected by surveys administered to postsecondary institutions participating in Title IV federal financial aid programs. The tables can be found <span class="co">[</span><span class="ot">here</span><span class="co">](https://nces.ed.gov/programs/digest/d22/tables/dt22_322.10.asp)</span></span>
+<span id="cb10-212"><a href="#cb10-212"></a></span>
+<span id="cb10-213"><a href="#cb10-213"></a><span class="fu">#### Description of contents</span></span>
+<span id="cb10-214"><a href="#cb10-214"></a></span>
+<span id="cb10-215"><a href="#cb10-215"></a>There are 6 datasets that will be loaded, providing a combination of data on bachelor’s degrees conferred by either field of study, state, sex, or race/ethnicity. The datasets provide data either from a range of time (\~1970-2021) or only two years (2019/20-2020/21). Below is an outline of each table and its contents. - Table 319.30. Bachelor&#39;s degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21 - Table 322.10. Bachelor&#39;s degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21 - Table 322.20. Bachelor&#39;s degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21 - Table 322.30. Bachelor&#39;s degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 - Table 322.40. Bachelor&#39;s degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 - Table 322.50. Bachelor&#39;s degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21</span>
+<span id="cb10-216"><a href="#cb10-216"></a></span>
+<span id="cb10-217"><a href="#cb10-217"></a><span class="fu">#### Ethical Concerns</span></span>
+<span id="cb10-218"><a href="#cb10-218"></a></span>
+<span id="cb10-219"><a href="#cb10-219"></a>Because the data was collected from surveys, it is possible that there could be missing patterns from universities that did not participate. Otherwise, there are no other glaring ethical concerns with the data.</span>
+<span id="cb10-220"><a href="#cb10-220"></a></span>
+<span id="cb10-221"><a href="#cb10-221"></a><span class="fu">### Research Question</span></span>
+<span id="cb10-222"><a href="#cb10-222"></a></span>
+<span id="cb10-223"><a href="#cb10-223"></a>How does the diversity, in gender and race/ethnicity, of newer and fast growing majors compare with more traditional majors?</span>
+<span id="cb10-224"><a href="#cb10-224"></a></span>
+<span id="cb10-225"><a href="#cb10-225"></a><span class="fu">### Glimpse of data</span></span>
+<span id="cb10-226"><a href="#cb10-226"></a></span>
+<span id="cb10-227"><a href="#cb10-227"></a><span class="fu">### Analysis plan</span></span>
+<span id="cb10-228"><a href="#cb10-228"></a></span>
+<span id="cb10-229"><a href="#cb10-229"></a>##</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
