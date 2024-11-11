@@ -272,4 +272,4 @@ tabn322_50.head()
 
 ### Analysis plan
 
-The tables will need to be integrated into a tabular format containing the information needed to answer the research question. 
+The tables will need to be integrated into a tabular format containing the information needed to answer the research question. There is little to no missing data and the individual tables are already highly structured but there will likely be significant wrangling needed to integrate the tables into a usable format. After the tables are integrated, summary statistics can be calculated and the data can be visualized to answer the research question.
