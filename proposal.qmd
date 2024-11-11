@@ -24,6 +24,7 @@ jupyter: python3
 #| message: false
 import numpy as np
 import seaborn as sns
+import pandas as pd
 ```
 
 ## Introduction and data
