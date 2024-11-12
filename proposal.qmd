@@ -199,7 +199,14 @@ The Digest of Education Statistics includes data summarized from surveys adminis
 
 #### Description of contents
 
-There are 6 datasets that will be loaded, providing a combination of data on bachelor’s degrees conferred by either field of study, state, sex, or race/ethnicity. The datasets provide data either from a range of time (\~1970-2021) or only two years (2019/20-2020/21). Below is an outline of each table and its contents. - Table 319.30. Bachelor's degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21 - Table 322.10. Bachelor's degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21 - Table 322.20. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21 - Table 322.30. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 - Table 322.40. Bachelor's degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 - Table 322.50. Bachelor's degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+There are 6 datasets that will be loaded, providing a combination of data on bachelor’s degrees conferred by either field of study, state, sex, or race/ethnicity. The datasets provide data either from a range of time (\~1970-2021) or only two years (2019/20-2020/21). Below is an outline of each table and its contents. 
+
+-   Table 319.30. Bachelor's degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21 
+-   Table 322.10. Bachelor's degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21 
+-   Table 322.20. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21 
+-   Table 322.30. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 
+-   Table 322.40. Bachelor's degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 
+-   Table 322.50. Bachelor's degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
 
 #### Ethical Concerns
 
@@ -207,7 +214,15 @@ Because the data was collected from surveys, it is possible that there could be 
 
 ### Research Question
 
-How does the diversity, in gender and race/ethnicity, of newer and fast growing majors compare with more traditional majors?
+-   How do gender and racial/ethnic diversity levels compare between those in newer and fast growing majors and those in more well established and traditional majors?
+
+    -   The target audience are universities and colleges.
+
+-   This question is important because it examines diversity trends within academia. The shifts in representation in a field can highlight progress in educational inclusion and access. Furthermore, this question can inform policies or awarness to support diversity in fields lacking representation.
+
+-   We hypothesize that newer, fast-growing majors have higher levels of diversity than more traditional majors.
+
+-   The categorical variables are the field of study, gender, and race/ethnicity. The quantitative variables include the year, and counts for each respective field of study and year or demographic feature
 
 ### Glimpse of data
 
@@ -273,3 +288,5 @@ tabn322_50.head()
 ### Analysis plan
 
 The tables will need to be integrated into a tabular format containing the information needed to answer the research question. There is little to no missing data and the individual tables are already highly structured but there will likely be significant wrangling needed to integrate the tables into a usable format. After the tables are integrated, summary statistics can be calculated and the data can be visualized to answer the research question.
+
+Once the tables are in a usable format, there are two questions that will need to be answered. First, we will need to identify what majors are traditional and which would be considered fast-growing. That is, which majors have historically and continue to be conferred highly, compared to those that only recently have begun to increase in numbers. From here, then we will investigate the demographic makeup of graduates for different fields of study. Because there are a significant number of majors listed, only a select few majors of interest (i.e. the most traditional and most new majors) will be looked at.
