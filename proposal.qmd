@@ -1,7 +1,7 @@
 ---
-title: "Proposal title"
-subtitle: "Proposal"
-author: 
+title: "Data, Data, Data"
+subtitle: "Oh My"
+author:
   - name: "The Outliers"
     affiliations:
       - name: "School of Information, University of Arizona"
@@ -228,7 +228,7 @@ Because the data was collected from surveys, it is possible that there could be 
 
 #### Table 319.30.	Bachelor's degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21
 ```{python}
-tabn319_30 = pd.read_excel("data/education/tabn319.30.xlsx")         
+tabn319_30 = pd.read_excel("data/education/tabn319.30.xlsx")
 ```
 
 ```{python}
@@ -238,7 +238,7 @@ tabn319_30.head()
 #### Table 322.10. Bachelor's degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21
 
 ```{python}
-tabn322_10 = pd.read_excel("data/education/tabn322.10.xlsx")         
+tabn322_10 = pd.read_excel("data/education/tabn322.10.xlsx")
 ```
 
 ```{python}
@@ -248,7 +248,7 @@ tabn322_10.head()
 #### Table 322.20. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21
 
 ```{python}
-tabn322_20 = pd.read_excel("data/education/tabn322.20.xlsx")         
+tabn322_20 = pd.read_excel("data/education/tabn322.20.xlsx")
 ```
 
 ```{python}
@@ -258,7 +258,7 @@ tabn322_20.head()
 #### Table 322.30.	Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
 
 ```{python}
-tabn322_30 = pd.read_excel("data/education/tabn322.30.xlsx")         
+tabn322_30 = pd.read_excel("data/education/tabn322.30.xlsx")
 ```
 
 ```{python}
@@ -268,7 +268,7 @@ tabn322_30.head()
 #### Table 322.40.	Bachelor's degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
 
 ```{python}
-tabn322_40 = pd.read_excel("data/education/tabn322.40.xlsx")         
+tabn322_40 = pd.read_excel("data/education/tabn322.40.xlsx")
 ```
 
 ```{python}
@@ -278,7 +278,7 @@ tabn322_40.head()
 #### Table 322.50.	Bachelor's degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
 
 ```{python}
-tabn322_50 = pd.read_excel("data/education/tabn322.50.xlsx")         
+tabn322_50 = pd.read_excel("data/education/tabn322.50.xlsx")
 ```
 
 ```{python}
