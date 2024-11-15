@@ -27,57 +27,6 @@ import seaborn as sns
 import pandas as pd
 ```
 
-## Introduction and data
-
-```{python}
-#| label: load-dataset
-#| message: false
-```
-
-For each data set:
-
--   Identify the source of the data.
-
--   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
-
--   Write a brief description of the observations.
-
--   Address ethical concerns about the data, if any.
-
-Make sure to load the data and use inline code for some of this information.
-
-## Research Question
-
-Your research question should contain at least three variables, and should be a mix of categorical and quantitative variables. When writing a research question, please think about the following:
-
--   What is your target population?
-
--   Is the question original?
-
--   Can the question be answered?
-
-For each data set, include the following:
-
--   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
-
--   Statement on why this question is important.
-
--   A description of the research topic along with a concise statement of your hypotheses on this topic.
-
--   Identify the types of variables in your research question. Categorical? Quantitative?
-
-## Glimpse of data
-
-For each data set:
-
--   Place the file containing your data in the data folder of the project repo.
-
--   Use the `.head()` and `.info()` functions to provide a glimpse of the data set.
-
-## Analysis plan
-
--   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
-
 ## Dataset 1: Nutrition, physical activity, and obesity
 
 ### Introduction and data
@@ -172,7 +121,7 @@ There may also be bias in the model used to identify AI-related publications, wh
 
 -   We hypothesize that the sectors ‘Software and IT Services”, ‘Banking and Investment Services’, and ‘Financial Technology (Fintech) & Infrastructure’ will have high numbers of AI related publications and patents, while ‘Food & Beverages’, ‘Food & Drug Retailing’, and ‘Personal & Household Products & Services’ will have lower levels of publications and patents.
 
--   Most of the variables are numeric and quantitative as they represent numerical quantities describing levels of AI related business activity, such as the variables in the subcategories Publications, Patents, and Workforce. The categorical qualitative variables include Name, Country, Region, and Sector. 
+-   Most of the variables are numeric and quantitative as they represent numerical quantities describing levels of AI related business activity, such as the variables in the subcategories Publications, Patents, and Workforce. The categorical qualitative variables include Name, Country, Region, and Sector.
 
 ### Glimpse of data
 
@@ -189,7 +138,8 @@ ai.info()
 ```
 
 ### Analysis plan
-Some data cleaning will need to take place to identify missing data and outliers. Some variables that may require significant decision making about the scope of the data used to answer the research question are `Publications: Recent AI publication growth` and `Patents: AI patents: recent growth`, which each only have 331 rows compared to the 691 for most other variables. The variables involved in answering the research question are the company name/ID, variables within the Publications and Patents categories. There are no plans to integrate any other data sources, but if necessary the other tables in the dataset may contain information of use. After the data cleaning, wrangling, and EDA prcoess the data can be visualized and numerical statistics can be computed to understand the relationships between publications/patents and sector. 
+
+Some data cleaning will need to take place to identify missing data and outliers. Some variables that may require significant decision making about the scope of the data used to answer the research question are `Publications: Recent AI publication growth` and `Patents: AI patents: recent growth`, which each only have 331 rows compared to the 691 for most other variables. The variables involved in answering the research question are the company name/ID, variables within the Publications and Patents categories. There are no plans to integrate any other data sources, but if necessary the other tables in the dataset may contain information of use. After the data cleaning, wrangling, and EDA prcoess the data can be visualized and numerical statistics can be computed to understand the relationships between publications/patents and sector.
 
 ## Dataset 3: Bachelor's degrees by field of study
 
@@ -199,13 +149,13 @@ The Digest of Education Statistics includes data summarized from surveys adminis
 
 #### Description of contents
 
-There are 6 datasets that will be loaded, providing a combination of data on bachelor’s degrees conferred by either field of study, state, sex, or race/ethnicity. The datasets provide data either from a range of time (\~1970-2021) or only two years (2019/20-2020/21). Below is an outline of each table and its contents. 
+There are 6 datasets that will be loaded, providing a combination of data on bachelor’s degrees conferred by either field of study, state, sex, or race/ethnicity. The datasets provide data either from a range of time (\~1970-2021) or only two years (2019/20-2020/21). Below is an outline of each table and its contents.
 
--   Table 319.30. Bachelor's degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21 
--   Table 322.10. Bachelor's degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21 
--   Table 322.20. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21 
--   Table 322.30. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 
--   Table 322.40. Bachelor's degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21 
+-   Table 319.30. Bachelor's degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21
+-   Table 322.10. Bachelor's degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21
+-   Table 322.20. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21
+-   Table 322.30. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+-   Table 322.40. Bachelor's degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
 -   Table 322.50. Bachelor's degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
 
 #### Ethical Concerns
@@ -226,7 +176,8 @@ Because the data was collected from surveys, it is possible that there could be 
 
 ### Glimpse of data
 
-#### Table 319.30.	Bachelor's degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21
+#### Table 319.30. Bachelor's degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21
+
 ```{python}
 tabn319_30 = pd.read_excel("data/education/tabn319.30.xlsx")
 ```
@@ -255,7 +206,7 @@ tabn322_20 = pd.read_excel("data/education/tabn322.20.xlsx")
 tabn322_20.head()
 ```
 
-#### Table 322.30.	Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+#### Table 322.30. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
 
 ```{python}
 tabn322_30 = pd.read_excel("data/education/tabn322.30.xlsx")
@@ -265,7 +216,7 @@ tabn322_30 = pd.read_excel("data/education/tabn322.30.xlsx")
 tabn322_30.head()
 ```
 
-#### Table 322.40.	Bachelor's degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+#### Table 322.40. Bachelor's degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
 
 ```{python}
 tabn322_40 = pd.read_excel("data/education/tabn322.40.xlsx")
@@ -275,7 +226,7 @@ tabn322_40 = pd.read_excel("data/education/tabn322.40.xlsx")
 tabn322_40.head()
 ```
 
-#### Table 322.50.	Bachelor's degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
+#### Table 322.50. Bachelor's degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21
 
 ```{python}
 tabn322_50 = pd.read_excel("data/education/tabn322.50.xlsx")
