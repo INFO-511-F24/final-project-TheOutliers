@@ -7,34 +7,6 @@
     "text": "import numpy as np\nimport seaborn as sns\nimport pandas as pd"
   },
   {
-    "objectID": "proposal.html#introduction-and-data",
-    "href": "proposal.html#introduction-and-data",
-    "title": "Data, Data, Data",
-    "section": "Introduction and data",
-    "text": "Introduction and data\nFor each data set:\n\nIdentify the source of the data.\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nWrite a brief description of the observations.\nAddress ethical concerns about the data, if any.\n\nMake sure to load the data and use inline code for some of this information."
-  },
-  {
-    "objectID": "proposal.html#research-question",
-    "href": "proposal.html#research-question",
-    "title": "Data, Data, Data",
-    "section": "Research Question",
-    "text": "Research Question\nYour research question should contain at least three variables, and should be a mix of categorical and quantitative variables. When writing a research question, please think about the following:\n\nWhat is your target population?\nIs the question original?\nCan the question be answered?\n\nFor each data set, include the following:\n\nA well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\nStatement on why this question is important.\nA description of the research topic along with a concise statement of your hypotheses on this topic.\nIdentify the types of variables in your research question. Categorical? Quantitative?"
-  },
-  {
-    "objectID": "proposal.html#glimpse-of-data",
-    "href": "proposal.html#glimpse-of-data",
-    "title": "Data, Data, Data",
-    "section": "Glimpse of data",
-    "text": "Glimpse of data\nFor each data set:\n\nPlace the file containing your data in the data folder of the project repo.\nUse the .head() and .info() functions to provide a glimpse of the data set."
-  },
-  {
-    "objectID": "proposal.html#analysis-plan",
-    "href": "proposal.html#analysis-plan",
-    "title": "Data, Data, Data",
-    "section": "Analysis plan",
-    "text": "Analysis plan\n\nA plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any)."
-  },
-  {
     "objectID": "proposal.html#dataset-1-nutrition-physical-activity-and-obesity",
     "href": "proposal.html#dataset-1-nutrition-physical-activity-and-obesity",
     "title": "Data, Data, Data",
