@@ -2,7 +2,7 @@
 title: "Project Title"
 subtitle: "INFO 511 - Fall 2024 - Final Project"
 author: 
-  - name: "Team name"
+  - name: "The Outliers"
     affiliations:
       - name: "School of Information, University of Arizona"
 description: "Project description"
