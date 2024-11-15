@@ -1,11 +1,11 @@
 ---
-title: "Exploring incomelevels and physical activity disparities in the US"
+title: "Project Title"
 subtitle: "INFO 511 - Fall 2024 - Final Project"
-author: Sarah Gilbride, Miguel Peralta, Vera Jackson, Quinn Jones, Cas Laskowski
+author: 
   - name: "The Outliers"
     affiliations:
       - name: "School of Information, University of Arizona"
-description: "Exploration and analysis of a dataset of nutrition, physical activity, and obesity records from the CDC to answer the question of whether or not there is a relationship between income and levels of physical activity, and the direction and strength of the relationship."
+description: "Project description"
 format:
    html:
     code-tools: true
