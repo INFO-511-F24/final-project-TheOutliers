@@ -28,88 +28,25 @@
     "text": "Dataset 3: Bachelor’s degrees by field of study\n\nIntroduction and data\nThe Digest of Education Statistics includes data summarized from surveys administered by the National Center for Education Statistics (NCES) (and other government agencies) and Annual Reports. This data was collected by surveys administered to postsecondary institutions participating in Title IV federal financial aid programs. The tables can be found here\n\nDescription of contents\nThere are 6 datasets that will be loaded, providing a combination of data on bachelor’s degrees conferred by either field of study, state, sex, or race/ethnicity. The datasets provide data either from a range of time (~1970-2021) or only two years (2019/20-2020/21). Below is an outline of each table and its contents.\n\nTable 319.30. Bachelor’s degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21\nTable 322.10. Bachelor’s degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21\nTable 322.20. Bachelor’s degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21\nTable 322.30. Bachelor’s degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21\nTable 322.40. Bachelor’s degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21\nTable 322.50. Bachelor’s degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21\n\n\n\nEthical Concerns\nBecause the data was collected from surveys, it is possible that there could be missing patterns from universities that did not participate. Otherwise, there are no other glaring ethical concerns with the data.\n\n\n\nResearch Question\n\nHow do gender and racial/ethnic diversity levels compare between those in newer and fast growing majors and those in more well established and traditional majors?\n\nThe target audience are universities and colleges.\n\nThis question is important because it examines diversity trends within academia. The shifts in representation in a field can highlight progress in educational inclusion and access. Furthermore, this question can inform policies or awarness to support diversity in fields lacking representation.\nWe hypothesize that newer, fast-growing majors have higher levels of diversity than more traditional majors.\nThe categorical variables are the field of study, gender, and race/ethnicity. The quantitative variables include the year, and counts for each respective field of study and year or demographic feature\n\n\n\nGlimpse of data\n\nTable 319.30. Bachelor’s degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21\n\ntabn319_30 = pd.read_excel(\"data/education/tabn319.30.xlsx\")\n\n\ntabn319_30.head()\n\n\n\n\n\n\n\n\nTable 319.30. Bachelor's degrees conferred by postsecondary institutions, by field of study and state or jurisdiction: Academic year 2020-21\nUnnamed: 1\nUnnamed: 2\nUnnamed: 3\nUnnamed: 4\nUnnamed: 5\nUnnamed: 6\nUnnamed: 7\nUnnamed: 8\nUnnamed: 9\nUnnamed: 10\nUnnamed: 11\n\n\n\n\n0\nState or jurisdiction\nTotal\nHumanities\\1\\\nPsychology\nSocial sciences and history\nNatural sciences and mathematics\\2\\\nComputer and information sciences and support ...\nEngineering\\3\\\nEducation\nBusiness\\4\\\nHealth professions and related programs\nOther fields\\5\\\n\n\n1\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n\n\n2\nUnited States\n2066445\n263894\n126944\n160827\n187829\n104874\n145041\n89398\n391375\n268018\n328245\n\n\n3\nAlabama\n34821\n2785\n1523\n1593\n2851\n1195\n3832\n1813\n8272\n4513\n6444\n\n\n4\nAlaska\n1812\n273\n110\n124\n159\n29\n166\n57\n320\n261\n313\n\n\n\n\n\n\n\n\n\nTable 322.10. Bachelor’s degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21\n\ntabn322_10 = pd.read_excel(\"data/education/tabn322.10.xlsx\")\n\n\ntabn322_10.head()\n\n\n\n\n\n\n\n\nTable 322.10. Bachelor's degrees conferred by postsecondary institutions, by field of study: Selected academic years, 1970-71 through 2020-21\nUnnamed: 1\nUnnamed: 2\nUnnamed: 3\nUnnamed: 4\nUnnamed: 5\nUnnamed: 6\nUnnamed: 7\nUnnamed: 8\nUnnamed: 9\nUnnamed: 10\nUnnamed: 11\nUnnamed: 12\nUnnamed: 13\nUnnamed: 14\nUnnamed: 15\nUnnamed: 16\nUnnamed: 17\nUnnamed: 18\n\n\n\n\n0\nField of study\n1970-71\n1975-76\n1980-81\n1985-86\n1990-91\n1995-96\n2000-01\n2005-06\n2011-12\n2012-13\n2013-14\n2014-15\n2015-16\n2016-17\n2017-18\n2018-19\n2019-20\n2020-21\n\n\n1\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n\n\n2\nTotal\n839730\n925746\n935140\n987823\n1094538\n1164792\n1244171\n1485104\n1792163\n1840381\n1870150\n1894969\n1920750\n1956114\n1980665\n2013086\n2038682\n2066445\n\n\n3\nAgriculture and natural resources\\1\\\n12674\n19402\n21886\n17191\n13363\n21757\n23766\n23497\n31629\n34304\n35953\n37028\n37827\n38782\n40334\n41373\n41858\n41925\n\n\n4\nArchitecture and related services\n5570\n9146\n9455\n9119\n9781\n8352\n8480\n9515\n9727\n9757\n9149\n9090\n8825\n8579\n8464\n8806\n9045\n9296\n\n\n\n\n\n\n\n\n\nTable 322.20. Bachelor’s degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21\n\ntabn322_20 = pd.read_excel(\"data/education/tabn322.20.xlsx\")\n\n\ntabn322_20.head()\n\n\n\n\n\n\n\n\nTable 322.20. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and sex of student: Selected academic years, 1976-77 through 2020-21\nUnnamed: 1\nUnnamed: 2\nUnnamed: 3\nUnnamed: 4\nUnnamed: 5\nUnnamed: 6\nUnnamed: 7\nUnnamed: 8\nUnnamed: 9\nUnnamed: 10\nUnnamed: 11\nUnnamed: 12\nUnnamed: 13\nUnnamed: 14\nUnnamed: 15\nUnnamed: 16\n\n\n\n\n0\nYear and sex\nNumber of degrees conferred to U.S. citizens, ...\nNumber of degrees conferred to U.S. citizens, ...\nNumber of degrees conferred to U.S. citizens, ...\nNumber of degrees conferred to U.S. citizens, ...\nNumber of degrees conferred to U.S. citizens, ...\nNumber of degrees conferred to U.S. citizens, ...\nNumber of degrees conferred to U.S. citizens, ...\nNumber of degrees conferred to U.S. citizens, ...\nNumber of degrees conferred to U.S. citizens, ...\nPercentage distribution of degrees conferred t...\nPercentage distribution of degrees conferred t...\nPercentage distribution of degrees conferred t...\nPercentage distribution of degrees conferred t...\nPercentage distribution of degrees conferred t...\nPercentage distribution of degrees conferred t...\nPercentage distribution of degrees conferred t...\n\n\n1\nYear and sex\nTotal\nTotal\nWhite\nBlack\nHispanic\nAsian/Pacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\\1\\\nNonresident\nTotal\nWhite\nBlack\nHispanic\nAsian/Pacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\\1\\\n\n\n2\n1\n2\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n\n\n3\nTotal\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n\n\n4\n1976-77\n919549\n\\2,3\\\n807688\n58636\n18743\n13793\n3326\n---\n15714\n100\n89.525663\n6.499325\n2.07751\n1.528842\n0.36866\n---\n\n\n\n\n\n\n\n\n\nTable 322.30. Bachelor’s degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21\n\ntabn322_30 = pd.read_excel(\"data/education/tabn322.30.xlsx\")\n\n\ntabn322_30.head()\n\n\n\n\n\n\n\n\nTable 322.30. Bachelor's degrees conferred by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21\nUnnamed: 1\nUnnamed: 2\nUnnamed: 3\nUnnamed: 4\nUnnamed: 5\nUnnamed: 6\nUnnamed: 7\nUnnamed: 8\nUnnamed: 9\n...\nUnnamed: 11\nUnnamed: 12\nUnnamed: 13\nUnnamed: 14\nUnnamed: 15\nUnnamed: 16\nUnnamed: 17\nUnnamed: 18\nUnnamed: 19\nUnnamed: 20\n\n\n\n\n0\nField of study\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n...\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n\n\n1\nField of study\nTotal\nWhite\nBlack\nHispanic\nAsian/Pacific Islander\nAsian/Pacific Islander\nAsian/Pacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\n...\nTotal\nWhite\nBlack\nHispanic\nAsian/Pacific Islander\nAsian/Pacific Islander\nAsian/Pacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\nNonresident\n\n\n2\nField of study\nTotal\nWhite\nBlack\nHispanic\nTotal\nAsian\nPacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\n...\nTotal\nWhite\nBlack\nHispanic\nTotal\nAsian\nPacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\nNonresident\n\n\n3\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n\n\n4\nAll fields, total\n2038682\n1184082\n197491\n302663\n161468\n157085\n4383\n9154\n77621\n...\n2066445\n1172187\n206527\n324848\n169261\n164845\n4416\n9545\n81369\n102708\n\n\n\n\n5 rows × 21 columns\n\n\n\n\n\nTable 322.40. Bachelor’s degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21\n\ntabn322_40 = pd.read_excel(\"data/education/tabn322.40.xlsx\")\n\n\ntabn322_40.head()\n\n\n\n\n\n\n\n\nTable 322.40. Bachelor's degrees conferred to males by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21\nUnnamed: 1\nUnnamed: 2\nUnnamed: 3\nUnnamed: 4\nUnnamed: 5\nUnnamed: 6\nUnnamed: 7\nUnnamed: 8\nUnnamed: 9\n...\nUnnamed: 11\nUnnamed: 12\nUnnamed: 13\nUnnamed: 14\nUnnamed: 15\nUnnamed: 16\nUnnamed: 17\nUnnamed: 18\nUnnamed: 19\nUnnamed: 20\n\n\n\n\n0\nField of study\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n...\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n\n\n1\nField of study\nTotal\nWhite\nBlack\nHispanic\nAsian/Pacific Islander\nAsian/Pacific Islander\nAsian/Pacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\n...\nTotal\nWhite\nBlack\nHispanic\nAsian/Pacific Islander\nAsian/Pacific Islander\nAsian/Pacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\nNonresident\n\n\n2\nField of study\nTotal\nWhite\nBlack\nHispanic\nTotal\nAsian\nPacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\n...\nTotal\nWhite\nBlack\nHispanic\nTotal\nAsian\nPacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\nNonresident\n\n\n3\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n\n\n4\nAll fields, total\n861384\n509079\n70346\n117230\n72916\n71005\n1911\n3344\n31620\n...\n860764\n499092\n72092\n123256\n75704\n73835\n1869\n3407\n33003\n54210\n\n\n\n\n5 rows × 21 columns\n\n\n\n\n\nTable 322.50. Bachelor’s degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21\n\ntabn322_50 = pd.read_excel(\"data/education/tabn322.50.xlsx\")\n\n\ntabn322_50.head()\n\n\n\n\n\n\n\n\nTable 322.50. Bachelor's degrees conferred to females by postsecondary institutions, by race/ethnicity and field of study: Academic years 2019-20 and 2020-21\nUnnamed: 1\nUnnamed: 2\nUnnamed: 3\nUnnamed: 4\nUnnamed: 5\nUnnamed: 6\nUnnamed: 7\nUnnamed: 8\nUnnamed: 9\n...\nUnnamed: 11\nUnnamed: 12\nUnnamed: 13\nUnnamed: 14\nUnnamed: 15\nUnnamed: 16\nUnnamed: 17\nUnnamed: 18\nUnnamed: 19\nUnnamed: 20\n\n\n\n\n0\nField of study\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n2019-20\n...\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n2020-21\n\n\n1\nField of study\nTotal\nWhite\nBlack\nHispanic\nAsian/Pacific Islander\nAsian/Pacific Islander\nAsian/Pacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\n...\nTotal\nWhite\nBlack\nHispanic\nAsian/Pacific Islander\nAsian/Pacific Islander\nAsian/Pacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\nNonresident\n\n\n2\nField of study\nTotal\nWhite\nBlack\nHispanic\nTotal\nAsian\nPacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\n...\nTotal\nWhite\nBlack\nHispanic\nTotal\nAsian\nPacific Islander\nAmerican Indian/Alaska Native\nTwo or more races\nNonresident\n\n\n3\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n\n\n4\nAll fields, total\n1177298\n675003\n127145\n185433\n88552\n86080\n2472\n5810\n46001\n...\n1205681\n673095\n134435\n201592\n93557\n91010\n2547\n6138\n48366\n48498\n\n\n\n\n5 rows × 21 columns\n\n\n\n\n\n\nAnalysis plan\nThe tables will need to be integrated into a tabular format containing the information needed to answer the research question. There is little to no missing data and the individual tables are already highly structured but there will likely be significant wrangling needed to integrate the tables into a usable format. After the tables are integrated, summary statistics can be calculated and the data can be visualized to answer the research question.\nOnce the tables are in a usable format, there are two questions that will need to be answered. First, we will need to identify what majors are traditional and which would be considered fast-growing. That is, which majors have historically and continue to be conferred highly, compared to those that only recently have begun to increase in numbers. From here, then we will investigate the demographic makeup of graduates for different fields of study. Because there are a significant number of majors listed, only a select few majors of interest (i.e. the most traditional and most new majors) will be looked at."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project was developed by [The Outliers] For INFO 511 - Fundamentals of Data Science at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nSarah Gilbride: Master’s student in Data Science program, based in Phoenix, AZ\nMiguel Peralta: Master’s student in Data Science, based in Tucson, AZ\nVera Jackson: Master’s student in Data Science program, based in Chicago, IL\nQuinn Jones: Master’s of Data Science student, based in Salem, OR\nCas Laskowski: PhD in Information, Tucson, AZ"
-  },
-  {
-    "objectID": "presentation.html#quarto",
-    "href": "presentation.html#quarto",
-    "title": "Project title",
-    "section": "Quarto",
-    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
-  },
-  {
-    "objectID": "presentation.html#layouts",
-    "href": "presentation.html#layouts",
-    "title": "Project title",
-    "section": "Layouts",
-    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\nlike\nthis\n\nAnd add footnotes"
-  },
-  {
-    "objectID": "presentation.html#code",
-    "href": "presentation.html#code",
-    "title": "Project title",
-    "section": "Code",
-    "text": "Code\n\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.073\nModel:                            OLS   Adj. R-squared:                  0.070\nMethod:                 Least Squares   F-statistic:                     30.59\nDate:                Mon, 08 Jul 2024   Prob (F-statistic):           5.84e-08\nTime:                        11:38:07   Log-Likelihood:                -1346.4\nNo. Observations:                 392   AIC:                             2697.\nDf Residuals:                     390   BIC:                             2705.\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         35.8015      2.266     15.800      0.000      31.347      40.257\nspeed       -354.7055     64.129     -5.531      0.000    -480.788    -228.623\n==============================================================================\nOmnibus:                       27.687   Durbin-Watson:                   0.589\nProb(Omnibus):                  0.000   Jarque-Bera (JB):               18.976\nSkew:                           0.420   Prob(JB):                     7.57e-05\nKurtosis:                       2.323   Cond. No.                         169.\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
-  },
-  {
-    "objectID": "presentation.html#plots",
-    "href": "presentation.html#plots",
-    "title": "Project title",
-    "section": "Plots",
-    "text": "Plots"
-  },
-  {
-    "objectID": "presentation.html#plot-and-text",
-    "href": "presentation.html#plot-and-text",
-    "title": "Project title",
-    "section": "Plot and text",
-    "text": "Plot and text\n\n\n\nSome text\ngoes here"
-  },
-  {
-    "objectID": "presentation.html#tables",
-    "href": "presentation.html#tables",
-    "title": "Project title",
-    "section": "Tables",
-    "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\n\n\n\nisland\n\n\n\nbill_length_mm\n\n\n\nbill_depth_mm\n\n\n\nflipper_length_mm\n\n\n\nbody_mass_g\n\n\n\nsex\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.1\n\n\n\n18.7\n\n\n\n181.0\n\n\n\n3750.0\n\n\n\nMale\n\n\n\n\n\n\n\n1\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.5\n\n\n\n17.4\n\n\n\n186.0\n\n\n\n3800.0\n\n\n\nFemale\n\n\n\n\n\n\n\n2\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n40.3\n\n\n\n18.0\n\n\n\n195.0\n\n\n\n3250.0\n\n\n\nFemale\n\n\n\n\n\n\n\n4\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n36.7\n\n\n\n19.3\n\n\n\n193.0\n\n\n\n3450.0\n\n\n\nFemale\n\n\n\n\n\n\n\n5\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.3\n\n\n\n20.6\n\n\n\n190.0\n\n\n\n3650.0\n\n\n\nMale"
-  },
-  {
-    "objectID": "presentation.html#images",
-    "href": "presentation.html#images",
-    "title": "Project title",
-    "section": "Images",
-    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
-  },
-  {
-    "objectID": "presentation.html#math-expressions",
-    "href": "presentation.html#math-expressions",
-    "title": "Project title",
-    "section": "Math Expressions",
-    "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
-  },
-  {
-    "objectID": "presentation.html#feeling-adventurous",
-    "href": "presentation.html#feeling-adventurous",
-    "title": "Project title",
-    "section": "Feeling adventurous?",
-    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Project Title",
+    "title": "Exploring income and physical activity disparities in the US",
     "section": "",
     "text": "Add project abstract here."
   },
   {
     "objectID": "index.html#abstract",
     "href": "index.html#abstract",
-    "title": "Project Title",
+    "title": "Exploring income and physical activity disparities in the US",
     "section": "",
     "text": "Add project abstract here."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project was developed by [The Outliers] For INFO 511 - Fundamentals of Data Science at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nSarah Gilbride: Master’s student in Data Science program, based in Phoenix, AZ\nMiguel Peralta: Master’s student in Data Science, based in Tucson, AZ\nVera Jackson: Master’s student in Data Science program, based in Chicago, IL\nQuinn Jones: Master’s of Data Science student, based in Salem, OR\nCas Laskowski: PhD in Information, Tucson, AZ"
   },
   {
     "objectID": "contract.html",
@@ -180,5 +117,68 @@
     "title": "Team Project Contract",
     "section": "Signatures",
     "text": "Signatures\nBy signing below, each team member agrees to the terms of this contract and commits to working together effectively and respectfully.\n\nCas Laskowski: CML Date: 10/17/2024\nMiguel Peralta: MCAP Date: 10/14/2024\nSarah Gilbride: SMG Date: 10/14/2024\nQuinn Jones: QAJ Date: 10/15/2024\nVera Jackson: VSJ Date: 10/14/2024"
+  },
+  {
+    "objectID": "presentation.html#quarto",
+    "href": "presentation.html#quarto",
+    "title": "Project title",
+    "section": "Quarto",
+    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
+  },
+  {
+    "objectID": "presentation.html#layouts",
+    "href": "presentation.html#layouts",
+    "title": "Project title",
+    "section": "Layouts",
+    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\nlike\nthis\n\nAnd add footnotes"
+  },
+  {
+    "objectID": "presentation.html#code",
+    "href": "presentation.html#code",
+    "title": "Project title",
+    "section": "Code",
+    "text": "Code\n\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.073\nModel:                            OLS   Adj. R-squared:                  0.070\nMethod:                 Least Squares   F-statistic:                     30.59\nDate:                Mon, 08 Jul 2024   Prob (F-statistic):           5.84e-08\nTime:                        11:38:07   Log-Likelihood:                -1346.4\nNo. Observations:                 392   AIC:                             2697.\nDf Residuals:                     390   BIC:                             2705.\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         35.8015      2.266     15.800      0.000      31.347      40.257\nspeed       -354.7055     64.129     -5.531      0.000    -480.788    -228.623\n==============================================================================\nOmnibus:                       27.687   Durbin-Watson:                   0.589\nProb(Omnibus):                  0.000   Jarque-Bera (JB):               18.976\nSkew:                           0.420   Prob(JB):                     7.57e-05\nKurtosis:                       2.323   Cond. No.                         169.\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
+  },
+  {
+    "objectID": "presentation.html#plots",
+    "href": "presentation.html#plots",
+    "title": "Project title",
+    "section": "Plots",
+    "text": "Plots"
+  },
+  {
+    "objectID": "presentation.html#plot-and-text",
+    "href": "presentation.html#plot-and-text",
+    "title": "Project title",
+    "section": "Plot and text",
+    "text": "Plot and text\n\n\n\nSome text\ngoes here"
+  },
+  {
+    "objectID": "presentation.html#tables",
+    "href": "presentation.html#tables",
+    "title": "Project title",
+    "section": "Tables",
+    "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\n\n\n\nisland\n\n\n\nbill_length_mm\n\n\n\nbill_depth_mm\n\n\n\nflipper_length_mm\n\n\n\nbody_mass_g\n\n\n\nsex\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.1\n\n\n\n18.7\n\n\n\n181.0\n\n\n\n3750.0\n\n\n\nMale\n\n\n\n\n\n\n\n1\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.5\n\n\n\n17.4\n\n\n\n186.0\n\n\n\n3800.0\n\n\n\nFemale\n\n\n\n\n\n\n\n2\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n40.3\n\n\n\n18.0\n\n\n\n195.0\n\n\n\n3250.0\n\n\n\nFemale\n\n\n\n\n\n\n\n4\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n36.7\n\n\n\n19.3\n\n\n\n193.0\n\n\n\n3450.0\n\n\n\nFemale\n\n\n\n\n\n\n\n5\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.3\n\n\n\n20.6\n\n\n\n190.0\n\n\n\n3650.0\n\n\n\nMale"
+  },
+  {
+    "objectID": "presentation.html#images",
+    "href": "presentation.html#images",
+    "title": "Project title",
+    "section": "Images",
+    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
+  },
+  {
+    "objectID": "presentation.html#math-expressions",
+    "href": "presentation.html#math-expressions",
+    "title": "Project title",
+    "section": "Math Expressions",
+    "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
+  },
+  {
+    "objectID": "presentation.html#feeling-adventurous",
+    "href": "presentation.html#feeling-adventurous",
+    "title": "Project title",
+    "section": "Feeling adventurous?",
+    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
   }
 ]
