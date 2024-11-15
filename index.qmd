@@ -1,11 +1,11 @@
 ---
-title: "Project Title"
+title: "Exploring income and physical activity disparities in the US"
 subtitle: "INFO 511 - Fall 2024 - Final Project"
 author: 
   - name: "The Outliers"
     affiliations:
       - name: "School of Information, University of Arizona"
-description: "Project description"
+description: "Using a dataset from the CDC of nutrition, physical activity, and obesity records, we will explore the possibility of a relationship between income and physical activity and examine its direction and strength."
 format:
    html:
     code-tools: true
