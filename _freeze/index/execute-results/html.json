@@ -1,10 +1,10 @@
 {
-  "hash": "57b3db6b5d278f36ab8a2bbcb9068d23",
+  "hash": "7cdc8e59e93e52a53e1b5d4dff323f29",
   "result": {
     "engine": "jupyter",
-    "markdown": "---\ntitle: \"Project Title\"\nsubtitle: \"INFO 511 - Fall 2024 - Final Project\"\nauthor: \n  - name: \"The Outliers\"\n    affiliations:\n      - name: \"School of Information, University of Arizona\"\ndescription: \"Project description\"\nformat:\n   html:\n    code-tools: true\n    code-overflow: wrap\n    embed-resources: true\neditor: visual\nexecute:\n  warning: false\n  echo: false\njupyter: python3\n---\n\n\n\n\n## Abstract\n\nAdd project abstract here.\n\n",
+    "markdown": "---\ntitle: \"Exploring income and physical activity disparities in the US\"\nsubtitle: \"INFO 511 - Fall 2024 - Final Project\"\nauthor: \n  - name: \"The Outliers\"\n    affiliations:\n      - name: \"School of Information, University of Arizona\"\ndescription: \"Using a dataset from the CDC of nutrition, physical activity, and obesity records, we will explore the possibility of a relationship between income and physical activity and examine its direction and strength.\"\nformat:\n   html:\n    code-tools: true\n    code-overflow: wrap\n    embed-resources: true\neditor: visual\nexecute:\n  warning: false\n  echo: false\njupyter: python3\n---\n\n\n## Abstract\n\nAdd project abstract here.\n\n",
     "supporting": [
-      "index_files/figure-html"
+      "index_files"
     ],
     "filters": [],
     "includes": {}
