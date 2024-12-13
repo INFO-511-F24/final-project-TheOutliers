@@ -59,7 +59,7 @@ data.head()
 data.info()
 ```
 
-### Data Cleaning and Wrangling
+### Data Cleaning and Wrangling, EDA
 
 The columns YearStart and YearEnd always contain the same values so one can be dropped. 
 
@@ -80,8 +80,8 @@ activity = activity[activity['StratificationCategory1'] == "Income"]
 activity.info()
 ```
 
-#### Dealing with Missing Values
 ```{python}
+# looking for missing values
 cols_with_nulls = []
 for col in activity.columns:
     if activity[col].isna().sum() > 0:
@@ -90,4 +90,42 @@ for col in activity.columns:
 print(f"Columns with 1 or more missing values:")
 for i in cols_with_nulls:
     print(i)
+```
+
+#####  Data_Value_Unit
+```{python}
+# unique values in Data_Value_Unit
+print(['Data_Value_Unit'].unique())
+```
+
+This column's values seem to not correspond to the name, it looks like it might be a data entry error.
+
+##### Remoing nulls from Data_Value
+```{python}
+# removing null values
+activity = activity.dropna(subset=['Data_Value'])
+```
+
+##### Questions
+```{python}
+print(questions = activity['Question'].unique())
+```
+
+##### Encoding income as a numeric value
+Treating income as a numeric variable can be useful for regression.
+```{python}
+# maps income ranges to numeric values
+income_dict = {'Less than $15,000':0,
+  '$15,000 - $24,999':15,
+  '$25,000 - $34,999':25, 
+  "$35,000 - $49,999":35, 
+  '$50,000 - $74,999':50, 
+  '$75,000 or greater':75,
+        }
+
+# removes data not reported
+activity_clean = activity_clean.loc[activity_clean['Income'] != 'Data not reported']
+
+# creates numeric column of income based on mappings
+activity_clean['numeric_income'] = activity_clean['Income'].replace(income_dict)
 ```
