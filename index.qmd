@@ -92,7 +92,7 @@ for i in cols_with_nulls:
     print(i)
 ```
 
-#####  Data_Value_Unit
+####  Data_Value_Unit
 ```{python}
 # unique values in Data_Value_Unit
 print(['Data_Value_Unit'].unique())
@@ -100,18 +100,18 @@ print(['Data_Value_Unit'].unique())
 
 This column's values seem to not correspond to the name, it looks like it might be a data entry error.
 
-##### Removing nulls from Data_Value
+#### Removing nulls from Data_Value
 ```{python}
 # removing null values
 activity = activity.dropna(subset=['Data_Value'])
 ```
 
-##### Questions
+#### Questions
 ```{python}
 print(questions = activity['Question'].unique())
 ```
 
-##### Encoding income as a numeric value
+#### Encoding income as a numeric value
 Treating income as a numeric variable can be useful for regression.
 ```{python}
 # maps income ranges to numeric values
