@@ -18,6 +18,12 @@ execute:
 jupyter: python3
 ---
 
+## Introduction
+
+Understanding the relationship between socioeconomic status and health behaviors is necessary for addressing disparities in public health outcomes. Our project seeks to understand whether higher-income populations consistently have more time for physical activity than lower income populations using a dataset from the Centers for Disease Control and Prevention (CDC). The dataset is specifically from the Division of Nutrition, Physical Activity, and Obesity (DNPAO) and was derived from phone surveys conducted between 2011 and 2023. The whole dataset offers insights into physical activity, nutrition, and obesity trends among U.S. residents aged 18 and older. For the purpose of this project, we are focusing on the survey questions related to physical activity. The data is stratified by factors such as age, education, gender, income, and race/ethnicity.
+
+Our team's research question asks whether individuals with lower income levels have less leisure time for physical activity, and we hypothesize that this is true. This type of investigation is important for identifying specific groups that may face structural barriers to adopting healthy lifestyles, and therefore impacting public health interventions that can benefit those groups. We hope to gain a broader understanding of health inequities with this analysis.
+
 ## Abstract
 
 ### Analysis plan
