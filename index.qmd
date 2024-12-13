@@ -20,9 +20,32 @@ jupyter: python3
 
 ## Introduction
 
-Understanding the relationship between socioeconomic status and health behaviors is necessary for addressing disparities in public health outcomes. Our project seeks to understand whether higher-income populations consistently have more time for physical activity than lower income populations using a dataset from the Centers for Disease Control and Prevention (CDC). The dataset is specifically from the Division of Nutrition, Physical Activity, and Obesity (DNPAO) and was derived from phone surveys conducted between 2011 and 2023. The whole dataset offers insights into physical activity, nutrition, and obesity trends among U.S. residents aged 18 and older. For the purpose of this project, we are focusing on the survey questions related to physical activity. The data is stratified by factors such as age, education, gender, income, and race/ethnicity.
+Understanding the relationship between socioeconomic status and health behaviors is necessary for addressing disparities in public health outcomes. Our project seeks to understand whether higher-income populations consistently have more time for physical activity than lower income populations using a dataset from the Centers for Disease Control and Prevention (CDC). The dataset is specifically from the Behavioral Risk Factor Surveillance System project and was obtained from phone surveys conducted between 2011 and 2023. The whole dataset offers insights into physical activity, nutrition, and obesity trends among U.S. residents aged 18 and older. For the purpose of this project, we are focusing on the survey questions related to physical activity. The data is stratified by factors such as age, education, gender, income, and race/ethnicity.
 
-Our team's research question asks whether individuals with lower income levels have less leisure time for physical activity, and we hypothesize that this is true. This type of investigation is important for identifying specific groups that may face structural barriers to adopting healthy lifestyles, and therefore impacting public health interventions that can benefit those groups. We hope to gain a broader understanding of health inequities with this analysis.
+## Research Question
+
+**Do higher-income populations have more time for physical activity than lower income populations?**
+
+We hypothesize that this is true, higher income populations have more time for physical activity. Therefore, populations will engage in more physical activity as their income level increases (positive relationship).
+
+## Data
+
+Dataset: [Nutrition, Physical Activity, and Obesity - Behavioral Risk Factor Surveillance System](https://chronicdata.cdc.gov/Nutrition-Physical-Activity-and-Obesity/Nutrition-Physical-Activity-and-Obesity-Behavioral/hn4x-zwk7/about_data)
+
+This dataset is hosted by the United States Center for Disease Control and was obtained from the Behavioral Risk Factor Surveillance System, a CDC project consisting of health-related phone surveys. The original dataset consists of 104,000 rows and 33 columns. Descriptions of all columns are available on the link above. Each row represents a question being asked to a group of participants and contains a value in the Data_Value column representing what is being measured. The main columns of interest for our research question are:
+
+-   YearStart and YearEnd: The year the data was collected. These are the same for every row.
+-   LocationAbbr: Contains the abbreviation for the data where the data was collected.
+-   Topic: Contains the topic the variable being measured falls into. For our research question, we are interested in the topic "Physical Activity - Behavior"
+-   Question: What is being measured. Within "Physical Activity - Behavior" there are 5 questions:
+    -   Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic physical activity and engage in muscle-strengthening activities on 2 or more days a week
+    -   Percent of adults who engage in no leisure-time physical activity
+    -   Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)
+    -   Percent of adults who engage in muscle-strengthening activities on 2 or more days a week
+    -   Percent of adults who achieve at least 300 minutes a week of moderate-intensity aerobic physical activity or 150 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)
+-   Data_Value: The value being measured by the survey, in this case for these specific questions it will be a percentage.
+-   StratificationCategory1: What variable the data is being stratified by. Depending on the value in this column, it will contain a value in the columns "Race", "Age (years)", "Income", etc. For our research question we are interested in the levels in Income, such as 'Less than \$15,000', '\$35,000 - \$49,999', etc.
+-   Income: Contains the income level.
 
 ## Abstract
 
