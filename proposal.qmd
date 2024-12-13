@@ -64,7 +64,7 @@ There are no particular ethical concerns regarding working with this data. This 
 ### Glimpse of data
 
 ```{python}
-nutrition = pd.read_csv("data/nutrition.csv")
+nutrition = pd.read_csv("../data/nutrition.csv")
 ```
 
 ```{python}

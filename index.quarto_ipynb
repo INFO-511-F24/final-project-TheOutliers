@@ -1,0 +1,172 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Exploring income and physical activity disparities in the US\"\n",
+        "subtitle: \"INFO 511 - Fall 2024 - Final Project\"\n",
+        "author: \n",
+        "  - name: \"The Outliers\"\n",
+        "    affiliations:\n",
+        "      - name: \"School of Information, University of Arizona\"\n",
+        "description: \"Using a dataset from the CDC of nutrition, physical activity, and obesity records, we will explore the possibility of a relationship between income and physical activity and examine its direction and strength.\"\n",
+        "format:\n",
+        "   html:\n",
+        "    code-tools: true\n",
+        "    code-overflow: wrap\n",
+        "    embed-resources: true\n",
+        "editor: visual\n",
+        "execute:\n",
+        "  warning: false\n",
+        "  echo: false\n",
+        "jupyter: python3\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "## Introduction\n",
+        "\n",
+        "Understanding the relationship between socioeconomic status and health behaviors is necessary for addressing disparities in public health outcomes. Our project seeks to understand whether higher-income populations consistently have more time for physical activity than lower income populations using a dataset from the Centers for Disease Control and Prevention (CDC). The dataset is specifically from the Behavioral Risk Factor Surveillance System project and was obtained from phone surveys conducted between 2011 and 2023. The whole dataset offers insights into physical activity, nutrition, and obesity trends among U.S. residents aged 18 and older. For the purpose of this project, we are focusing on the survey questions related to physical activity. The data is stratified by factors such as age, education, gender, income, and race/ethnicity.\n",
+        "\n",
+        "## Research Question\n",
+        "\n",
+        "**Do higher-income populations have more time for physical activity than lower income populations?**\n",
+        "\n",
+        "We hypothesize that this is true, higher income populations have more time for physical activity. Therefore, populations will engage in more physical activity as their income level increases (positive relationship).\n",
+        "\n",
+        "## Data\n",
+        "\n",
+        "Dataset: [Nutrition, Physical Activity, and Obesity - Behavioral Risk Factor Surveillance System](https://chronicdata.cdc.gov/Nutrition-Physical-Activity-and-Obesity/Nutrition-Physical-Activity-and-Obesity-Behavioral/hn4x-zwk7/about_data)\n",
+        "\n",
+        "This dataset is hosted by the United States Center for Disease Control and was obtained from the Behavioral Risk Factor Surveillance System, a CDC project consisting of health-related phone surveys. The original dataset consists of 104,000 rows and 33 columns. Descriptions of all columns are available on the link above. Each row represents a combination of a year, state, survey question, and percent of individuals who are positively identified for that question, along with stratification. Data_Value contains the corresponding value collected for each survey question. The categories for stratification are Age Range, Education, Gender, Income, Race/Ethnicity, and Total. This dataset includes observations for the years 2011-2023. Percentages and data are not included for groups with insufficient sample sizes. \n",
+        "\n",
+        "The main columns of interest for our research question are:\n",
+        "\n",
+        "-   YearStart and YearEnd: The year the data was collected. These are the same for every row.\n",
+        "-   LocationAbbr: Contains the abbreviation for the data where the data was collected.\n",
+        "-   Topic: Contains the topic the variable being measured falls into. For our research question, we are interested in the topic \"Physical Activity - Behavior\"\n",
+        "-   Question: What is being measured. Within \"Physical Activity - Behavior\" there are 5 questions:\n",
+        "    -   Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic physical activity and engage in muscle-strengthening activities on 2 or more days a week\n",
+        "    -   Percent of adults who engage in no leisure-time physical activity\n",
+        "    -   Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)\n",
+        "    -   Percent of adults who engage in muscle-strengthening activities on 2 or more days a week\n",
+        "    -   Percent of adults who achieve at least 300 minutes a week of moderate-intensity aerobic physical activity or 150 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)\n",
+        "-   Data_Value: The value being measured by the survey, in this case for these specific questions it will be a percentage.\n",
+        "-   StratificationCategory1: What variable the data is being stratified by. Depending on the value in this column, it will contain a value in the columns \"Race\", \"Age (years)\", \"Income\", etc. For our research question we are interested in the levels in Income, such as 'Less than \\$15,000', '\\$35,000 - \\$49,999', etc.\n",
+        "-   Income: Contains the income level.\n"
+      ],
+      "id": "9841f6ca"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "data = pd.read_csv('/data/Nutrition.csv')\n",
+        "data.head()"
+      ],
+      "id": "285fc86d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "data.info()"
+      ],
+      "id": "50a787dd",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Data Cleaning and Wrangling\n",
+        "\n",
+        "The columns YearStart and YearEnd always contain the same values so one can be dropped. \n"
+      ],
+      "id": "5907e25b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "data.loc[data['YearStart'] != data['YearEnd']]"
+      ],
+      "id": "02a72f04",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "activity = data.drop(columns='YearEnd')"
+      ],
+      "id": "3c340db7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "We are only interested in the rows containing questions related to physical activity. \n"
+      ],
+      "id": "8da0c26f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "activity = activity.loc[activity['Topic'] == 'Physical Activity - Behavior']\n",
+        "activity.drop(columns=[\"Total\", \"Education\", \"Age(years)\", \"Gender\", \"Race/Ethnicity\", \"GeoLocation\"], inplace=True)\n",
+        "activity = activity[activity['StratificationCategory1'] == \"Income\"]\n",
+        "activity.info()"
+      ],
+      "id": "e1e69c71",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "#### Dealing with Missing Values\n"
+      ],
+      "id": "74ec6d4e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "cols_with_nulls = []\n",
+        "for col in activity.columns:\n",
+        "    if activity[col].isna().sum() > 0:\n",
+        "        cols_with_nulls.append(col)\n",
+        "\n",
+        "print(f\"Columns with 1 or more missing values:\")\n",
+        "for i in cols_with_nulls:\n",
+        "    print(i)"
+      ],
+      "id": "025d8683",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "c:\\Users\\miguel\\anaconda3\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

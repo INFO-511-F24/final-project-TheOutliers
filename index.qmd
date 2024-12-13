@@ -32,7 +32,9 @@ We hypothesize that this is true, higher income populations have more time for p
 
 Dataset: [Nutrition, Physical Activity, and Obesity - Behavioral Risk Factor Surveillance System](https://chronicdata.cdc.gov/Nutrition-Physical-Activity-and-Obesity/Nutrition-Physical-Activity-and-Obesity-Behavioral/hn4x-zwk7/about_data)
 
-This dataset is hosted by the United States Center for Disease Control and was obtained from the Behavioral Risk Factor Surveillance System, a CDC project consisting of health-related phone surveys. The original dataset consists of 104,000 rows and 33 columns. Descriptions of all columns are available on the link above. Each row represents a question being asked to a group of participants and contains a value in the Data_Value column representing what is being measured. The main columns of interest for our research question are:
+This dataset is hosted by the United States Center for Disease Control and was obtained from the Behavioral Risk Factor Surveillance System, a CDC project consisting of health-related phone surveys. The original dataset consists of 104,000 rows and 33 columns. Descriptions of all columns are available on the link above. Each row represents a combination of a year, state, survey question, and percent of individuals who are positively identified for that question, along with stratification. Data_Value contains the corresponding value collected for each survey question. The categories for stratification are Age Range, Education, Gender, Income, Race/Ethnicity, and Total. This dataset includes observations for the years 2011-2023. Percentages and data are not included for groups with insufficient sample sizes. 
+
+The main columns of interest for our research question are:
 
 -   YearStart and YearEnd: The year the data was collected. These are the same for every row.
 -   LocationAbbr: Contains the abbreviation for the data where the data was collected.
@@ -47,10 +49,45 @@ This dataset is hosted by the United States Center for Disease Control and was o
 -   StratificationCategory1: What variable the data is being stratified by. Depending on the value in this column, it will contain a value in the columns "Race", "Age (years)", "Income", etc. For our research question we are interested in the levels in Income, such as 'Less than \$15,000', '\$35,000 - \$49,999', etc.
 -   Income: Contains the income level.
 
-## Abstract
+```{python}
+import pandas as pd
+data = pd.read_csv('/data/Nutrition.csv')
+data.head()
+```
 
-### Analysis plan
+```{python}
+data.info()
+```
 
-Initial detailed exploration of the data (focusing on the main variables involved) will be followed by data cleaning and some wrangling. Identification of missing observations, data type conversions, etc. will be addressed in these initial steps. The variables involved to answer the largest research question include the "Question" and "Income" and "StratificationCategoryId1" columns, as well as the "Data_Value" column and the "YearStart" column. New columns that group some of these variables may also be created, such as grouping the "Income" values into "Low Income" and "High Income". At this point there is no plan to bring in and merge any external data.
+### Data Cleaning and Wrangling
 
-Once the data has been wrangled, it can be visualized in an assortment of plots for analysis, and summary statistics by group can be compiled as well. These visualizations and statistics will allow for insight as to how the relationship between income and physical activity compares between groups, as well as over time. From here, additional metrics can be run, plots created, etc. to explore and dive in further.
+The columns YearStart and YearEnd always contain the same values so one can be dropped. 
+
+```{python}
+data.loc[data['YearStart'] != data['YearEnd']]
+```
+
+```{python}
+activity = data.drop(columns='YearEnd')
+```
+
+We are only interested in the rows containing questions related to physical activity. 
+
+```{python}
+activity = activity.loc[activity['Topic'] == 'Physical Activity - Behavior']
+activity.drop(columns=["Total", "Education", "Age(years)", "Gender", "Race/Ethnicity", "GeoLocation"], inplace=True)
+activity = activity[activity['StratificationCategory1'] == "Income"]
+activity.info()
+```
+
+#### Dealing with Missing Values
+```{python}
+cols_with_nulls = []
+for col in activity.columns:
+    if activity[col].isna().sum() > 0:
+        cols_with_nulls.append(col)
+
+print(f"Columns with 1 or more missing values:")
+for i in cols_with_nulls:
+    print(i)
+```
