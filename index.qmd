@@ -100,7 +100,7 @@ print(['Data_Value_Unit'].unique())
 
 This column's values seem to not correspond to the name, it looks like it might be a data entry error.
 
-##### Remoing nulls from Data_Value
+##### Removing nulls from Data_Value
 ```{python}
 # removing null values
 activity = activity.dropna(subset=['Data_Value'])
