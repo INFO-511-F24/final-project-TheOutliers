@@ -1,0 +1,140 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Data, Data, Data\"\n",
+        "subtitle: \"Oh My\"\n",
+        "author:\n",
+        "  - name: \"The Outliers\"\n",
+        "    affiliations:\n",
+        "      - name: \"School of Information, University of Arizona\"\n",
+        "description: \"Final Project: Milestone 2\"\n",
+        "format:\n",
+        "  html:\n",
+        "    code-tools: true\n",
+        "    code-overflow: wrap\n",
+        "    code-line-numbers: true\n",
+        "    embed-resources: true\n",
+        "editor: visual\n",
+        "code-annotations: hover\n",
+        "execute:\n",
+        "  warning: false\n",
+        "jupyter: python3\n",
+        "---"
+      ],
+      "id": "f542a530"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "message": false
+      },
+      "source": [
+        "#| label: load-pkgs\n",
+        "import numpy as np\n",
+        "import seaborn as sns\n",
+        "import pandas as pd"
+      ],
+      "id": "load-pkgs",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Dataset 1: Nutrition, physical activity, and obesity\n",
+        "\n",
+        "### Introduction and data\n",
+        "\n",
+        "This dataset was provided by the Centers for Disease Control and Provention (CDC), National Center for Chronic Disease prevention and Health Promotion, Division of Nutrition, Physical Activity, and Obesity. This data was collected through health-related telephone surveys that gather state data about U.S. Residents. This dataset has been used for the Data, Trends, and Maps database that the Division of Nutrition, Physical Activity, and Obesity (DNPAO) section of the CDC has, which is responsible for providing both state and national data for these topics.\n",
+        "\n",
+        "#### Description of contents\n",
+        "\n",
+        "This dataset includes over 104 thousand rows, and has 33 columns. Each row represents a combination of a year, state, survey question, and percent of individuals who are positively identified for that question, along with stratification. The categories for stratification are Age Range, Education, Gender, Income, Race/Ethnicity, and Total.\n",
+        "\n",
+        "Survey questions fall into the categories of \"Fruits and Vegetables - Behavior\", \"Obesity/Weight Status\", and \"Physical Activity - Behavior\". Examples of survey questions include \"Percent of adults who engage in muscle-strengthening activities on 2 or more days a week\" and \"Percent of adults aged 18 years and older who have obesity\".\n",
+        "\n",
+        "This dataset includes observations for the years 2011-2023. Percentages and data are not included for groups with insufficient sample sizes.\n",
+        "\n",
+        "#### Ethical Concerns\n",
+        "\n",
+        "There are no particular ethical concerns regarding working with this data. This dataset is aggregated, and numbers are excluded in instances where the sample size is too small. This removes concerns surrounding the personal identification of individuals within this dataset. This dataset is publicly available for anyone to download, and the licensing agreement states that it is free to be shared, created, and adapted, as long as it is attributed as the data source when publicly displayed or published. This removes concerns surrounding unfair or illegal acquisition and use of the data.\n",
+        "\n",
+        "### Research Question\n",
+        "\n",
+        "-   Research Question: Do higher-income populations consistently have more time for physical activity than lower income populations?\n",
+        "\n",
+        "    -   Additional research questions include: How has the relationship between amount of physical activity and income changed over time? How does this vary between groups? And how does the amount of physical activity that lower-income populations have the time to do changed over the years?\n",
+        "\n",
+        "    -   The target population for this research question is U.S. Residents 18 and over, represented by the dataset\n",
+        "\n",
+        "-   This question is important because it may highlight areas that correlate with differences in physical health across the population. If there are groupings that are identified that are tied to physical health and activity more than others, then more research can be done to identify ways in which these groups can receive more assistance with nutrition and adopting healthier lifestyles. \n",
+        "\n",
+        "-   The research topic of interest here is whether or not there is a relationship between the amount of income that an individual makes and the amount of physical activity they are able to make time for. This falls in a larger category of interest surrounding differences between physical activity and nutrition for different groups and subsets of the population.\n",
+        "\n",
+        "-   We hypothesize that individuals who have lower income levels will have less time for physical activity, showing that larger percentages of the low income population will fall into the “Percent of adults who engage in no leisure-time physical activity” group compared to individuals with higher incomes. \n",
+        "\n",
+        "-   The variables in this research question are mostly categorical, the questions themselves and the groupings (income range) are both categorical. The percentage of respondents who fall into each category is a quantitative variable, and there is a time element (years) which can be used as well.\n",
+        "\n",
+        "### Glimpse of data\n"
+      ],
+      "id": "8b7b4e18"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "nutrition = pd.read_csv(\"../data/nutrition.csv\")"
+      ],
+      "id": "1791e8fd",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "nutrition.head()"
+      ],
+      "id": "000a0cce",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "nutrition.info()"
+      ],
+      "id": "9a00ad7a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Analysis plan\n",
+        "\n",
+        "Initial detailed exploration of the data (focusing on the main variables involved) will be followed by data cleaning and some wrangling. Identification of missing observations, data type conversions, etc. will be addressed in these initial steps. The variables involved to answer the largest research question include the \"Question\" and \"Income\" and \"StratificationCategoryId1\" columns, as well as the \"Data_Value\" column and the \"YearStart\" column. New columns that group some of these variables may also be created, such as grouping the \"Income\" values into \"Low Income\" and \"High Income\". At this point there is no plan to bring in and merge any external data.\n",
+        "\n",
+        "Once the data has been wrangled, it can be visualized in an assortment of plots for analysis, and summary statistics by group can be compiled as well. These visualizations and statistics will allow for insight as to how the relationship between income and physical activity compares between groups, as well as over time. From here, additional metrics can be run, plots created, etc. to explore and dive in further."
+      ],
+      "id": "33ae86a1"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/verasview/Library/Python/3.7/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

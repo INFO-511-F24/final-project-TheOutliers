@@ -25,8 +25,6 @@
         "---\n",
         "\n",
         "\n",
-        "\n",
-        "\n",
         "## Introduction\n",
         "\n",
         "Understanding the relationship between socioeconomic status and health behaviors is necessary for addressing disparities in public health outcomes. Our project seeks to understand whether higher-income populations consistently have more time for physical activity than lower income populations using a dataset from the Centers for Disease Control and Prevention (CDC). The dataset is specifically from the Behavioral Risk Factor Surveillance System project and was obtained from phone surveys conducted between 2011 and 2023. The whole dataset offers insights into physical activity, nutrition, and obesity trends among U.S. residents aged 18 and older. For the purpose of this project, we are focusing on the survey questions related to physical activity. The data is stratified by factors such as age, education, gender, income, and race/ethnicity.\n",
@@ -58,7 +56,7 @@
         "-   StratificationCategory1: What variable the data is being stratified by. Depending on the value in this column, it will contain a value in the columns \"Race\", \"Age (years)\", \"Income\", etc. For our research question we are interested in the levels in Income, such as 'Less than \\$15,000', '\\$35,000 - \\$49,999', etc.\n",
         "-   Income: Contains the income level.\n"
       ],
-      "id": "9841f6ca"
+      "id": "ac93b9e9"
     },
     {
       "cell_type": "code",
@@ -68,7 +66,7 @@
         "data = pd.read_csv('/data/Nutrition.csv')\n",
         "data.head()"
       ],
-      "id": "285fc86d",
+      "id": "aa4d08a4",
       "execution_count": null,
       "outputs": []
     },
@@ -78,7 +76,7 @@
       "source": [
         "data.info()"
       ],
-      "id": "50a787dd",
+      "id": "72ab732c",
       "execution_count": null,
       "outputs": []
     },
@@ -86,11 +84,11 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "### Data Cleaning and Wrangling\n",
+        "### Data Cleaning and Wrangling, EDA\n",
         "\n",
         "The columns YearStart and YearEnd always contain the same values so one can be dropped. \n"
       ],
-      "id": "5907e25b"
+      "id": "9a18b90d"
     },
     {
       "cell_type": "code",
@@ -98,7 +96,7 @@
       "source": [
         "data.loc[data['YearStart'] != data['YearEnd']]"
       ],
-      "id": "02a72f04",
+      "id": "535e6564",
       "execution_count": null,
       "outputs": []
     },
@@ -108,7 +106,7 @@
       "source": [
         "activity = data.drop(columns='YearEnd')"
       ],
-      "id": "3c340db7",
+      "id": "098d3831",
       "execution_count": null,
       "outputs": []
     },
@@ -118,7 +116,7 @@
       "source": [
         "We are only interested in the rows containing questions related to physical activity. \n"
       ],
-      "id": "8da0c26f"
+      "id": "4d931084"
     },
     {
       "cell_type": "code",
@@ -129,22 +127,15 @@
         "activity = activity[activity['StratificationCategory1'] == \"Income\"]\n",
         "activity.info()"
       ],
-      "id": "e1e69c71",
+      "id": "37bfd9e3",
       "execution_count": null,
       "outputs": []
-    },
-    {
-      "cell_type": "markdown",
-      "metadata": {},
-      "source": [
-        "#### Dealing with Missing Values\n"
-      ],
-      "id": "74ec6d4e"
     },
     {
       "cell_type": "code",
       "metadata": {},
       "source": [
+        "# looking for missing values\n",
         "cols_with_nulls = []\n",
         "for col in activity.columns:\n",
         "    if activity[col].isna().sum() > 0:\n",
@@ -154,7 +145,97 @@
         "for i in cols_with_nulls:\n",
         "    print(i)"
       ],
-      "id": "025d8683",
+      "id": "d4369e2c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "####  Data_Value_Unit"
+      ],
+      "id": "8c9f0350"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# unique values in Data_Value_Unit\n",
+        "print(['Data_Value_Unit'].unique())"
+      ],
+      "id": "1e7d0a9d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "This column's values seem to not correspond to the name, it looks like it might be a data entry error.\n",
+        "\n",
+        "#### Removing nulls from Data_Value"
+      ],
+      "id": "b9f04355"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# removing null values\n",
+        "activity = activity.dropna(subset=['Data_Value'])"
+      ],
+      "id": "4316f0bd",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "#### Questions"
+      ],
+      "id": "458b17ef"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(questions = activity['Question'].unique())"
+      ],
+      "id": "cbbbeb9e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "#### Encoding income as a numeric value\n",
+        "Treating income as a numeric variable can be useful for regression."
+      ],
+      "id": "275f8c60"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# maps income ranges to numeric values\n",
+        "income_dict = {'Less than $15,000':0,\n",
+        "  '$15,000 - $24,999':15,\n",
+        "  '$25,000 - $34,999':25, \n",
+        "  \"$35,000 - $49,999\":35, \n",
+        "  '$50,000 - $74,999':50, \n",
+        "  '$75,000 or greater':75,\n",
+        "        }\n",
+        "\n",
+        "# removes data not reported\n",
+        "activity_clean = activity_clean.loc[activity_clean['Income'] != 'Data not reported']\n",
+        "\n",
+        "# creates numeric column of income based on mappings\n",
+        "activity_clean['numeric_income'] = activity_clean['Income'].replace(income_dict)"
+      ],
+      "id": "f0e7d8d0",
       "execution_count": null,
       "outputs": []
     }
@@ -164,7 +245,7 @@
       "name": "python3",
       "language": "python",
       "display_name": "Python 3 (ipykernel)",
-      "path": "c:\\Users\\miguel\\anaconda3\\share\\jupyter\\kernels\\python3"
+      "path": "/Users/verasview/Library/Python/3.7/share/jupyter/kernels/python3"
     }
   },
   "nbformat": 4,
