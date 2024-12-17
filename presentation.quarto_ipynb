@@ -23,7 +23,7 @@
         "jupyter: python3\n",
         "---"
       ],
-      "id": "0360da24"
+      "id": "cf4705fa"
     },
     {
       "cell_type": "code",
@@ -109,7 +109,7 @@
         "\n",
         "## Code\n"
       ],
-      "id": "0bca547e"
+      "id": "ec6ebe71"
     },
     {
       "cell_type": "code",
@@ -130,7 +130,7 @@
         "est2 = est.fit()\n",
         "print(est2.summary())"
       ],
-      "id": "081d3b7d",
+      "id": "0e9df272",
       "execution_count": null,
       "outputs": []
     },
@@ -140,7 +140,7 @@
       "source": [
         "## Plots\n"
       ],
-      "id": "1100df0e"
+      "id": "8f18eca2"
     },
     {
       "cell_type": "code",
@@ -150,7 +150,7 @@
         "sns.scatterplot(data=penguins, x='flipper_length_mm', y='body_mass_g', hue='species')\n",
         "plt.show()"
       ],
-      "id": "17621efb",
+      "id": "6bfbe476",
       "execution_count": null,
       "outputs": []
     },
@@ -169,7 +169,7 @@
         "\n",
         "::: {.column width=\"50%\"}"
       ],
-      "id": "9d0a31e1"
+      "id": "3c609440"
     },
     {
       "cell_type": "code",
@@ -182,7 +182,7 @@
         "sns.boxplot(data=penguins, x='bill_length_mm', y='species', hue='species', ax=ax)\n",
         "plt.show()"
       ],
-      "id": "cbbe8620",
+      "id": "90de3dd0",
       "execution_count": null,
       "outputs": []
     },
@@ -199,7 +199,7 @@
         "\n",
         "If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n"
       ],
-      "id": "b0983a14"
+      "id": "a975a7b5"
     },
     {
       "cell_type": "code",
@@ -207,7 +207,7 @@
       "source": [
         "penguins.head().to_html()"
       ],
-      "id": "62b48545",
+      "id": "2565a1a7",
       "execution_count": null,
       "outputs": []
     },
@@ -245,7 +245,7 @@
         "\n",
         "-   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
       ],
-      "id": "212ed9e4"
+      "id": "23e36ad5"
     }
   ],
   "metadata": {
@@ -253,7 +253,7 @@
       "name": "python3",
       "language": "python",
       "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/verasview/Library/Python/3.7/share/jupyter/kernels/python3"
+      "path": "/usr/local/Caskroom/miniconda/base/envs/py38/share/jupyter/kernels/python3"
     }
   },
   "nbformat": 4,

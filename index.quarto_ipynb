@@ -39,7 +39,7 @@
         "\n",
         "Dataset: [Nutrition, Physical Activity, and Obesity - Behavioral Risk Factor Surveillance System](https://chronicdata.cdc.gov/Nutrition-Physical-Activity-and-Obesity/Nutrition-Physical-Activity-and-Obesity-Behavioral/hn4x-zwk7/about_data)\n",
         "\n",
-        "This dataset is hosted by the United States Center for Disease Control and was obtained from the Behavioral Risk Factor Surveillance System, a CDC project consisting of health-related phone surveys. The original dataset consists of 104,000 rows and 33 columns. Descriptions of all columns are available on the link above. Each row represents a combination of a year, state, survey question, and percent of individuals who are positively identified for that question, along with stratification. Data_Value contains the corresponding value collected for each survey question. The categories for stratification are Age Range, Education, Gender, Income, Race/Ethnicity, and Total. This dataset includes observations for the years 2011-2023. Percentages and data are not included for groups with insufficient sample sizes. \n",
+        "This dataset is hosted by the United States Center for Disease Control and was obtained from the Behavioral Risk Factor Surveillance System, a CDC project consisting of health-related phone surveys. The original dataset consists of 104,000 rows and 33 columns. Descriptions of all columns are available on the link above. Each row represents a combination of a year, state, survey question, and percent of individuals who are positively identified for that question, along with stratification. Data_Value contains the corresponding value collected for each survey question. The categories for stratification are Age Range, Education, Gender, Income, Race/Ethnicity, and Total. This dataset includes observations for the years 2011-2023. Percentages and data are not included for groups with insufficient sample sizes.\n",
         "\n",
         "The main columns of interest for our research question are:\n",
         "\n",
@@ -56,7 +56,7 @@
         "-   StratificationCategory1: What variable the data is being stratified by. Depending on the value in this column, it will contain a value in the columns \"Race\", \"Age (years)\", \"Income\", etc. For our research question we are interested in the levels in Income, such as 'Less than \\$15,000', '\\$35,000 - \\$49,999', etc.\n",
         "-   Income: Contains the income level.\n"
       ],
-      "id": "ac93b9e9"
+      "id": "1a1fcf20"
     },
     {
       "cell_type": "code",
@@ -66,7 +66,7 @@
         "data = pd.read_csv('/data/Nutrition.csv')\n",
         "data.head()"
       ],
-      "id": "aa4d08a4",
+      "id": "4136ac3d",
       "execution_count": null,
       "outputs": []
     },
@@ -76,7 +76,7 @@
       "source": [
         "data.info()"
       ],
-      "id": "72ab732c",
+      "id": "a8e4a91b",
       "execution_count": null,
       "outputs": []
     },
@@ -86,9 +86,9 @@
       "source": [
         "### Data Cleaning and Wrangling, EDA\n",
         "\n",
-        "The columns YearStart and YearEnd always contain the same values so one can be dropped. \n"
+        "The columns YearStart and YearEnd always contain the same values so one can be dropped.\n"
       ],
-      "id": "9a18b90d"
+      "id": "066d2244"
     },
     {
       "cell_type": "code",
@@ -96,7 +96,7 @@
       "source": [
         "data.loc[data['YearStart'] != data['YearEnd']]"
       ],
-      "id": "535e6564",
+      "id": "135f2c7c",
       "execution_count": null,
       "outputs": []
     },
@@ -106,7 +106,7 @@
       "source": [
         "activity = data.drop(columns='YearEnd')"
       ],
-      "id": "098d3831",
+      "id": "2f879255",
       "execution_count": null,
       "outputs": []
     },
@@ -114,9 +114,9 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "We are only interested in the rows containing questions related to physical activity. \n"
+        "We are only interested in the rows containing questions related to physical activity.\n"
       ],
-      "id": "4d931084"
+      "id": "f88fb5ba"
     },
     {
       "cell_type": "code",
@@ -127,7 +127,7 @@
         "activity = activity[activity['StratificationCategory1'] == \"Income\"]\n",
         "activity.info()"
       ],
-      "id": "37bfd9e3",
+      "id": "ae4fdfb2",
       "execution_count": null,
       "outputs": []
     },
@@ -145,7 +145,7 @@
         "for i in cols_with_nulls:\n",
         "    print(i)"
       ],
-      "id": "d4369e2c",
+      "id": "ce377e79",
       "execution_count": null,
       "outputs": []
     },
@@ -153,9 +153,9 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "####  Data_Value_Unit"
+        "#### Data_Value_Unit\n"
       ],
-      "id": "8c9f0350"
+      "id": "bf36159f"
     },
     {
       "cell_type": "code",
@@ -164,7 +164,7 @@
         "# unique values in Data_Value_Unit\n",
         "print(['Data_Value_Unit'].unique())"
       ],
-      "id": "1e7d0a9d",
+      "id": "7e8819ca",
       "execution_count": null,
       "outputs": []
     },
@@ -174,9 +174,9 @@
       "source": [
         "This column's values seem to not correspond to the name, it looks like it might be a data entry error.\n",
         "\n",
-        "#### Removing nulls from Data_Value"
+        "#### Removing nulls from Data_Value\n"
       ],
-      "id": "b9f04355"
+      "id": "1ed323cd"
     },
     {
       "cell_type": "code",
@@ -185,7 +185,7 @@
         "# removing null values\n",
         "activity = activity.dropna(subset=['Data_Value'])"
       ],
-      "id": "4316f0bd",
+      "id": "7f87bef4",
       "execution_count": null,
       "outputs": []
     },
@@ -193,9 +193,9 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "#### Questions"
+        "#### Questions\n"
       ],
-      "id": "458b17ef"
+      "id": "b6a9cb1e"
     },
     {
       "cell_type": "code",
@@ -203,7 +203,7 @@
       "source": [
         "print(questions = activity['Question'].unique())"
       ],
-      "id": "cbbbeb9e",
+      "id": "58d4882d",
       "execution_count": null,
       "outputs": []
     },
@@ -212,9 +212,10 @@
       "metadata": {},
       "source": [
         "#### Encoding income as a numeric value\n",
-        "Treating income as a numeric variable can be useful for regression."
+        "\n",
+        "Treating income as a numeric variable can be useful for regression.\n"
       ],
-      "id": "275f8c60"
+      "id": "cf04f8a6"
     },
     {
       "cell_type": "code",
@@ -230,12 +231,12 @@
         "        }\n",
         "\n",
         "# removes data not reported\n",
-        "activity_clean = activity_clean.loc[activity_clean['Income'] != 'Data not reported']\n",
+        "activity_clean = activity.loc[activity['Income'] != 'Data not reported']\n",
         "\n",
         "# creates numeric column of income based on mappings\n",
         "activity_clean['numeric_income'] = activity_clean['Income'].replace(income_dict)"
       ],
-      "id": "f0e7d8d0",
+      "id": "7b3864b8",
       "execution_count": null,
       "outputs": []
     }
@@ -245,7 +246,7 @@
       "name": "python3",
       "language": "python",
       "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/verasview/Library/Python/3.7/share/jupyter/kernels/python3"
+      "path": "/usr/local/Caskroom/miniconda/base/envs/py38/share/jupyter/kernels/python3"
     }
   },
   "nbformat": 4,
