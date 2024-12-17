@@ -175,7 +175,7 @@ plt.figure(figsize=(8,6))
 sns.violinplot(data=noleisuretime_income_national, x="Income", y="Data_Value", palette='viridis')
 plt.xticks(rotation=-20)
 plt.ylabel('Percent')
-plt.title('Percent of Adults Who Do Not Engage in Leisure-Time Activity')
+plt.title('From 2011-Percent of Adults Who Do Not Engage in Leisure-Time Physical Activity')
 plt.text(2.1, -1, 'Source: CDC, Behavioral Risk Factor Surveillance System (2011 - 2023)', fontsize = 8)
 
 plt.show()
