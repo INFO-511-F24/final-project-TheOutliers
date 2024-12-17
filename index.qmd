@@ -134,3 +134,7 @@ activity_clean = activity.loc[activity['Income'] != 'Data not reported']
 # creates numeric column of income based on mappings
 activity_clean['numeric_income'] = activity_clean['Income'].replace(income_dict)
 ```
+
+#### Plotting
+
+First, we plot the responses to our question of interest, "Percent of adults who engage in no leisure-time physical activity" for each income level.
