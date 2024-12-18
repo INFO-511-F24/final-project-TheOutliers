@@ -1,5 +1,5 @@
 ---
-title: "Exploring income and physical activity disparities in the US"
+title: "Exploring Income and Physical Activity Disparities in the US"
 subtitle: "INFO 511 - Fall 2024 - Final Project"
 author: 
   - name: "The Outliers"
@@ -17,6 +17,10 @@ execute:
   echo: false
 jupyter: python3
 ---
+
+## Abstract
+
+In this Final Project for INFO 511: Fundamentals of Data Science, we set out to investigate the potential relationship between physical activity and income level. Through analysis of historical health survey data, we attempt to better understand whether there is a visible trend or relationship between socioeconomic status and leisure-time physical activity in US adults.
 
 ## Introduction
 
