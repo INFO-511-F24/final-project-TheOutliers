@@ -61,7 +61,21 @@ data.info()
 
 ### Data Cleaning and Wrangling, EDA
 
-The columns YearStart and YearEnd always contain the same values so one can be dropped.
+The columns YearStart and YearEnd always contain the same values so one of these columns can be dropped. We are only interested in the rows containing questions related to physical activity. Specifically, we are interested in the rows corresponding to the value in column `Question` that describes: "Percent of adults who engage in no leisure-time physical activity". There were five measurements collected related to physical activity from the phone surveys from which the dataset was derived, though not all of these questions were asked every year. The following statements are how the measurements were described in the `Question` column, but were not the way the questions were presented to participants over the phone. The exact wording of the questions is available on the [Behavioral Risk Factor Surveillance System website](https://www.cdc.gov/brfss/questionnaires/index.htm).
+
+1.  Percent of adults who engage in no leisure-time physical activity
+
+2.  Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)
+
+3.  Percent of adults who engage in muscle-strengthening activities on 2 or more days a week
+
+4.  Percent of adults who achieve at least 300 minutes a week of moderate-intensity aerobic physical activity or 150 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)
+
+5.  Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic physical activity and engage in muscle-strengthening activities on 2 or more days a week
+
+There are multiple columns containing the categories for stratification, such as education levels in the column `Education`. To answer our research question, we are most interested in the `Income` column.
+
+Some of the columns contained missing values. Missing values were dropped for the column `Data_Value` because the percentage values in this column were the focus of our analysis, and we were not interested in the years where this question was not measured. One abnormality of note in this dataset was the column `Data_Value_Unit`. This column was described as containing the unit of measurement for `Data_Value`, but this was not the case as the column contained years followed by a period. This may be indicative of a data entry error.
 
 ```{python}
 data.loc[data['YearStart'] != data['YearEnd']]
@@ -71,8 +85,6 @@ data.loc[data['YearStart'] != data['YearEnd']]
 activity = data.drop(columns='YearEnd')
 ```
 
-We are only interested in the rows containing questions related to physical activity.
-
 ```{python}
 activity = activity.loc[activity['Topic'] == 'Physical Activity - Behavior']
 activity.drop(columns=["Total", "Education", "Age(years)", "Gender", "Race/Ethnicity", "GeoLocation"], inplace=True)
@@ -80,43 +92,23 @@ activity = activity[activity['StratificationCategory1'] == "Income"]
 activity.info()
 ```
 
-```{python}
-# looking for missing values
-cols_with_nulls = []
-for col in activity.columns:
-    if activity[col].isna().sum() > 0:
-        cols_with_nulls.append(col)
-
-print(f"Columns with 1 or more missing values:")
-for i in cols_with_nulls:
-    print(i)
-```
-
-#### Data_Value_Unit
-
-```{python}
-# unique values in Data_Value_Unit
-print(['Data_Value_Unit'].unique())
-```
-
-This column's values seem to not correspond to the name, it looks like it might be a data entry error.
-
-#### Removing nulls from Data_Value
-
-```{python}
-# removing null values
-activity = activity.dropna(subset=['Data_Value'])
-```
-
-#### Questions
-
-```{python}
-print(questions = activity['Question'].unique())
-```
-
 #### Encoding income as a numeric value
 
-Treating income as a numeric variable can be useful for regression.
+The income level of the participants is encoded in the dataset as a string value. The income levels were placed into the following bins:
+
+-   Less than \$15,000
+
+-   \$15,000 - \$24,999
+
+-   \$25,000 - \$34,999
+
+-   \$35,000 - \$49,999
+
+-   \$50,000 - \$74,999
+
+-   \$75,000 or greater
+
+This can be used as a nominal ordinal variable, but to do linear regression this must be converted to a numeric variable. For this project, we encoded the income as the first number in the range, such as 15,000 for \$15,000 - \$24,999.
 
 ```{python}
 # maps income ranges to numeric values
