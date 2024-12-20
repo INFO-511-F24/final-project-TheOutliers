@@ -1,5 +1,5 @@
 ---
-title: "Exploring Income and Physical Activity Disparities in the US"
+title: "Exploring income and physical activity disparities in the US"
 subtitle: "INFO 511 - Fall 2024 - Final Project"
 author: 
   - name: "The Outliers"
@@ -17,7 +17,6 @@ execute:
   echo: false
 jupyter: python3
 ---
-
 ## Abstract
 
 In this Final Project for INFO 511: Fundamentals of Data Science, we set out to investigate the potential relationship between physical activity and income level. Through analysis of historical health survey data, we attempt to better understand whether there is a visible trend or relationship between socioeconomic status and leisure-time physical activity in US adults.
@@ -196,7 +195,8 @@ activity_clean['Question'].map(question_mapping)
 
 national = activity_clean[activity_clean['LocationDesc'] == 'National']
 
-g = sns.FacetGrid(national, col="Short_Question", col_wrap=3, aspect=1.5)
+g = sns.FacetGrid(national, col="Short_Question", hue='Income', hue_order=order, col_wrap=3, aspect=1.5, palette='viridis')
+g.map(sns.regplot, 'YearStart', 'Data_Value', )
 
 # Rotate the x-axis labels for better readability
 for ax in g.axes.flat:
@@ -214,5 +214,31 @@ g.fig.suptitle('Percent of Population for Each Exercise Class Over Years')
 # Adding the legend
 g.add_legend(title='Income Bracket')
 # Show the plot
+plt.show()
+```
+
+```{python}
+from sklearn.linear_model import LinearRegression
+
+sns.set_style(style='whitegrid')
+sns.scatterplot(data=noleisuretime, x='numeric_income', y='Data_Value', alpha=0.1)
+
+model = LinearRegression()
+x = no_leisure_time[['numeric_income']]
+y = no_leisure_time['Data_Value']
+model.fit(x, y)
+
+slope = model.coef_[0]
+intercept = model.intercept_
+r_squared = model.score(x, y)
+
+x_range = np.linspace(x.min(), x.max(), 100)  # Range of x values
+y_pred = model.predict(x_range)  # Predicted y values
+plt.plot(x_range, y_pred, color='red', label=f"y = {slope:.2f}x + {intercept:.2f}, $R^2$ = {r_squared:.2f}")
+
+plt.title("Percent of sample population who engage in no leisure time activity", fontsize=14)
+plt.xlabel("Minimum Income in Range (i.e. 15,000 for \$15,000 - \$24,999)", fontsize=12)
+plt.ylabel("Percent of Sample Population", fontsize=12)
+plt.legend()
 plt.show()
 ```
