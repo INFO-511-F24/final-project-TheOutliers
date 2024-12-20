@@ -55,7 +55,7 @@ The main columns of interest for our research question are:
 
 ```{python}
 import pandas as pd
-data = pd.read_csv('/data/Nutrition.csv')
+data = pd.read_csv('data/Nutrition.csv')
 data.head()
 ```
 
@@ -149,6 +149,11 @@ noleisuretime_income_national = noleisuretime_income[noleisuretime_income['Locat
 ```
 
 ```{python}
+import seaborn as sns
+import matplotlib.pyplot as plt
+```
+
+```{python}
 #manual order for income levels
 order = ['Less than $15,000',
   '$15,000 - $24,999',
@@ -176,3 +181,38 @@ plt.show()
 This violin plot shows the distribution and density of the data for each income group, with the y-axis representing the percentage of adults not engaging in physical activity and the x-axis denoting income categories. The lowest income category, "Less than \$15,000", has the highest percentage of adults who do not engage in any leisure-time physical activity, and the opposite is true for the highest income category, "\$75,000 or greater", which has the most adults who do engage in leisure-time physical activity.
 
 This plot provides a general overview of the trends in the physical activity of American adults as related to income. Further analysis of this dataset shows the same association between higher income and higher percentages of adults who engage in physical activity.
+
+```{python}
+question_mapping = {
+    'Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic physical activity and engage in muscle-strengthening activities on 2 or more days a week': 'Moderate Exercise & Muscle Strengthening',
+    'Percent of adults who engage in muscle-strengthening activities on 2 or more days a week': 'Muscle Strengthening',
+    'Percent of adults who engage in no leisure-time physical activity': 'No Leisure-time Physical Activity',
+    'Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)': 'Moderate Exercise',
+    'Percent of adults who achieve at least 300 minutes a week of moderate-intensity aerobic physical activity or 150 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)': 'Intense exercise'
+}
+
+activity_clean['Short_Question'] = activity_clean['Question'].map(question_mapping)
+activity_clean['Question'].map(question_mapping)
+
+national = activity_clean[activity_clean['LocationDesc'] == 'National']
+
+g = sns.FacetGrid(national, col="Short_Question", col_wrap=3, aspect=1.5)
+
+# Rotate the x-axis labels for better readability
+for ax in g.axes.flat:
+    for label in ax.get_xticklabels():
+        label.set_rotation(45)
+
+# Enhancing the plot with titles and labels
+g.set_titles('{col_name}')  # Set titles to be each question
+g.set_axis_labels('Year', 'Percent of Pop')  # Set common axis labels
+
+# Adjust the top space to accommodate title
+plt.subplots_adjust(top=0.9)
+g.fig.suptitle('Percent of Population for Each Exercise Class Over Years')
+
+# Adding the legend
+g.add_legend(title='Income Bracket')
+# Show the plot
+plt.show()
+```
