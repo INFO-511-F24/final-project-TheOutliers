@@ -40,27 +40,18 @@ This dataset is hosted by the United States Center for Disease Control and was o
 
 The main columns of interest for our research question are:
 
--   YearStart and YearEnd: The year the data was collected. These are the same for every row.
--   LocationAbbr and LocationDesc: Contains the abbreviation for the data where the data was collected.
--   Topic: Contains the topic the variable being measured falls into. For our research question, we are interested in the topic "Physical Activity - Behavior"
--   Question: What is being measured. Within "Physical Activity - Behavior" there are 5 questions:
-    -   Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic physical activity and engage in muscle-strengthening activities on 2 or more days a week
-    -   Percent of adults who engage in no leisure-time physical activity
-    -   Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)
-    -   Percent of adults who engage in muscle-strengthening activities on 2 or more days a week
-    -   Percent of adults who achieve at least 300 minutes a week of moderate-intensity aerobic physical activity or 150 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)
--   Data_Value: The value being measured by the survey, in this case for these specific questions it will be a percentage.
--   StratificationCategory1: What variable the data is being stratified by. Depending on the value in this column, it will contain a value in the columns "Race", "Age (years)", "Income", etc. For our research question we are interested in the levels in Income, such as 'Less than \$15,000', '\$35,000 - \$49,999', etc.
--   Income: Contains the income level.
+-   **YearStart and YearEnd:** The year the data was collected. These are the same for every row.
+-   **LocationAbbr and LocationDesc**: Contains the abbreviation for the data where the data was collected.
+-   **Topic**: Contains the topic the variable being measured falls into. For our research question, we are interested in the topic "Physical Activity - Behavior"
+-   **Question:** What is being measured. Within "Physical Activity - Behavior" there are 5 questions, which are listed in the "Data Cleaning and Wrangling, EDA" section below.
+-   **Data_Value**: The value being measured by the survey, in this case for these specific questions it will be a percentage.
+-   **StratificationCategory1:** What variable the data is being stratified by. Depending on the value in this column, it will contain a value in the columns "Race", "Age (years)", "Income", etc. For our research question we are interested in the levels in the Income column.
+-   **Income:** Contains the income level as a string representing an income range, such as 'Less than \$15,000', '\$35,000 - \$49,999', etc.
 
 ```{python}
 import pandas as pd
 data = pd.read_csv('data/Nutrition.csv')
-data.head()
-```
-
-```{python}
-data.info()
+# data.head()
 ```
 
 ### Data Cleaning and Wrangling, EDA
@@ -82,7 +73,7 @@ There are multiple columns containing the categories for stratification, such as
 Some of the columns contained missing values. Missing values were dropped for the column `Data_Value` because the percentage values in this column were the focus of our analysis, and we were not interested in the years where this question was not measured. One abnormality of note in this dataset was the column `Data_Value_Unit`. This column was described as containing the unit of measurement for `Data_Value`, but this was not the case as the column contained years followed by a period. This may be indicative of a data entry error.
 
 ```{python}
-data.loc[data['YearStart'] != data['YearEnd']]
+# data.loc[data['YearStart'] != data['YearEnd']]
 ```
 
 ```{python}
@@ -92,8 +83,9 @@ activity = data.drop(columns='YearEnd')
 ```{python}
 activity = activity.loc[activity['Topic'] == 'Physical Activity - Behavior']
 activity.drop(columns=["Total", "Education", "Age(years)", "Gender", "Race/Ethnicity", "GeoLocation"], inplace=True)
+activity.dropna(subset=['Data_Value'], inplace=True)
 activity = activity[activity['StratificationCategory1'] == "Income"]
-activity.info()
+# activity.info()
 ```
 
 #### Encoding income as a numeric value
@@ -117,11 +109,11 @@ This can be used as a nominal ordinal variable, but to do linear regression this
 ```{python}
 # maps income ranges to numeric values
 income_dict = {'Less than $15,000':0,
-  '$15,000 - $24,999':15,
-  '$25,000 - $34,999':25,
-  "$35,000 - $49,999":35,
-  '$50,000 - $74,999':50,
-  '$75,000 or greater':75,
+  '$15,000 - $24,999':15000,
+  '$25,000 - $34,999':25000,
+  "$35,000 - $49,999":35000,
+  '$50,000 - $74,999':50000,
+  '$75,000 or greater':75000,
         }
 
 # removes data not reported
@@ -134,6 +126,8 @@ activity_clean['numeric_income'] = activity_clean['Income'].replace(income_dict)
 ## Visualization of Dataset
 
 ### Overview of National Levels of Leisure-Time Physical Activity
+
+Figure 1: Percent of US adults who do not engage in leisure-time physical activity, from 2011-2023
 
 ```{python}
 # onyl include question of interest
@@ -172,7 +166,7 @@ plt.figure(figsize=(8,6))
 sns.violinplot(data=noleisuretime_income_national, x="Income", y="Data_Value", palette='viridis')
 plt.xticks(rotation=-20)
 plt.ylabel('Percent')
-plt.title('From 2011-Percent of US Adults Who Do Not Engage in Leisure-Time Physical Activity')
+plt.title('Percent of US Adults Who Do Not Engage in Leisure-Time Physical Activity')
 plt.text(2.1, -1, 'Source: CDC, Behavioral Risk Factor Surveillance System (2011 - 2023)', fontsize = 8)
 
 plt.show()
@@ -181,6 +175,8 @@ plt.show()
 This violin plot shows the distribution and density of the data for each income group, with the y-axis representing the percentage of adults not engaging in physical activity and the x-axis denoting income categories. The lowest income category, "Less than \$15,000", has the highest percentage of adults who do not engage in any leisure-time physical activity, and the opposite is true for the highest income category, "\$75,000 or greater", which has the most adults who do engage in leisure-time physical activity.
 
 This plot provides a general overview of the trends in the physical activity of American adults as related to income. Further analysis of this dataset shows the same association between higher income and higher percentages of adults who engage in physical activity.
+
+Figure 2: Percent of U.S. national population engaging in each exercise class over years
 
 ```{python}
 question_mapping = {
@@ -218,17 +214,18 @@ g.add_legend(title='Income Bracket')
 plt.show()
 ```
 
-And while we were focusing on leisure-time physical activity, we did want to assess whether that disparity carried through the other questions about exercise. This facet grid helps compare the disparities between income groups for all exercise categories. On the far left you can see that there is a large disparity between the lowest and highest income bracket when it comes to no leisure time physical activity. However, that gap starts to shrink as we get to different types of exercise.
+Our team also wanted to assess whether the income and activity disparity carried through the other questions about exercise in the survey. This facet grid helps compare the disparities between income groups for all exercise categories measured in the survey. On the far left, you can see that there is a large disparity between the lowest and highest income bracket when it comes to no leisure time physical activity. However, that gap starts to shrink as we get to different types of exercise.
 
-It is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity, which may be one reason the disparity begins to shrink so drastically in other exercise categories.
+It is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity. This may be one reason the disparity begins to shrink so drastically in other exercise categories.
+
+Figure 3: Percent of sample population who engage in no leisure time activity versus income levels
 
 ```{python}
-noleisuretime.dropna(subset=['Data_Value'],inplace=True)
 from sklearn.linear_model import LinearRegression
 import numpy as np
 
 sns.set_style(style='whitegrid')
-sns.scatterplot(data=noleisuretime, x='numeric_income', y='Data_Value', alpha=0.1)
+sns.scatterplot(data=noleisuretime, x='numeric_income', y='Data_Value', alpha=0.1, color='#404788FF')
 
 model = LinearRegression()
 x = noleisuretime[['numeric_income']]
@@ -241,27 +238,29 @@ r_squared = model.score(x, y)
 
 x_range = np.linspace(x.min(), x.max(), 100)  # Range of x values
 y_pred = model.predict(x_range)  # Predicted y values
-plt.plot(x_range, y_pred, color='red', label=f"y = {slope:.2f}x + {intercept:.2f}, $R^2$ = {r_squared:.2f}")
+plt.plot(x_range, y_pred, color='#29af7fff', label=f"y = {slope:.2f}x + {intercept:.2f}, $R^2$ = {r_squared:.2f}")
 
-plt.title("Percent of sample population who engage in no leisure time activity", fontsize=14)
-plt.xlabel("Minimum Income in Range (i.e. 15,000 for \$15,000 - \$24,999)", fontsize=12)
+plt.title("Percent of sample population who engage in no leisure time activity\n versus income levels", fontsize=14)
+plt.xlabel("Minimum Income in Range \n(i.e. 15,000 for \$15,000 - \$24,999)", fontsize=12)
 plt.ylabel("Percent of Sample Population", fontsize=12)
 plt.legend()
 plt.show()
 ```
 
-This scatter plot shows the percent of the sample population who does not engage in leisure time activity on the Y-axis graphed with their income. On the X-axis the income is encoded as the minimum income in the range. As a numeric value, so it can be used as a numeric variable for linear regression. The linear regression line shows a downward trend with percent engaging in no leisure time, activity being associated with lower incomes. The R squared value of 0 point 7 shows a moderately strong correlation between the percent and income.
+This scatter plot shows the percent of the sample population who does not engage in leisure time activity on the Y-axis, and their income on the X-axis. The income is encoded as the minimum income in the range as a numeric value, so it can be used as a numeric variable for linear regression.
+
+The linear regression line shows a downward trend, with lower percentages engaging in no leisure time activity associated with lower incomes. The R squared value of 0.7 shows a moderately strong correlation between the percentage and income.
 
 # Results
 
-According to our analysis the lowest income bracket population had the highest percentage of people who engaged in no leisure-time physical activity. The disparity between the lowest and highest income bracket populations was around 25 percentage points. The regression analysis demonstrates a strong correlation between income and the percent of a population who engage in no leisure-time physical activity.
+According to our analysis, the lowest income bracket population had the highest percentage of people who engaged in no leisure-time physical activity. The disparity between the lowest and highest income bracket populations was around 25 percentage points. The regression analysis demonstrates a strong correlation between income and the percent of a population who engage in no leisure-time physical activity.
 
 That disparity starts to shrink as we get to different types of exercise, but a gap of about 10 percentage points exists in most other exercise categories.
 
 # Discussion
 
-Our work, supports the hypothesis we have that people with higher incomes have generally more time to engage in exercise in their free time. While the percent of those not engaging in physical activity has increased in the past 10 years, the lowest income brackets continue to have the largest percentage of their population who engage in no leisure-time physical activity.
+Our work supports the hypothesis we have that people with higher incomes have generally more time to engage in exercise in their free time. While the percent of those not engaging in physical activity has increased in the past 10 years, the lowest income brackets continue to have the largest percentage of their population who engage in no leisure-time physical activity.
 
-While the disparity in other exercises categories was less than for no leisure-time physical activity, it is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity, which may be one reason the disparity begins to shrink so drastically in other exercise categories.
+While the disparity in other exercises categories was less than for no leisure-time physical activity, it is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity. This may be one reason the disparity begins to shrink so drastically in other exercise categories.
 
-To further investigate the disparities in physical activity. Using this data set, we could further break down the data by other demographics, such as age, ethnicity, education, and location in future work. With this data set, it would also be insightful to address some of the problems with this data, such as certain questions being missing for certain years and insufficient sample sizes for some rows in the data set.
+To further investigate the disparities in physical activity using this data set, we could further break down the data by other demographics, such as age, ethnicity, education, and location in future work. With this data set, it would also be insightful to address some of the problems with this data, such as certain questions being missing for certain years and insufficient sample sizes for some rows.
