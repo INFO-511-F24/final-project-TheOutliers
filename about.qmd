@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-This project was developed by **\[The Outliers\]** For [INFO 511 - Fundamentals of Data Science](https://datasciaz.netlify.app/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
+This project was developed by **The Outliers** For [INFO 511 - Fundamentals of Data Science](https://datasciaz.netlify.app/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
 
 -   Sarah Gilbride: Master's student in Data Science program, based in Phoenix, AZ
 
