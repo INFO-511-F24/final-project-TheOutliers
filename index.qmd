@@ -223,16 +223,14 @@ And while we were focusing on leisure-time physical activity, we did want to ass
 It is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity, which may be one reason the disparity begins to shrink so drastically in other exercise categories.
 
 ```{python}
-no_leisure_time = activity_clean[activity_clean['Question'] == 'Percent of adults who engage in no leisure-time physical activity']
-
 from sklearn.linear_model import LinearRegression
 
 sns.set_style(style='whitegrid')
 sns.scatterplot(data=noleisuretime, x='numeric_income', y='Data_Value', alpha=0.1)
 
 model = LinearRegression()
-x = no_leisure_time[['numeric_income']]
-y = no_leisure_time['Data_Value']
+x = noleisuretime[['numeric_income']]
+y = noleisuretime['Data_Value']
 model.fit(x, y)
 
 slope = model.coef_[0]
@@ -251,3 +249,17 @@ plt.show()
 ```
 
 This scatter plot shows the percent of the sample population who does not engage in leisure time activity on the Y-axis graphed with their income. On the X-axis the income is encoded as the minimum income in the range. As a numeric value, so it can be used as a numeric variable for linear regression. The linear regression line shows a downward trend with percent engaging in no leisure time, activity being associated with lower incomes. The R squared value of 0 point 7 shows a moderately strong correlation between the percent and income.
+
+# Results
+
+According to our analysis the lowest income bracket population had the highest percentage of people who engaged in no leisure-time physical activity. The disparity between the lowest and highest income bracket populations was around 25 percentage points. The regression analysis demonstrates a strong correlation between income and the percent of a population who engage in no leisure-time physical activity.
+
+That disparity starts to shrink as we get to different types of exercise, but a gap of about 10 percentage points exists in most other exercise categories.
+
+# Discussion
+
+Our work, supports the hypothesis we have that people with higher incomes have generally more time to engage in exercise in their free time. While the percent of those not engaging in physical activity has increased in the past 10 years, the lowest income brackets continue to have the largest percentage of their population who engage in no leisure-time physical activity.
+
+While the disparity in other exercises categories was less than for no leisure-time physical activity, it is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity, which may be one reason the disparity begins to shrink so drastically in other exercise categories.
+
+To further investigate the disparities in physical activity. Using this data set, we could further break down the data by other demographics, such as age, ethnicity, education, and location in future work. With this data set, it would also be insightful to address some of the problems with this data, such as certain questions being missing for certain years and insufficient sample sizes for some rows in the data set.
