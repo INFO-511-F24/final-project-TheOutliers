@@ -7,7 +7,7 @@
         "---\n",
         "title: \"Exploring income and physical activity disparities in the US\"\n",
         "subtitle: \"INFO 511 - Fall 2024 - Final Project\"\n",
-        "author: \n",
+        "author:\n",
         "  - name: \"The Outliers\"\n",
         "    affiliations:\n",
         "      - name: \"School of Information, University of Arizona\"\n",
@@ -23,7 +23,6 @@
         "  echo: false\n",
         "jupyter: python3\n",
         "---\n",
-        "\n",
         "\n",
         "\n",
         "\n",
@@ -63,7 +62,7 @@
         "-   StratificationCategory1: What variable the data is being stratified by. Depending on the value in this column, it will contain a value in the columns \"Race\", \"Age (years)\", \"Income\", etc. For our research question we are interested in the levels in Income, such as 'Less than \\$15,000', '\\$35,000 - \\$49,999', etc.\n",
         "-   Income: Contains the income level.\n"
       ],
-      "id": "2c519857"
+      "id": "89097899"
     },
     {
       "cell_type": "code",
@@ -73,7 +72,7 @@
         "data = pd.read_csv('data/Nutrition.csv')\n",
         "data.head()"
       ],
-      "id": "9880c793",
+      "id": "b8853e73",
       "execution_count": null,
       "outputs": []
     },
@@ -83,7 +82,7 @@
       "source": [
         "data.info()"
       ],
-      "id": "b727c792",
+      "id": "2aca990f",
       "execution_count": null,
       "outputs": []
     },
@@ -109,7 +108,7 @@
         "\n",
         "Some of the columns contained missing values. Missing values were dropped for the column `Data_Value` because the percentage values in this column were the focus of our analysis, and we were not interested in the years where this question was not measured. One abnormality of note in this dataset was the column `Data_Value_Unit`. This column was described as containing the unit of measurement for `Data_Value`, but this was not the case as the column contained years followed by a period. This may be indicative of a data entry error.\n"
       ],
-      "id": "8ae5b4d6"
+      "id": "927f16e9"
     },
     {
       "cell_type": "code",
@@ -117,7 +116,7 @@
       "source": [
         "data.loc[data['YearStart'] != data['YearEnd']]"
       ],
-      "id": "3b9affc3",
+      "id": "ddf910d2",
       "execution_count": null,
       "outputs": []
     },
@@ -127,7 +126,7 @@
       "source": [
         "activity = data.drop(columns='YearEnd')"
       ],
-      "id": "7e6967f2",
+      "id": "412b690b",
       "execution_count": null,
       "outputs": []
     },
@@ -140,7 +139,7 @@
         "activity = activity[activity['StratificationCategory1'] == \"Income\"]\n",
         "activity.info()"
       ],
-      "id": "62e1eaa2",
+      "id": "68afe31d",
       "execution_count": null,
       "outputs": []
     },
@@ -166,7 +165,7 @@
         "\n",
         "This can be used as a nominal ordinal variable, but to do linear regression this must be converted to a numeric variable. For this project, we encoded the income as the first number in the range, such as 15,000 for \\$15,000 - \\$24,999.\n"
       ],
-      "id": "935f1104"
+      "id": "f594188d"
     },
     {
       "cell_type": "code",
@@ -175,9 +174,9 @@
         "# maps income ranges to numeric values\n",
         "income_dict = {'Less than $15,000':0,\n",
         "  '$15,000 - $24,999':15,\n",
-        "  '$25,000 - $34,999':25, \n",
-        "  \"$35,000 - $49,999\":35, \n",
-        "  '$50,000 - $74,999':50, \n",
+        "  '$25,000 - $34,999':25,\n",
+        "  \"$35,000 - $49,999\":35,\n",
+        "  '$50,000 - $74,999':50,\n",
         "  '$75,000 or greater':75,\n",
         "        }\n",
         "\n",
@@ -187,7 +186,7 @@
         "# creates numeric column of income based on mappings\n",
         "activity_clean['numeric_income'] = activity_clean['Income'].replace(income_dict)"
       ],
-      "id": "8e685837",
+      "id": "a610b4a9",
       "execution_count": null,
       "outputs": []
     },
@@ -199,7 +198,7 @@
         "\n",
         "### Overview of National Levels of Leisure-Time Physical Activity\n"
       ],
-      "id": "b13002b0"
+      "id": "96caf044"
     },
     {
       "cell_type": "code",
@@ -214,7 +213,7 @@
         "# Only include national data, disregarding results from individual states\n",
         "noleisuretime_income_national = noleisuretime_income[noleisuretime_income['LocationDesc']==\"National\"]\n"
       ],
-      "id": "7397ab7b",
+      "id": "fb3e7bed",
       "execution_count": null,
       "outputs": []
     },
@@ -225,7 +224,7 @@
         "import seaborn as sns\n",
         "import matplotlib.pyplot as plt"
       ],
-      "id": "7cc01c36",
+      "id": "e0261b0b",
       "execution_count": null,
       "outputs": []
     },
@@ -236,12 +235,12 @@
         "#manual order for income levels\n",
         "order = ['Less than $15,000',\n",
         "  '$15,000 - $24,999',\n",
-        "  '$25,000 - $34,999', \n",
-        "  \"$35,000 - $49,999\", \n",
-        "  '$50,000 - $74,999', \n",
+        "  '$25,000 - $34,999',\n",
+        "  \"$35,000 - $49,999\",\n",
+        "  '$50,000 - $74,999',\n",
         "  '$75,000 or greater']\n",
         "\n",
-        "# order data \n",
+        "# order data\n",
         "noleisuretime_income_national['Income'] = pd.Categorical(noleisuretime_income_national['Income'],categories=order, ordered=True)\n",
         "\n",
         "# plot\n",
@@ -256,7 +255,7 @@
         "\n",
         "plt.show()"
       ],
-      "id": "8e3c29c3",
+      "id": "c39f89a2",
       "execution_count": null,
       "outputs": []
     },
@@ -268,7 +267,7 @@
         "\n",
         "This plot provides a general overview of the trends in the physical activity of American adults as related to income. Further analysis of this dataset shows the same association between higher income and higher percentages of adults who engage in physical activity.\n"
       ],
-      "id": "6d2f453a"
+      "id": "cfa9a64e"
     },
     {
       "cell_type": "code",
@@ -308,7 +307,7 @@
         "# Show the plot\n",
         "plt.show()"
       ],
-      "id": "17ad01f2",
+      "id": "529de440",
       "execution_count": null,
       "outputs": []
     },
@@ -320,7 +319,7 @@
         "\n",
         "It is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity, which may be one reason the disparity begins to shrink so drastically in other exercise categories.\n"
       ],
-      "id": "c68929be"
+      "id": "056c2e8c"
     },
     {
       "cell_type": "code",
@@ -332,8 +331,8 @@
         "sns.scatterplot(data=noleisuretime, x='numeric_income', y='Data_Value', alpha=0.1)\n",
         "\n",
         "model = LinearRegression()\n",
-        "x = no_leisure_time[['numeric_income']]\n",
-        "y = no_leisure_time['Data_Value']\n",
+        "x = noleisuretime['numeric_income']\n",
+        "y = noleisuretime['Data_Value']\n",
         "model.fit(x, y)\n",
         "\n",
         "slope = model.coef_[0]\n",
@@ -350,7 +349,7 @@
         "plt.legend()\n",
         "plt.show()"
       ],
-      "id": "355df37b",
+      "id": "ff5c13ed",
       "execution_count": null,
       "outputs": []
     },
@@ -358,9 +357,23 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "This scatter plot shows the percent of the sample population who does not engage in leisure time activity on the Y-axis graphed with their income. On the X-axis the income is encoded as the minimum income in the range. As a numeric value, so it can be used as a numeric variable for linear regression. The linear regression line shows a downward trend with percent engaging in no leisure time, activity being associated with lower incomes. The R squared value of 0 point 7 shows a moderately strong correlation between the percent and income."
+        "This scatter plot shows the percent of the sample population who does not engage in leisure time activity on the Y-axis graphed with their income. On the X-axis the income is encoded as the minimum income in the range. As a numeric value, so it can be used as a numeric variable for linear regression. The linear regression line shows a downward trend with percent engaging in no leisure time, activity being associated with lower incomes. The R squared value of 0 point 7 shows a moderately strong correlation between the percent and income.\n",
+        "\n",
+        "# Results\n",
+        "\n",
+        "According to our analysis the lowest income bracket population had the highest percentage of people who engaged in no leisure-time physical activity. The disparity between the lowest and highest income bracket populations was around 25 percentage points. The regression analysis demonstrates a strong correlation between income and the percent of a population who engage in no leisure-time physical activity.\n",
+        "\n",
+        "That disparity starts to shrink as we get to different types of exercise, but a gap of about 10 percentage points exists in most other exercise categories.\n",
+        "\n",
+        "# Discussion\n",
+        "\n",
+        "Our work, supports the hypothesis we have that people with higher incomes have generally more time to engage in exercise in their free time. While the percent of those not engaging in physical activity has increased in the past 10 years, the lowest income brackets continue to have the largest percentage of their population who engage in no leisure-time physical activity.\n",
+        "\n",
+        "While the disparity in other exercises categories was less than for no leisure-time physical activity, it is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity, which may be one reason the disparity begins to shrink so drastically in other exercise categories.\n",
+        "\n",
+        "To further investigate the disparities in physical activity. Using this data set, we could further break down the data by other demographics, such as age, ethnicity, education, and location in future work. With this data set, it would also be insightful to address some of the problems with this data, such as certain questions being missing for certain years and insufficient sample sizes for some rows in the data set."
       ],
-      "id": "13d3875d"
+      "id": "8e988dc6"
     }
   ],
   "metadata": {

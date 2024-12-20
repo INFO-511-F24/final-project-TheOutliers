@@ -1,7 +1,7 @@
 ---
 title: "Exploring income and physical activity disparities in the US"
 subtitle: "INFO 511 - Fall 2024 - Final Project"
-author: 
+author:
   - name: "The Outliers"
     affiliations:
       - name: "School of Information, University of Arizona"
@@ -118,9 +118,9 @@ This can be used as a nominal ordinal variable, but to do linear regression this
 # maps income ranges to numeric values
 income_dict = {'Less than $15,000':0,
   '$15,000 - $24,999':15,
-  '$25,000 - $34,999':25, 
-  "$35,000 - $49,999":35, 
-  '$50,000 - $74,999':50, 
+  '$25,000 - $34,999':25,
+  "$35,000 - $49,999":35,
+  '$50,000 - $74,999':50,
   '$75,000 or greater':75,
         }
 
@@ -157,12 +157,12 @@ import matplotlib.pyplot as plt
 #manual order for income levels
 order = ['Less than $15,000',
   '$15,000 - $24,999',
-  '$25,000 - $34,999', 
-  "$35,000 - $49,999", 
-  '$50,000 - $74,999', 
+  '$25,000 - $34,999',
+  "$35,000 - $49,999",
+  '$50,000 - $74,999',
   '$75,000 or greater']
 
-# order data 
+# order data
 noleisuretime_income_national['Income'] = pd.Categorical(noleisuretime_income_national['Income'],categories=order, ordered=True)
 
 # plot
@@ -229,7 +229,7 @@ sns.set_style(style='whitegrid')
 sns.scatterplot(data=noleisuretime, x='numeric_income', y='Data_Value', alpha=0.1)
 
 model = LinearRegression()
-x = noleisuretime[['numeric_income']]
+x = noleisuretime['numeric_income']
 y = noleisuretime['Data_Value']
 model.fit(x, y)
 
