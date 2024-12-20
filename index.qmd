@@ -223,6 +223,8 @@ And while we were focusing on leisure-time physical activity, we did want to ass
 It is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity, which may be one reason the disparity begins to shrink so drastically in other exercise categories.
 
 ```{python}
+no_leisure_time = activity_clean[activity_clean['Question'] == 'Percent of adults who engage in no leisure-time physical activity']
+
 from sklearn.linear_model import LinearRegression
 
 sns.set_style(style='whitegrid')

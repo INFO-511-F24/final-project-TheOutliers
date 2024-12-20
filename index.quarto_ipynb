@@ -24,6 +24,10 @@
         "jupyter: python3\n",
         "---\n",
         "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
         "## Abstract\n",
         "\n",
         "In this Final Project for INFO 511: Fundamentals of Data Science, we set out to investigate the potential relationship between physical activity and income level. Through analysis of historical health survey data, we attempt to better understand whether there is a visible trend or relationship between socioeconomic status and leisure-time physical activity in US adults.\n",
@@ -59,7 +63,7 @@
         "-   StratificationCategory1: What variable the data is being stratified by. Depending on the value in this column, it will contain a value in the columns \"Race\", \"Age (years)\", \"Income\", etc. For our research question we are interested in the levels in Income, such as 'Less than \\$15,000', '\\$35,000 - \\$49,999', etc.\n",
         "-   Income: Contains the income level.\n"
       ],
-      "id": "010e7c92"
+      "id": "2c519857"
     },
     {
       "cell_type": "code",
@@ -69,7 +73,7 @@
         "data = pd.read_csv('data/Nutrition.csv')\n",
         "data.head()"
       ],
-      "id": "d007bf69",
+      "id": "9880c793",
       "execution_count": null,
       "outputs": []
     },
@@ -79,7 +83,7 @@
       "source": [
         "data.info()"
       ],
-      "id": "f9fa0fca",
+      "id": "b727c792",
       "execution_count": null,
       "outputs": []
     },
@@ -105,7 +109,7 @@
         "\n",
         "Some of the columns contained missing values. Missing values were dropped for the column `Data_Value` because the percentage values in this column were the focus of our analysis, and we were not interested in the years where this question was not measured. One abnormality of note in this dataset was the column `Data_Value_Unit`. This column was described as containing the unit of measurement for `Data_Value`, but this was not the case as the column contained years followed by a period. This may be indicative of a data entry error.\n"
       ],
-      "id": "50509f48"
+      "id": "8ae5b4d6"
     },
     {
       "cell_type": "code",
@@ -113,7 +117,7 @@
       "source": [
         "data.loc[data['YearStart'] != data['YearEnd']]"
       ],
-      "id": "f178820b",
+      "id": "3b9affc3",
       "execution_count": null,
       "outputs": []
     },
@@ -123,7 +127,7 @@
       "source": [
         "activity = data.drop(columns='YearEnd')"
       ],
-      "id": "b3c420e9",
+      "id": "7e6967f2",
       "execution_count": null,
       "outputs": []
     },
@@ -136,7 +140,7 @@
         "activity = activity[activity['StratificationCategory1'] == \"Income\"]\n",
         "activity.info()"
       ],
-      "id": "33701e52",
+      "id": "62e1eaa2",
       "execution_count": null,
       "outputs": []
     },
@@ -162,7 +166,7 @@
         "\n",
         "This can be used as a nominal ordinal variable, but to do linear regression this must be converted to a numeric variable. For this project, we encoded the income as the first number in the range, such as 15,000 for \\$15,000 - \\$24,999.\n"
       ],
-      "id": "480c8d73"
+      "id": "935f1104"
     },
     {
       "cell_type": "code",
@@ -183,7 +187,7 @@
         "# creates numeric column of income based on mappings\n",
         "activity_clean['numeric_income'] = activity_clean['Income'].replace(income_dict)"
       ],
-      "id": "f54ac9d6",
+      "id": "8e685837",
       "execution_count": null,
       "outputs": []
     },
@@ -195,7 +199,7 @@
         "\n",
         "### Overview of National Levels of Leisure-Time Physical Activity\n"
       ],
-      "id": "b5341a72"
+      "id": "b13002b0"
     },
     {
       "cell_type": "code",
@@ -210,7 +214,7 @@
         "# Only include national data, disregarding results from individual states\n",
         "noleisuretime_income_national = noleisuretime_income[noleisuretime_income['LocationDesc']==\"National\"]\n"
       ],
-      "id": "e7edb75d",
+      "id": "7397ab7b",
       "execution_count": null,
       "outputs": []
     },
@@ -221,7 +225,7 @@
         "import seaborn as sns\n",
         "import matplotlib.pyplot as plt"
       ],
-      "id": "7dec11d2",
+      "id": "7cc01c36",
       "execution_count": null,
       "outputs": []
     },
@@ -252,7 +256,7 @@
         "\n",
         "plt.show()"
       ],
-      "id": "a950d961",
+      "id": "8e3c29c3",
       "execution_count": null,
       "outputs": []
     },
@@ -264,7 +268,7 @@
         "\n",
         "This plot provides a general overview of the trends in the physical activity of American adults as related to income. Further analysis of this dataset shows the same association between higher income and higher percentages of adults who engage in physical activity.\n"
       ],
-      "id": "34ffa359"
+      "id": "6d2f453a"
     },
     {
       "cell_type": "code",
@@ -304,9 +308,19 @@
         "# Show the plot\n",
         "plt.show()"
       ],
-      "id": "d3b8584a",
+      "id": "17ad01f2",
       "execution_count": null,
       "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "And while we were focusing on leisure-time physical activity, we did want to assess whether that disparity carried through the other questions about exercise. This facet grid helps compare the disparities between income groups for all exercise categories. On the far left you can see that there is a large disparity between the lowest and highest income bracket when it comes to no leisure time physical activity. However, that gap starts to shrink as we get to different types of exercise.\n",
+        "\n",
+        "It is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity, which may be one reason the disparity begins to shrink so drastically in other exercise categories.\n"
+      ],
+      "id": "c68929be"
     },
     {
       "cell_type": "code",
@@ -336,9 +350,17 @@
         "plt.legend()\n",
         "plt.show()"
       ],
-      "id": "6def310c",
+      "id": "355df37b",
       "execution_count": null,
       "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "This scatter plot shows the percent of the sample population who does not engage in leisure time activity on the Y-axis graphed with their income. On the X-axis the income is encoded as the minimum income in the range. As a numeric value, so it can be used as a numeric variable for linear regression. The linear regression line shows a downward trend with percent engaging in no leisure time, activity being associated with lower incomes. The R squared value of 0 point 7 shows a moderately strong correlation between the percent and income."
+      ],
+      "id": "13d3875d"
     }
   ],
   "metadata": {
