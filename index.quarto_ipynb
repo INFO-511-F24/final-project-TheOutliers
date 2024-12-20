@@ -24,6 +24,9 @@
         "jupyter: python3\n",
         "---\n",
         "\n",
+        "## Abstract\n",
+        "\n",
+        "In this Final Project for INFO 511: Fundamentals of Data Science, we set out to investigate the potential relationship between physical activity and income level. Through analysis of historical health survey data, we attempt to better understand whether there is a visible trend or relationship between socioeconomic status and leisure-time physical activity in US adults.\n",
         "\n",
         "## Introduction\n",
         "\n",
@@ -44,7 +47,7 @@
         "The main columns of interest for our research question are:\n",
         "\n",
         "-   YearStart and YearEnd: The year the data was collected. These are the same for every row.\n",
-        "-   LocationAbbr: Contains the abbreviation for the data where the data was collected.\n",
+        "-   LocationAbbr and LocationDesc: Contains the abbreviation for the data where the data was collected.\n",
         "-   Topic: Contains the topic the variable being measured falls into. For our research question, we are interested in the topic \"Physical Activity - Behavior\"\n",
         "-   Question: What is being measured. Within \"Physical Activity - Behavior\" there are 5 questions:\n",
         "    -   Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic physical activity and engage in muscle-strengthening activities on 2 or more days a week\n",
@@ -56,17 +59,17 @@
         "-   StratificationCategory1: What variable the data is being stratified by. Depending on the value in this column, it will contain a value in the columns \"Race\", \"Age (years)\", \"Income\", etc. For our research question we are interested in the levels in Income, such as 'Less than \\$15,000', '\\$35,000 - \\$49,999', etc.\n",
         "-   Income: Contains the income level.\n"
       ],
-      "id": "1a1fcf20"
+      "id": "010e7c92"
     },
     {
       "cell_type": "code",
       "metadata": {},
       "source": [
         "import pandas as pd\n",
-        "data = pd.read_csv('/data/Nutrition.csv')\n",
+        "data = pd.read_csv('data/Nutrition.csv')\n",
         "data.head()"
       ],
-      "id": "4136ac3d",
+      "id": "d007bf69",
       "execution_count": null,
       "outputs": []
     },
@@ -76,7 +79,7 @@
       "source": [
         "data.info()"
       ],
-      "id": "a8e4a91b",
+      "id": "f9fa0fca",
       "execution_count": null,
       "outputs": []
     },
@@ -86,9 +89,23 @@
       "source": [
         "### Data Cleaning and Wrangling, EDA\n",
         "\n",
-        "The columns YearStart and YearEnd always contain the same values so one can be dropped.\n"
+        "The columns YearStart and YearEnd always contain the same values so one of these columns can be dropped. We are only interested in the rows containing questions related to physical activity. Specifically, we are interested in the rows corresponding to the value in column `Question` that describes: \"Percent of adults who engage in no leisure-time physical activity\". There were five measurements collected related to physical activity from the phone surveys from which the dataset was derived, though not all of these questions were asked every year. The following statements are how the measurements were described in the `Question` column, but were not the way the questions were presented to participants over the phone. The exact wording of the questions is available on the [Behavioral Risk Factor Surveillance System website](https://www.cdc.gov/brfss/questionnaires/index.htm).\n",
+        "\n",
+        "1.  Percent of adults who engage in no leisure-time physical activity\n",
+        "\n",
+        "2.  Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)\n",
+        "\n",
+        "3.  Percent of adults who engage in muscle-strengthening activities on 2 or more days a week\n",
+        "\n",
+        "4.  Percent of adults who achieve at least 300 minutes a week of moderate-intensity aerobic physical activity or 150 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)\n",
+        "\n",
+        "5.  Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic physical activity and engage in muscle-strengthening activities on 2 or more days a week\n",
+        "\n",
+        "There are multiple columns containing the categories for stratification, such as education levels in the column `Education`. To answer our research question, we are most interested in the `Income` column. The data can also be separated by US state using the `LocationAbbr` (state abbreviation, i.e. \"AZ\") or `LocationDesc` (full state text, i.e. \"Arizona\") columns. There are also national measurements, using the abbreviation \"US\" or full text \"National\".\n",
+        "\n",
+        "Some of the columns contained missing values. Missing values were dropped for the column `Data_Value` because the percentage values in this column were the focus of our analysis, and we were not interested in the years where this question was not measured. One abnormality of note in this dataset was the column `Data_Value_Unit`. This column was described as containing the unit of measurement for `Data_Value`, but this was not the case as the column contained years followed by a period. This may be indicative of a data entry error.\n"
       ],
-      "id": "066d2244"
+      "id": "50509f48"
     },
     {
       "cell_type": "code",
@@ -96,7 +113,7 @@
       "source": [
         "data.loc[data['YearStart'] != data['YearEnd']]"
       ],
-      "id": "135f2c7c",
+      "id": "f178820b",
       "execution_count": null,
       "outputs": []
     },
@@ -106,17 +123,9 @@
       "source": [
         "activity = data.drop(columns='YearEnd')"
       ],
-      "id": "2f879255",
+      "id": "b3c420e9",
       "execution_count": null,
       "outputs": []
-    },
-    {
-      "cell_type": "markdown",
-      "metadata": {},
-      "source": [
-        "We are only interested in the rows containing questions related to physical activity.\n"
-      ],
-      "id": "f88fb5ba"
     },
     {
       "cell_type": "code",
@@ -127,83 +136,7 @@
         "activity = activity[activity['StratificationCategory1'] == \"Income\"]\n",
         "activity.info()"
       ],
-      "id": "ae4fdfb2",
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "metadata": {},
-      "source": [
-        "# looking for missing values\n",
-        "cols_with_nulls = []\n",
-        "for col in activity.columns:\n",
-        "    if activity[col].isna().sum() > 0:\n",
-        "        cols_with_nulls.append(col)\n",
-        "\n",
-        "print(f\"Columns with 1 or more missing values:\")\n",
-        "for i in cols_with_nulls:\n",
-        "    print(i)"
-      ],
-      "id": "ce377e79",
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "markdown",
-      "metadata": {},
-      "source": [
-        "#### Data_Value_Unit\n"
-      ],
-      "id": "bf36159f"
-    },
-    {
-      "cell_type": "code",
-      "metadata": {},
-      "source": [
-        "# unique values in Data_Value_Unit\n",
-        "print(['Data_Value_Unit'].unique())"
-      ],
-      "id": "7e8819ca",
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "markdown",
-      "metadata": {},
-      "source": [
-        "This column's values seem to not correspond to the name, it looks like it might be a data entry error.\n",
-        "\n",
-        "#### Removing nulls from Data_Value\n"
-      ],
-      "id": "1ed323cd"
-    },
-    {
-      "cell_type": "code",
-      "metadata": {},
-      "source": [
-        "# removing null values\n",
-        "activity = activity.dropna(subset=['Data_Value'])"
-      ],
-      "id": "7f87bef4",
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "markdown",
-      "metadata": {},
-      "source": [
-        "#### Questions\n"
-      ],
-      "id": "b6a9cb1e"
-    },
-    {
-      "cell_type": "code",
-      "metadata": {},
-      "source": [
-        "print(questions = activity['Question'].unique())"
-      ],
-      "id": "58d4882d",
+      "id": "33701e52",
       "execution_count": null,
       "outputs": []
     },
@@ -213,9 +146,23 @@
       "source": [
         "#### Encoding income as a numeric value\n",
         "\n",
-        "Treating income as a numeric variable can be useful for regression.\n"
+        "The income level of the participants is encoded in the dataset as a string value. The income levels were placed into the following bins:\n",
+        "\n",
+        "-   Less than \\$15,000\n",
+        "\n",
+        "-   \\$15,000 - \\$24,999\n",
+        "\n",
+        "-   \\$25,000 - \\$34,999\n",
+        "\n",
+        "-   \\$35,000 - \\$49,999\n",
+        "\n",
+        "-   \\$50,000 - \\$74,999\n",
+        "\n",
+        "-   \\$75,000 or greater\n",
+        "\n",
+        "This can be used as a nominal ordinal variable, but to do linear regression this must be converted to a numeric variable. For this project, we encoded the income as the first number in the range, such as 15,000 for \\$15,000 - \\$24,999.\n"
       ],
-      "id": "cf04f8a6"
+      "id": "480c8d73"
     },
     {
       "cell_type": "code",
@@ -236,7 +183,160 @@
         "# creates numeric column of income based on mappings\n",
         "activity_clean['numeric_income'] = activity_clean['Income'].replace(income_dict)"
       ],
-      "id": "7b3864b8",
+      "id": "f54ac9d6",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Visualization of Dataset\n",
+        "\n",
+        "### Overview of National Levels of Leisure-Time Physical Activity\n"
+      ],
+      "id": "b5341a72"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# onyl include question of interest\n",
+        "noleisuretime = activity_clean[activity_clean['Question']=='Percent of adults who engage in no leisure-time physical activity']\n",
+        "\n",
+        "# Stratified by income\n",
+        "noleisuretime_income = noleisuretime[noleisuretime['StratificationCategory1']=='Income']\n",
+        "\n",
+        "# Only include national data, disregarding results from individual states\n",
+        "noleisuretime_income_national = noleisuretime_income[noleisuretime_income['LocationDesc']==\"National\"]\n"
+      ],
+      "id": "e7edb75d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import seaborn as sns\n",
+        "import matplotlib.pyplot as plt"
+      ],
+      "id": "7dec11d2",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#manual order for income levels\n",
+        "order = ['Less than $15,000',\n",
+        "  '$15,000 - $24,999',\n",
+        "  '$25,000 - $34,999', \n",
+        "  \"$35,000 - $49,999\", \n",
+        "  '$50,000 - $74,999', \n",
+        "  '$75,000 or greater']\n",
+        "\n",
+        "# order data \n",
+        "noleisuretime_income_national['Income'] = pd.Categorical(noleisuretime_income_national['Income'],categories=order, ordered=True)\n",
+        "\n",
+        "# plot\n",
+        "sns.set_style('whitegrid')\n",
+        "plt.figure(figsize=(8,6))\n",
+        "\n",
+        "sns.violinplot(data=noleisuretime_income_national, x=\"Income\", y=\"Data_Value\", palette='viridis')\n",
+        "plt.xticks(rotation=-20)\n",
+        "plt.ylabel('Percent')\n",
+        "plt.title('From 2011-Percent of US Adults Who Do Not Engage in Leisure-Time Physical Activity')\n",
+        "plt.text(2.1, -1, 'Source: CDC, Behavioral Risk Factor Surveillance System (2011 - 2023)', fontsize = 8)\n",
+        "\n",
+        "plt.show()"
+      ],
+      "id": "a950d961",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "This violin plot shows the distribution and density of the data for each income group, with the y-axis representing the percentage of adults not engaging in physical activity and the x-axis denoting income categories. The lowest income category, \"Less than \\$15,000\", has the highest percentage of adults who do not engage in any leisure-time physical activity, and the opposite is true for the highest income category, \"\\$75,000 or greater\", which has the most adults who do engage in leisure-time physical activity.\n",
+        "\n",
+        "This plot provides a general overview of the trends in the physical activity of American adults as related to income. Further analysis of this dataset shows the same association between higher income and higher percentages of adults who engage in physical activity.\n"
+      ],
+      "id": "34ffa359"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "question_mapping = {\n",
+        "    'Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic physical activity and engage in muscle-strengthening activities on 2 or more days a week': 'Moderate Exercise & Muscle Strengthening',\n",
+        "    'Percent of adults who engage in muscle-strengthening activities on 2 or more days a week': 'Muscle Strengthening',\n",
+        "    'Percent of adults who engage in no leisure-time physical activity': 'No Leisure-time Physical Activity',\n",
+        "    'Percent of adults who achieve at least 150 minutes a week of moderate-intensity aerobic physical activity or 75 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)': 'Moderate Exercise',\n",
+        "    'Percent of adults who achieve at least 300 minutes a week of moderate-intensity aerobic physical activity or 150 minutes a week of vigorous-intensity aerobic activity (or an equivalent combination)': 'Intense exercise'\n",
+        "}\n",
+        "\n",
+        "activity_clean['Short_Question'] = activity_clean['Question'].map(question_mapping)\n",
+        "activity_clean['Question'].map(question_mapping)\n",
+        "\n",
+        "national = activity_clean[activity_clean['LocationDesc'] == 'National']\n",
+        "\n",
+        "g = sns.FacetGrid(national, col=\"Short_Question\", hue='Income', hue_order=order, col_wrap=3, aspect=1.5, palette='viridis')\n",
+        "g.map(sns.regplot, 'YearStart', 'Data_Value', )\n",
+        "\n",
+        "# Rotate the x-axis labels for better readability\n",
+        "for ax in g.axes.flat:\n",
+        "    for label in ax.get_xticklabels():\n",
+        "        label.set_rotation(45)\n",
+        "\n",
+        "# Enhancing the plot with titles and labels\n",
+        "g.set_titles('{col_name}')  # Set titles to be each question\n",
+        "g.set_axis_labels('Year', 'Percent of Pop')  # Set common axis labels\n",
+        "\n",
+        "# Adjust the top space to accommodate title\n",
+        "plt.subplots_adjust(top=0.9)\n",
+        "g.fig.suptitle('Percent of Population for Each Exercise Class Over Years')\n",
+        "\n",
+        "# Adding the legend\n",
+        "g.add_legend(title='Income Bracket')\n",
+        "# Show the plot\n",
+        "plt.show()"
+      ],
+      "id": "d3b8584a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "from sklearn.linear_model import LinearRegression\n",
+        "\n",
+        "sns.set_style(style='whitegrid')\n",
+        "sns.scatterplot(data=noleisuretime, x='numeric_income', y='Data_Value', alpha=0.1)\n",
+        "\n",
+        "model = LinearRegression()\n",
+        "x = no_leisure_time[['numeric_income']]\n",
+        "y = no_leisure_time['Data_Value']\n",
+        "model.fit(x, y)\n",
+        "\n",
+        "slope = model.coef_[0]\n",
+        "intercept = model.intercept_\n",
+        "r_squared = model.score(x, y)\n",
+        "\n",
+        "x_range = np.linspace(x.min(), x.max(), 100)  # Range of x values\n",
+        "y_pred = model.predict(x_range)  # Predicted y values\n",
+        "plt.plot(x_range, y_pred, color='red', label=f\"y = {slope:.2f}x + {intercept:.2f}, $R^2$ = {r_squared:.2f}\")\n",
+        "\n",
+        "plt.title(\"Percent of sample population who engage in no leisure time activity\", fontsize=14)\n",
+        "plt.xlabel(\"Minimum Income in Range (i.e. 15,000 for \\$15,000 - \\$24,999)\", fontsize=12)\n",
+        "plt.ylabel(\"Percent of Sample Population\", fontsize=12)\n",
+        "plt.legend()\n",
+        "plt.show()"
+      ],
+      "id": "6def310c",
       "execution_count": null,
       "outputs": []
     }
@@ -246,7 +346,7 @@
       "name": "python3",
       "language": "python",
       "display_name": "Python 3 (ipykernel)",
-      "path": "/usr/local/Caskroom/miniconda/base/envs/py38/share/jupyter/kernels/python3"
+      "path": "C:\\Users\\Colorfulgeek\\anaconda3\\envs\\DataScienceClass\\share\\jupyter\\kernels\\python3"
     }
   },
   "nbformat": 4,

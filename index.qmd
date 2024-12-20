@@ -17,6 +17,7 @@ execute:
   echo: false
 jupyter: python3
 ---
+
 ## Abstract
 
 In this Final Project for INFO 511: Fundamentals of Data Science, we set out to investigate the potential relationship between physical activity and income level. Through analysis of historical health survey data, we attempt to better understand whether there is a visible trend or relationship between socioeconomic status and leisure-time physical activity in US adults.
@@ -217,6 +218,10 @@ g.add_legend(title='Income Bracket')
 plt.show()
 ```
 
+And while we were focusing on leisure-time physical activity, we did want to assess whether that disparity carried through the other questions about exercise. This facet grid helps compare the disparities between income groups for all exercise categories. On the far left you can see that there is a large disparity between the lowest and highest income bracket when it comes to no leisure time physical activity. However, that gap starts to shrink as we get to different types of exercise.
+
+It is important to note that the only question in the survey that explicitly asked participants to only consider non-job related physical activity is the question about non-leisure time physical activity, which may be one reason the disparity begins to shrink so drastically in other exercise categories.
+
 ```{python}
 from sklearn.linear_model import LinearRegression
 
@@ -242,3 +247,5 @@ plt.ylabel("Percent of Sample Population", fontsize=12)
 plt.legend()
 plt.show()
 ```
+
+This scatter plot shows the percent of the sample population who does not engage in leisure time activity on the Y-axis graphed with their income. On the X-axis the income is encoded as the minimum income in the range. As a numeric value, so it can be used as a numeric variable for linear regression. The linear regression line shows a downward trend with percent engaging in no leisure time, activity being associated with lower incomes. The R squared value of 0 point 7 shows a moderately strong correlation between the percent and income.

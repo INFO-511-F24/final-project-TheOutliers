@@ -25,7 +25,7 @@
         "jupyter: python3\n",
         "---"
       ],
-      "id": "dbea72b6"
+      "id": "f5bb8f26"
     },
     {
       "cell_type": "code",
@@ -82,7 +82,7 @@
         "\n",
         "### Glimpse of data\n"
       ],
-      "id": "c6364033"
+      "id": "ae1857cd"
     },
     {
       "cell_type": "code",
@@ -90,7 +90,7 @@
       "source": [
         "nutrition = pd.read_csv(\"../data/nutrition.csv\")"
       ],
-      "id": "d16b83b0",
+      "id": "9ad7ff17",
       "execution_count": null,
       "outputs": []
     },
@@ -100,7 +100,7 @@
       "source": [
         "nutrition.head()"
       ],
-      "id": "5102488d",
+      "id": "f337d166",
       "execution_count": null,
       "outputs": []
     },
@@ -110,7 +110,7 @@
       "source": [
         "nutrition.info()"
       ],
-      "id": "97be1a8c",
+      "id": "25ec38b9",
       "execution_count": null,
       "outputs": []
     },
@@ -124,7 +124,7 @@
         "\n",
         "Once the data has been wrangled, it can be visualized in an assortment of plots for analysis, and summary statistics by group can be compiled as well. These visualizations and statistics will allow for insight as to how the relationship between income and physical activity compares between groups, as well as over time. From here, additional metrics can be run, plots created, etc. to explore and dive in further."
       ],
-      "id": "95483fbc"
+      "id": "8579a534"
     }
   ],
   "metadata": {
@@ -132,7 +132,7 @@
       "name": "python3",
       "language": "python",
       "display_name": "Python 3 (ipykernel)",
-      "path": "/usr/local/Caskroom/miniconda/base/envs/py38/share/jupyter/kernels/python3"
+      "path": "C:\\Users\\Colorfulgeek\\anaconda3\\envs\\DataScienceClass\\share\\jupyter\\kernels\\python3"
     }
   },
   "nbformat": 4,
